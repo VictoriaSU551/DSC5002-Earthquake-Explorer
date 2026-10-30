@@ -25,7 +25,7 @@ def prepare_data(root,config):
         previous = json.loads(seal.read_text(encoding='utf-8'))
         if previous['binding']==binding and previous['dataset_sha256']==sha256(processed):
             print('Reusing verified cleaned dataset and distances.',flush=True)
-            result = pd.read_csv(processed)
+            result = pd.read_csv(processed,float_precision='round_trip')
             result['time'] = pd.to_datetime(result.time,utc=True,format='mixed')
             return result,json.loads((processed.parent/'cleaning_audit.json').read_text(encoding='utf-8'))
     batches = [pd.read_csv(root/f'data/raw/usgs/{year}.csv') for year in range(config['start_year'],config['end_year']+1)]
@@ -43,7 +43,9 @@ def prepare_data(root,config):
     print(f'Computing exact spherical boundary distances for {len(result):,} events...',flush=True)
     result['boundary_distance_km'] = nearest_boundary_km(result.longitude.to_numpy(),result.latitude.to_numpy(),boundaries)
     processed.parent.mkdir(parents=True,exist_ok=True)
-    result.to_csv(processed,index=False,float_format='%.10g')
+    # Keep full floating-point precision so a first run and a cached run
+    # yield the same threshold counts even for high-precision magnitudes.
+    result.to_csv(processed,index=False)
     write_json(processed.parent/'cleaning_audit.json',audit)
     write_json(seal,{'binding':binding,'dataset_sha256':sha256(processed),'rows':len(result)})
     print('Cleaned dataset and boundary distances saved.',flush=True)

@@ -3,7 +3,7 @@
   "python": "3.12.3",
   "unit_tests": {
     "status": "PASS",
-    "passed": 11
+    "passed": 12
   },
   "independent_verifier": {
     "status": "PASS",
@@ -13,10 +13,10 @@
       "sample_events": 256,
       "dense_nodes": 282503,
       "spacing_km": 1,
-      "maximum_upper_bound_gap_km": 0.3088600275101589,
-      "minimum_upper_bound_gap_km": -4.9602363105805125e-08
+      "maximum_upper_bound_gap_km": 0.3088600274970504,
+      "minimum_upper_bound_gap_km": -2.1184831666687387e-10
     },
-    "dataset_sha256": "574e46a9774c3cfaca591d07f576ff0ac8541adf23782bcda7c26f11425e35d1"
+    "dataset_sha256": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff"
   },
   "browser_verification": {
     "status": "PASS",
@@ -46,5 +46,9 @@
     "resolved_findings": 1,
     "open_findings": 0,
     "fix": "Stack depth-class histograms so bins crossing thresholds retain their total visible count."
+  },
+  "precision_regression": {
+    "status": "PASS",
+    "behavior": "First-run and cached numeric values match exactly, including magnitude 5.0876669931811."
   }
 }
