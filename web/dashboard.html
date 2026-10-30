@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inside the Earth · Earthquake Explorer</title><style>/*__CSS__*/</style><script>/*__PLOTLY__*/</script></head>
+<body>
+<header><div class="eyebrow">DSC5002 · EXPLORATORY DATA ANALYSIS</div><h1>Inside the Earth</h1>
+<p>Global earthquake patterns in space, time and depth</p><div class="source-line">USGS · 2000–2025 UTC · M ≥ 5 · PB2002 · Natural Earth 110m</div>
+<a class="report-link" href="report.html">Read the results report ↗</a></header>
+<main>
+<nav aria-label="Research questions" class="tabs">
+<button data-tab="overview" class="active">01 Space &amp; time</button><button data-tab="boundaries">02 Boundaries</button>
+<button data-tab="depth">03 Depth</button><button data-tab="magnitude">04 Magnitude</button><button data-tab="cases">05 Major events</button>
+</nav>
+<section class="filters" id="global-filters" aria-label="Catalogue filters">
+<label>From year<select id="year-start"></select></label><label>To year<select id="year-end"></select></label>
+<label>Minimum magnitude<select id="min-mag"><option value="5">M 5.0</option><option value="5.5">M 5.5</option><option value="6">M 6.0</option><option value="7">M 7.0</option><option value="8">M 8.0</option><option value="9">M 9.0</option></select></label>
+<label>Region<select id="region"><option value="all">All regions</option></select></label>
+<label>Depth class<select id="depth-class"><option value="all">All depths</option><option value="0">Shallow &lt;70 km</option><option value="1">Intermediate 70–&lt;300 km</option><option value="2">Deep ≥300 km</option><option value="3">Missing depth</option></select></label>
+<button id="reset" class="secondary">Reset filters</button></section>
+<div id="status" class="status" role="status" aria-live="polite">Loading catalogue…</div>
+<section class="metrics" id="metrics"><div><span>Selected events</span><strong id="count">—</strong></div><div><span>Median depth</span><strong id="median-depth">—</strong></div><div><span>Median boundary distance</span><strong id="median-distance">—</strong></div><div><span>Within 100 km of a boundary</span><strong id="near-boundary">—</strong></div></section>
+<section data-panel="overview"><div class="panel-heading"><div><h2>Global epicentres</h2><p>Equal-size events colored by depth class. Hover for event details.</p></div>
+<label>View<select id="world-view"><option value="map">2D map</option><option value="globe">Rotatable 3D globe</option></select></label></div>
+<div id="world" class="chart tall" aria-label="Global earthquake map"></div><p class="note" id="world-note"></p>
+<div class="grid"><article><h2>Annual catalogue counts</h2><div id="annual" class="chart"></div></article><article><h2>Regional counts</h2><div id="regional" class="chart"></div></article></div>
+<p class="note">All filters apply to the selected catalogue. Regional boxes have different areas; raw counts are not hazard rates. Temporal differences can reflect event sequences, reporting and catalogue revisions.</p></section>
+<section data-panel="boundaries" hidden><h2>Distance to mapped plate boundaries</h2><p class="intro">Shortest spherical distance to PB2002 line segments. The map layer simplifies real plate-boundary geometry.</p>
+<div class="grid"><article><h3>Distance distribution</h3><div id="distance-hist" class="chart"></div></article><article><h3>Regional cumulative distance</h3><div id="distance-ecdf" class="chart"></div></article></div>
+<p class="note">ECDFs use separate regional denominators. Distances use minor great-circle arcs and a sphere of radius 6371.0088 km; they do not estimate geological uncertainty.</p></section>
+<section data-panel="depth" hidden><h2>Below the surface</h2><p class="intro">Depth classes: shallow &lt;70 km, intermediate 70–&lt;300 km, deep ≥300 km. Negative reported depths are retained.</p>
+<div class="grid"><article><h3>Depth distribution</h3><div id="depth-hist" class="chart"></div></article><article><h3>Regional depth distributions</h3><div id="depth-box" class="chart"></div></article></div>
+<div class="panel-heading"><div><h3>Regional cross-section</h3><p>Choose a geographic box for a longitude–depth projection or local hypocentre view.</p></div><label>Section region<select id="section-region"></select></label><label>View<select id="section-view"><option value="2d">Longitude–depth</option><option value="3d">3D hypocentres</option></select></label></div>
+<div id="cross-section" class="chart tall"></div><p class="note" id="section-note"></p></section>
+<section data-panel="magnitude" hidden><h2>Magnitude and recorded frequency</h2><p class="intro">The extraction starts at M5. Preferred catalogue magnitude types are mixed and have not been homogenized.</p>
+<div class="grid"><article><h3>Magnitude distribution</h3><div id="mag-hist" class="chart"></div></article><article><h3>Cumulative magnitude frequency</h3><div id="mag-frequency" class="chart"></div></article></div>
+<h3>Magnitude and depth</h3><div id="relationship" class="chart"></div><p class="note" id="relationship-note"></p>
+<p class="note">Cumulative counts are descriptive. This view does not fit an earthquake-prediction model or a completeness-adjusted b-value. Correlation does not establish causation.</p></section>
+<section data-panel="cases" hidden><div class="panel-heading"><div><h2>Recorded sequences around major events</h2><p>Fixed M ≥ 5 catalogue, 500 km radius, 30 days before and after. The anchor is excluded.</p></div><label>Case study<select id="case-select"></select></label></div>
+<p class="notice">Case studies use the full M ≥ 5 catalogue and their fixed windows. Global filters are hidden on this tab.</p>
+<div id="case-stats" class="case-stats"></div><div class="grid"><article><h3>Local epicentres</h3><div id="case-map" class="chart"></div></article><article><h3>Daily recorded sequence</h3><div id="case-timeline" class="chart"></div></article></div>
+<p class="note">Windows are [−30,0) and [0,30) days relative to the anchor, with equal exposure. These selected cases do not establish a general causal effect and exclude events below M5.</p></section>
+<footer><strong>Scope and limits</strong><p>Historical descriptive analysis only. Earthquake sequences are dependent; monitoring coverage, magnitude types and catalogue revisions affect comparisons. Geographic boxes are not tectonic classifications. PB2002 is dated and simplified.</p><p>Sources: <a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS catalogue</a> · <a href="https://github.com/fraxen/tectonicplates">PB2002 conversion</a> (Hugo Ahlenius, Nordpil and Peter Bird; ODC-By) · <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain). All plot assets are embedded for offline use.</p></footer>
+</main><script id="catalogue" type="application/json">/*__DATA__*/</script><script>/*__APP__*/</script></body></html>

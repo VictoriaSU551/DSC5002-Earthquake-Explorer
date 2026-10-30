@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+data/raw/
+data/processed/
+outputs/
+local_sources/
+.superpowers/
+*.log
+docs/superpowers/
+docs/progress.md

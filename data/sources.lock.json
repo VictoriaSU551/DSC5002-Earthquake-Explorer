@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "query": {
+    "starttime": "2000-01-01T00:00:00",
+    "endtime": "2025-12-31T23:59:59.999",
+    "minmagnitude": 5.0,
+    "eventtype": "earthquake"
+  },
+  "source_count": 46463,
+  "count_receipt": {
+    "file": "catalog_count.txt",
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/count?starttime=2000-01-01T00%3A00%3A00&endtime=2025-12-31T23%3A59%3A59.999&minmagnitude=5.0&eventtype=earthquake",
+    "accessed_utc": "2026-10-30T09:41:25.114146+00:00",
+    "bytes": 5,
+    "sha256": "652e05e6edb96843b9410ad82234004ad6f79f74ed665880ddbfaeb7b90c73f3"
+  },
+  "files": [
+    {
+      "file": "data/raw/usgs/2000.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2000-01-01T00%3A00%3A00&endtime=2001-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:55.630509+00:00",
+      "bytes": 245575,
+      "sha256": "0f542758205b6b6ff442cf957fd2b556b00f696ab95b40871001a20644527951"
+    },
+    {
+      "file": "data/raw/usgs/2001.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2001-01-01T00%3A00%3A00&endtime=2002-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:55.411242+00:00",
+      "bytes": 222390,
+      "sha256": "447c783ea298e7feae0535a02ec7f6c376aa35335364b9dc343ef0037577c082"
+    },
+    {
+      "file": "data/raw/usgs/2002.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2002-01-01T00%3A00%3A00&endtime=2003-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:55.293192+00:00",
+      "bytes": 215508,
+      "sha256": "d778d7db308bcd59f1a3725c7821569cf8992173dc47da6d7bf873b502a3ea8a"
+    },
+    {
+      "file": "data/raw/usgs/2003.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2003-01-01T00%3A00%3A00&endtime=2004-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:55.714267+00:00",
+      "bytes": 229202,
+      "sha256": "16c9e53e1b9214760b2ebf2b7ff779ea418043ff5bc2422fa4f24cb2596ba7c2"
+    },
+    {
+      "file": "data/raw/usgs/2004.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2004-01-01T00%3A00%3A00&endtime=2005-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:59.098492+00:00",
+      "bytes": 282542,
+      "sha256": "f8e245cd906a245762e831fa0527b358eb1c0b44bc0d95c5742f3cdb10dfa1b0"
+    },
+    {
+      "file": "data/raw/usgs/2005.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2005-01-01T00%3A00%3A00&endtime=2006-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:59.133851+00:00",
+      "bytes": 311346,
+      "sha256": "dac86d32598b6cf8bb879fb4ddf6ad8e41c2ae2131f27d2c022fcab9ac892854"
+    },
+    {
+      "file": "data/raw/usgs/2006.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2006-01-01T00%3A00%3A00&endtime=2007-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:59.222739+00:00",
+      "bytes": 315618,
+      "sha256": "4ba551f4bb1c719ef27bc087cf0e2d7b86c00830db095ee27a29b32d86a0471c"
+    },
+    {
+      "file": "data/raw/usgs/2007.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2007-01-01T00%3A00%3A00&endtime=2008-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:40:59.281520+00:00",
+      "bytes": 388072,
+      "sha256": "915c678173eac9d208ec0c7e18e85506939c62c27fb6121c6a233aebe305844d"
+    },
+    {
+      "file": "data/raw/usgs/2008.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2008-01-01T00%3A00%3A00&endtime=2009-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:02.688111+00:00",
+      "bytes": 331982,
+      "sha256": "9cb906bbddf0b960303d3cb7ef712a746a6182bb46f01580cfc123bba866648a"
+    },
+    {
+      "file": "data/raw/usgs/2009.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2009-01-01T00%3A00%3A00&endtime=2010-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:02.886138+00:00",
+      "bytes": 351242,
+      "sha256": "85b7f0a05356f6aa33ed5e0866fbb95093e95fccac274bc5de4bfa5e1175cb57"
+    },
+    {
+      "file": "data/raw/usgs/2010.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2010-01-01T00%3A00%3A00&endtime=2011-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:03.276379+00:00",
+      "bytes": 406479,
+      "sha256": "c531c59943d0a46f47755f468df03e0c8c61142477f7bba2a54fcb1266d31717"
+    },
+    {
+      "file": "data/raw/usgs/2011.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2011-01-01T00%3A00%3A00&endtime=2012-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:03.232614+00:00",
+      "bytes": 457200,
+      "sha256": "0f55c8c71936a75558cf5919259cf931df95f0532e8877f7fba51f9026c27d69"
+    },
+    {
+      "file": "data/raw/usgs/2012.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2012-01-01T00%3A00%3A00&endtime=2013-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:06.199834+00:00",
+      "bytes": 288539,
+      "sha256": "0216373d509843d9a9a70d6d926854f4d4e6af6c9d043b961e3dad68342e03ef"
+    },
+    {
+      "file": "data/raw/usgs/2013.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2013-01-01T00%3A00%3A00&endtime=2014-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:06.915117+00:00",
+      "bytes": 277604,
+      "sha256": "6ba308bf4654a56aabe943d3b6f55642a3804935b35243f7e5e0f139ac3126d0"
+    },
+    {
+      "file": "data/raw/usgs/2014.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2014-01-01T00%3A00%3A00&endtime=2015-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:07.042207+00:00",
+      "bytes": 312424,
+      "sha256": "df68d4bf8cd2ff27dd12cb64f56f8a1ee88beb605b8dbfb72dc0f0393efb9723"
+    },
+    {
+      "file": "data/raw/usgs/2015.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2015-01-01T00%3A00%3A00&endtime=2016-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:06.718650+00:00",
+      "bytes": 283282,
+      "sha256": "85c68b7eaf0192d77f07c7dc016bd9aefd1072f521633facb68a10289a6c223a"
+    },
+    {
+      "file": "data/raw/usgs/2016.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2016-01-01T00%3A00%3A00&endtime=2017-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:09.695098+00:00",
+      "bytes": 308639,
+      "sha256": "fe888f75c77b346f51502e9e95514a9cae9669d411775853ba5237e3f768b312"
+    },
+    {
+      "file": "data/raw/usgs/2017.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2017-01-01T00%3A00%3A00&endtime=2018-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:10.351569+00:00",
+      "bytes": 286307,
+      "sha256": "51260cd24b1f938cbb54818f1db4288a075a80555cd4d300186be4f2fad5ee9f"
+    },
+    {
+      "file": "data/raw/usgs/2018.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2018-01-01T00%3A00%3A00&endtime=2019-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:10.471746+00:00",
+      "bytes": 323285,
+      "sha256": "58b185e1a90e7ec4f79eae0c0e559a96000950c69f1c5ccdbe1091c2c51c55ae"
+    },
+    {
+      "file": "data/raw/usgs/2019.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2019-01-01T00%3A00%3A00&endtime=2020-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:10.458027+00:00",
+      "bytes": 300139,
+      "sha256": "0c89c9767316e7aafeefb0e99dd8c42406ab32b0ef8986f09e80f28479478e12"
+    },
+    {
+      "file": "data/raw/usgs/2020.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2020-01-01T00%3A00%3A00&endtime=2021-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:13.063555+00:00",
+      "bytes": 264413,
+      "sha256": "950f1cccea576582760c91d3ec2587494bd7bce0ced6a2cb8f46d50137e46318"
+    },
+    {
+      "file": "data/raw/usgs/2021.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2021-01-01T00%3A00%3A00&endtime=2022-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:14.422390+00:00",
+      "bytes": 404872,
+      "sha256": "a4db7cfdb39084f1983c9c2e6242bd96f0d2e245d2f6fbdafac919c48e18d851"
+    },
+    {
+      "file": "data/raw/usgs/2022.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2022-01-01T00%3A00%3A00&endtime=2023-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:14.508139+00:00",
+      "bytes": 319625,
+      "sha256": "80644ae69ca0f5e35b12801576b820b94b0de071cbace251d1339eeb61eb4826"
+    },
+    {
+      "file": "data/raw/usgs/2023.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2023-01-01T00%3A00%3A00&endtime=2024-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:14.000281+00:00",
+      "bytes": 335702,
+      "sha256": "9a0bfd230fdf4bf6e45cacd2ea80f936ce4b397fcc80efb77429e0b3fc6c4fd1"
+    },
+    {
+      "file": "data/raw/usgs/2024.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2024-01-01T00%3A00%3A00&endtime=2025-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:19.012328+00:00",
+      "bytes": 284431,
+      "sha256": "e8d9bae7fffd4ba4dcbdda1ebf9ab71c2091eca2b985d00c593e08e558d42ff5"
+    },
+    {
+      "file": "data/raw/usgs/2025.csv",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2025-01-01T00%3A00%3A00&endtime=2026-01-01T00%3A00%3A00&minmagnitude=5.0&eventtype=earthquake&orderby=time-asc&limit=20000",
+      "accessed_utc": "2026-10-30T09:41:19.835520+00:00",
+      "bytes": 405535,
+      "sha256": "733bc6cdd97204ef9c7d847350559bf1c089c0a1f6d3004ef114454d58d4948c"
+    },
+    {
+      "file": "data/raw/geography/PB2002_boundaries.json",
+      "url": "https://raw.githubusercontent.com/fraxen/tectonicplates/339b0c56563c118307b1f4542703047f5f698fae/GeoJSON/PB2002_boundaries.json",
+      "accessed_utc": "2026-10-30T09:41:18.385339+00:00",
+      "bytes": 226378,
+      "sha256": "42b3e0876a7e40f133e958ba7ab85f8851b5c693a046fbc3b138e7751863d92a"
+    },
+    {
+      "file": "data/raw/geography/ne_110m_coastline.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_coastline.geojson",
+      "accessed_utc": "2026-10-30T09:41:18.434668+00:00",
+      "bytes": 139907,
+      "sha256": "851f581ff5ffb844deed8ae1a9ce22e3c4bb3d74fa342cadb5d8e39b41ae7c3c"
+    },
+    {
+      "file": "data/raw/geography/ne_110m_land.geojson",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_land.geojson",
+      "accessed_utc": "2026-10-30T09:41:20.815946+00:00",
+      "bytes": 138160,
+      "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9"
+    },
+    {
+      "file": "data/raw/geography/PB2002_LICENSE.md",
+      "url": "https://raw.githubusercontent.com/fraxen/tectonicplates/339b0c56563c118307b1f4542703047f5f698fae/LICENSE.md",
+      "accessed_utc": "2026-10-30T09:41:20.452973+00:00",
+      "bytes": 186,
+      "sha256": "aca5f9e92e61843413b9297659af2eef552eb38fef39eae2f701566d985de36c"
+    }
+  ],
+  "geography_commits": {
+    "fraxen/tectonicplates": "339b0c56563c118307b1f4542703047f5f698fae",
+    "nvkelso/natural-earth-vector": "ca96624a56bd078437bca8184e78163e5039ad19"
+  }
+}

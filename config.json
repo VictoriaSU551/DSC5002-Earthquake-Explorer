@@ -1,0 +1,22 @@
+{
+  "start_year": 2000,
+  "end_year": 2025,
+  "min_magnitude": 5.0,
+  "earth_radius_km": 6371.0088,
+  "depth_thresholds_km": [70, 300],
+  "case_window_days": 30,
+  "case_radius_km": 500,
+  "cases": [
+    {"name": "Sumatra Andaman 2004", "date": "2004-12-26"},
+    {"name": "Maule Chile 2010", "date": "2010-02-27"},
+    {"name": "Tohoku Japan 2011", "date": "2011-03-11"}
+  ],
+  "regions": [
+    {"name": "Japan and Kuril", "lon": [125, 165], "lat": [25, 55]},
+    {"name": "Indonesia and Philippines", "lon": [90, 140], "lat": [-15, 25]},
+    {"name": "Tonga Kermadec Fiji", "lon": [165, -170], "lat": [-40, -10]},
+    {"name": "Andes", "lon": [-85, -60], "lat": [-60, 15]},
+    {"name": "Alaska and Aleutians", "lon": [170, -125], "lat": [45, 75]},
+    {"name": "Mediterranean and Himalaya", "lon": [-10, 100], "lat": [25, 45]}
+  ]
+}

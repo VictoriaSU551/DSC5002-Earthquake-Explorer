@@ -1,0 +1,50 @@
+{
+  "snapshot_date": "2026-10-30",
+  "python": "3.12.3",
+  "unit_tests": {
+    "status": "PASS",
+    "passed": 11
+  },
+  "independent_verifier": {
+    "status": "PASS",
+    "checks_passed": 93,
+    "events": 46463,
+    "boundary_validation": {
+      "sample_events": 256,
+      "dense_nodes": 282503,
+      "spacing_km": 1,
+      "maximum_upper_bound_gap_km": 0.3088600275101589,
+      "minimum_upper_bound_gap_km": -4.9602363105805125e-08
+    },
+    "dataset_sha256": "574e46a9774c3cfaca591d07f576ff0ac8541adf23782bcda7c26f11425e35d1"
+  },
+  "browser_verification": {
+    "status": "PASS",
+    "remote_requests": 0,
+    "page_errors": 0,
+    "checks": [
+      "default counts",
+      "decimal magnitude bin edges",
+      "valid geographic map axes",
+      "3D globe",
+      "year filters",
+      "magnitude filter",
+      "empty selection",
+      "boundary ECDF",
+      "date-line cross-section",
+      "3D hypocentres",
+      "magnitude survival",
+      "case windows",
+      "mobile layout",
+      "twelve report images",
+      "offline without HTTP requests"
+    ]
+  },
+  "independent_review": {
+    "status": "RESOLVED",
+    "important_findings": 1,
+    "resolved_findings": 1,
+    "open_findings": 0,
+    "fix": "Stack depth-class histograms so bins crossing thresholds retain their total visible count."
+  }
+}
