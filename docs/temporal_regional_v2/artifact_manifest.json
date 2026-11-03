@@ -1,0 +1,138 @@
+{
+  "version": "temporal_regional_v2_20261103",
+  "events": 46463,
+  "baseline_preserved": true,
+  "files": [
+    {
+      "path": "tables/annual_magnitude_type_mix.csv",
+      "bytes": 6213,
+      "sha256": "013c69ded57903938a14752a9976e0747950b119f9975b8537a466805f85a190"
+    },
+    {
+      "path": "tables/annual_network_mix.csv",
+      "bytes": 5164,
+      "sha256": "e76130d00b921420db0b0ff7f64f26e717bf245a21b0c8f7fb1c2e0f93255a3f"
+    },
+    {
+      "path": "tables/annual_region_threshold.csv",
+      "bytes": 64700,
+      "sha256": "04d98c346848afc4de99e1bd8d33fe49655f65fec26618e9b05af5715d64895c"
+    },
+    {
+      "path": "tables/annual_reporting_profile.csv",
+      "bytes": 39924,
+      "sha256": "52aa3c6d80a0d914cd299132ec470cc6105979bbb4ff5433afa796d5ae27f1a2"
+    },
+    {
+      "path": "tables/descriptive_slopes.csv",
+      "bytes": 2485,
+      "sha256": "d85d5c5abd34b3a430c7004ac4c2caf4d6d713596f62642d965640ace5736ef3"
+    },
+    {
+      "path": "tables/equal_period_comparison.csv",
+      "bytes": 8135,
+      "sha256": "a5dea32959d9b160a5edd395a490dc9abdd901d3899895014dd23b771e2d02e8"
+    },
+    {
+      "path": "tables/monthly_coverage.csv",
+      "bytes": 3731,
+      "sha256": "0a96a75262d925a528815b3f93349de1e19025898f282f7ac4185cbc1543ec54"
+    },
+    {
+      "path": "tables/multiyear_blocks.csv",
+      "bytes": 10889,
+      "sha256": "62ae44efaefcd4926adcfa81fbd3bdeeb15ec78a1ed5213248caa58faa9e86dd"
+    },
+    {
+      "path": "tables/period_reporting_comparison.csv",
+      "bytes": 703,
+      "sha256": "ca19558492abe30f88c76208f043b9ea6382176cc71010d110c84e456f2c91b9"
+    },
+    {
+      "path": "tables/region_box_period_sensitivity.csv",
+      "bytes": 24140,
+      "sha256": "7b534a3320f8cad8cd6fb5babc309c925d71efd5fc62c39663c4d575c375b417"
+    },
+    {
+      "path": "tables/selection_sensitivity.csv",
+      "bytes": 34081,
+      "sha256": "ec9d74ab9bda4101355b0970a823d20257a21339e8faf4550c1326ed9e9724a9"
+    },
+    {
+      "path": "tables/source_batch_coverage.csv",
+      "bytes": 2382,
+      "sha256": "494ab9c72829edad66dfcac116fa3fa22a3b1db4359339125598ff1e15ad8f03"
+    },
+    {
+      "path": "tables/summary.json",
+      "bytes": 10927,
+      "sha256": "378a25715bb2f763c6d5953e1f537e935c82dd2de5749b2b8a9cfa2a9f580de8"
+    },
+    {
+      "path": "tables/window_removal_annual.csv",
+      "bytes": 64797,
+      "sha256": "284a0420cc3532422733a8829cbfaa880ef73d08c90582c848e677756237b691"
+    },
+    {
+      "path": "figures/01_annual_threshold_trends.png",
+      "bytes": 286470,
+      "sha256": "122bb9531598ec7c36c7073a5ece527623ac22fb696d2b4e0c184959e7673926"
+    },
+    {
+      "path": "figures/02_regional_annual_trends.png",
+      "bytes": 304673,
+      "sha256": "6fcb61348597ee19d53d0df8849f3c8b34bdb3c535a8d8b640da74919c063841"
+    },
+    {
+      "path": "figures/03_equal_period_regions.png",
+      "bytes": 119610,
+      "sha256": "d613909deddd53caf4a9ca7bc03cb5f11cd74d8d0b3281ea7a965adabe6b1b60"
+    },
+    {
+      "path": "figures/04_regional_share_heatmap.png",
+      "bytes": 107865,
+      "sha256": "ce75b800140b2f2522e57e376f5f054663b8d5c818b60f3ab537f07429741184"
+    },
+    {
+      "path": "figures/05_threshold_sensitivity.png",
+      "bytes": 164697,
+      "sha256": "2423bb638432153569b9fa9eb484b690c0eb46b2f5e0775ee4251ca7254e521f"
+    },
+    {
+      "path": "figures/06_magnitude_type_mix.png",
+      "bytes": 89801,
+      "sha256": "7c85a3c6663d0e16d274f711a37e40c4d8f592df09a728669f3773648f76f917"
+    },
+    {
+      "path": "figures/07_reporting_availability.png",
+      "bytes": 94067,
+      "sha256": "ce0723adb9784ef517e9578786451b309ae7747abfd113d94d926824d806d857"
+    },
+    {
+      "path": "figures/08_regional_change_contributions.png",
+      "bytes": 104081,
+      "sha256": "e2c264888e5b0c67bc9f283f21593bc34d7a70181686f2d59a1b28415954ba90"
+    },
+    {
+      "path": "figures/09_window_sensitivity.png",
+      "bytes": 189235,
+      "sha256": "3add253cc672d4e4604ecfe40159cce0732d83bcee3b6e9f42041b5e599e87ce"
+    },
+    {
+      "path": "report.html",
+      "bytes": 19891,
+      "sha256": "44ad93f50d0a2758e50a581c769c155cbc7b8357621e84b158431ac4e5d02930"
+    },
+    {
+      "path": "dashboard.html",
+      "bytes": 4760184,
+      "sha256": "c69fecd38070c324ad2ef634df2eaba9aac2e2656c105897c2b3cf3d75eaa96e"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 1113,
+      "sha256": "e4ddbd3562ec58c62241e7469aaa38e23102bd5e1a25d74afad2a188c4405182"
+    }
+  ],
+  "aggregate_only": true
+}

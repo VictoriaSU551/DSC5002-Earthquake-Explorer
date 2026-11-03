@@ -4,6 +4,26 @@
 
 A reproducible Python implementation of the supplied project proposal, covering all five research questions with real USGS observations, spherical PB2002 boundary distances, twelve figures, a standalone interactive dashboard and an English results report. Team assignments are intentionally omitted.
 
+## 年度与地区扩展分析 2026年11月3日
+
+新增 **9 张研究图、14 个公开汇总表/JSON、可比性报告和离线交互比较工具**。已按年份、地区和 M≥5/5.5/6/7 分层比较，检查震级类型构成、误差字段缺失、深度取值集中现象、记录状态、来源网络、等长时段和大型事件窗口敏感性。
+
+- [中文结果摘要与全部新增图](docs/temporal_regional_v2/RESULTS.md)
+- [完整 HTML 报告](docs/temporal_regional_v2/report.html)（克隆仓库后可直接用浏览器打开）
+- [离线交互比较工具](docs/temporal_regional_v2/dashboard.html)（包含全部资源，不需要 Python 或网络）
+- [可复现方法与验证说明](docs/TEMPORAL_ANALYSIS.md)
+
+后十三年（2013–2025）相对前十三年（2000–2012）的时间暴露调整记录率为 **M≥5 −6.63%、M≥6 −15.42%**。M≥5 全期 Sen 斜率却为正，说明窗口和门槛的选择影响描述。震级类型与质量字段报告口径也发生明显变化；这些结果不能直接解释为真实地震活动或灾害风险的变化。
+
+```powershell
+python run_pipeline.py                  # 新克隆首次建立基础数据；已有已验证数据时无需重跑
+python run_temporal_analysis.py         # 只读校验基础快照，单独生成新版结果
+python verify_temporal_analysis.py
+python -m pytest -q
+```
+
+本轮本地结果在 `outputs/temporal_regional_v2_20261103`，公开汇总结果在 `docs/temporal_regional_v2`。基础数据和原有 30 个交付文件均保持原哈希。`--publish` 可将重新生成的汇总结果复制到公开文档目录；它不会执行 Git 推送。
+
 ## 快速使用
 
 本地成品已生成，可以直接双击打开：
@@ -13,7 +33,7 @@ A reproducible Python implementation of the supplied project proposal, covering 
 - `data/processed/earthquakes.csv`：清洗及派生变量后的完整分析数据。
 - `outputs/tables/`：统计表、Spearman 相关系数、案例事件列表与敏感性分析。
 
-所有文件均位于 `5002final`。公开仓库包含代码、测试、文档、来源清单和一张面板预览；原始数据、生成结果和输入 Word 计划保存在本地，不加入 Git。克隆仓库后运行下列命令即可重新生成。
+所有文件均位于 `5002final`。公开仓库包含代码、测试、文档、来源清单，以及本轮用户要求同步的汇总图表、报告和交互页；完整事件级数据、旧版生成目录和输入 Word 计划保存在本地。克隆仓库后运行下列命令即可重新生成基础版本。
 
 ```powershell
 python -m venv .venv

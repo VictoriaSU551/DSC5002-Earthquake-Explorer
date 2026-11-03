@@ -1,0 +1,17 @@
+{
+  "analysis_date": "2026-11-03",
+  "dataset_sha256": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff",
+  "source_access_dates": "2026-10-30",
+  "baseline_artifact_manifest_sha256": "2b6b0a891497d12b8cf5697ca3a12d07df68cf543cbaf994608bec1644304c0f",
+  "baseline_files_checked": 30,
+  "source_lock_sha256": "b3aaa9cf78010efe7102cc265c9a0038175fe97336aef32238d7332556d5bbb7",
+  "input_hashes": {
+    "config.json": "16986721b147eed7f048e550612e27087ebcf7c5d389243037bdc57a808deedc",
+    "data/sources.lock.json": "b3aaa9cf78010efe7102cc265c9a0038175fe97336aef32238d7332556d5bbb7",
+    "data/processed/earthquakes.csv": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff",
+    "data/processed/processing_manifest.json": "a23b56188d2f4be44c7a43a0846c8993489fe197f7a797d9c810a678267f035c",
+    "data/processed/cleaning_audit.json": "d883029ccd2e3fbc36a509cab433557a5b644d62f1c0af07cf858b38afe404d9",
+    "outputs/artifact_manifest.json": "2b6b0a891497d12b8cf5697ca3a12d07df68cf543cbaf994608bec1644304c0f"
+  },
+  "raw_metadata_join": "one-to-one by latest-update preferred event ID"
+}

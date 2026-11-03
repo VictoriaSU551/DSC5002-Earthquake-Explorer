@@ -27,3 +27,5 @@ Natural Earth coastline and land are public-domain cartographic data. They suppl
 ## Runtime libraries
 
 The project depends on the libraries listed in `requirements.txt`, which retain their upstream licenses. Plotly JavaScript is embedded from the installed Plotly Python package in the generated local HTML for offline use; its distributed license header is retained. It is not committed as a vendored JavaScript file. Matplotlib and DejaVu Sans render the local research figures.
+
+The public annual/regional extension also includes an offline aggregate-only HTML tool with the same embedded Plotly runtime and retained MIT license header. The original-code MIT license does not replace third-party terms.

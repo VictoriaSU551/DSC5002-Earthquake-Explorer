@@ -1,0 +1,48 @@
+{
+  "analysis_date": "2026-11-03",
+  "source_snapshot_date": "2026-10-30",
+  "unit_tests": {
+    "status": "PASS",
+    "passed": 23
+  },
+  "independent_validation": {
+    "status": "PASS",
+    "checks_passed": 4425,
+    "events": 46463,
+    "new_figures": 9,
+    "baseline_files_preserved": 30,
+    "dataset_sha256": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff",
+    "sequence_removed_unique": 3090
+  },
+  "browser_validation": {
+    "status": "PASS",
+    "page_errors": 0,
+    "http_requests": 0,
+    "checks": [
+      "global/threshold counts",
+      "regional counts",
+      "rate change",
+      "exact leap-year exposure",
+      "zero-count years",
+      "same-threshold shares",
+      "all-region comparison scope",
+      "reset",
+      "26 audit rows",
+      "mobile overflow",
+      "nine report figures",
+      "local links",
+      "offline operation"
+    ]
+  },
+  "independent_review": {
+    "status": "RESOLVED",
+    "important_findings": 1,
+    "open_findings": 0,
+    "fix": "Read-only sealed snapshot loading; changed bindings fail before any input write."
+  },
+  "public_scope": {
+    "figures": 9,
+    "aggregate_tables_and_json": 14,
+    "event_level_rows_published": false
+  }
+}

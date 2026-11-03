@@ -18,3 +18,5 @@ Changing the study period or region configuration is possible, but predefined ca
 ## Publication boundary
 
 The public repository contains original code, tests, documentation, configuration, source receipts, a summary snapshot and one UI preview. It does not publish the input Word document, personal identifiers from it, credentials, environments or bulk event records. Data can be retrieved from the cited upstream sources without authentication. The preview and summary contain only public-source descriptive information.
+
+The 3 November extension explicitly publishes the user-requested aggregate results in `docs/temporal_regional_v2`: nine new figures, fourteen aggregate tables/JSON, the report and an offline aggregate-only comparison tool. Event-level inputs and the anchor-level window audit stay local. See `docs/TEMPORAL_ANALYSIS.md` for the extension's strict read-only snapshot validation and preservation checks.
