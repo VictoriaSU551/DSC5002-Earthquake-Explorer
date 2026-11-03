@@ -44,5 +44,19 @@
     "figures": 9,
     "aggregate_tables_and_json": 14,
     "event_level_rows_published": false
+  },
+  "clean_checkout_replay": {
+    "status": "PASS",
+    "code_commit": "26625bd5ba2f3c002aa2a4ef6c44d47d18840f73",
+    "source": "Existing verified frozen baseline copied; no new downloads or baseline recomputation.",
+    "new_artifacts_compared": 27,
+    "hash_differences": [],
+    "unit_tests_passed": 23,
+    "independent_checks_passed": 4425
+  },
+  "git_artifact_bytes": {
+    "status": "PASS",
+    "published_artifacts_checked": 26,
+    "serialization": "UTF-8 LF"
   }
 }
