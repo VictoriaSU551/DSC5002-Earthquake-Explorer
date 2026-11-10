@@ -35,6 +35,9 @@ for seed in [5002,5003,5004,5005,5012]:
     v=np.column_stack([np.cos(lat[idx])*np.cos(lon[idx]),np.cos(lat[idx])*np.sin(lon[idx]),np.sin(lat[idx])])
     chord,_=tree.query(v);upper=2*6371.0088*np.arcsin(np.clip(chord/2,0,1));gap=upper-cache[key][idx];gaps.extend(gap)
     check('independent arc bound '+key,(gap>=-1e-5).all() and (gap<=.501).all())
+for row in pd.read_csv(T/'boundary_threshold_sensitivity.csv').itertuples():
+    subset=d.loc[d.mag.ge(row.min_magnitude)]
+    check('magnitude threshold proximity '+str(row.min_magnitude),len(subset)==row.n and np.allclose([row.within_100km_pct,row.median_boundary_distance_km],[100*subset.boundary_distance_km.le(100).mean(),subset.boundary_distance_km.median()]))
 bands=pd.read_csv(O/'rq4/tables/magnitude_band_summary.csv')
 for i,(lo,hi) in enumerate([(5,6),(6,7),(7,8),(8,10)]):
     mask=d.mag.ge(lo)&d.mag.lt(hi);proxy=10**(1.5*(d.mag-5))

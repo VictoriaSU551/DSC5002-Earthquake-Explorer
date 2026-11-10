@@ -9,7 +9,7 @@ const root=path.resolve(__dirname,'..'),out=path.join(root,'outputs/final');
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))remote.push(r.url())});
  for(const file of ['START_HERE.html','docs/index.html','outputs/final/report.html','docs/final_results/report.html']){
   await page.setViewportSize({width:1440,height:1100});await page.goto(pathToFileURL(path.join(root,file)).href);
-  if(file==='docs/index.html')assert.ok((await page.locator('body').innerText()).includes('five evidence columns, six searchable data tables, five selected figures'));
+  if(file==='docs/index.html')assert.ok((await page.locator('body').innerText()).includes('five evidence columns, eight searchable data tables, nine evidence figures'));
   if(file==='START_HERE.html')assert.ok((await page.locator('body').innerText()).includes('五列学术海报'));
   await page.evaluate(async()=>{await Promise.all([...document.images].map(img=>{img.loading='eager';return img.decode()}))});
   const images=await page.locator('img').count();assert.equal(images,file.includes('report.html')?14:1);

@@ -20,7 +20,7 @@ N='#123346';B='#197c9e';G='#d58c27';P='#8254a6';R='#c95d54';C=[B,G,P]
 names=[x['name'] for x in cfg['regions']]+['Other'];short=['Japan / Kuril','Indonesia / Phil.','Tonga / Fiji','Andes','Alaska / Aleut.','Med. / Himalaya','Other']
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':14,'axes.labelsize':14,'xtick.labelsize':12,'ytick.labelsize':12,'axes.spines.top':False,'axes.spines.right':False,'text.color':N,'axes.labelcolor':N,'xtick.color':N,'ytick.color':N,'pdf.fonttype':42,'axes.titleweight':'bold'})
 def save(fig,name):
- fig.savefig(F/(name+'.pdf'),facecolor='white');fig.savefig(F/(name+'.png'),dpi=220,facecolor='white');plt.close(fig)
+ fig.savefig(F/(name+'.pdf'),facecolor='white',bbox_inches='tight',pad_inches=.04);fig.savefig(F/(name+'.png'),dpi=220,facecolor='white',bbox_inches='tight',pad_inches=.04);plt.close(fig)
 def chart(h=3.0,left=.14,width=8):
  fig,ax=plt.subplots(figsize=(width,h));fig.subplots_adjust(left=left,right=.97,bottom=.24,top=.94);return fig,ax
 coast=list(geometry_lines(json.loads((ROOT/'data/raw/geography/ne_110m_coastline.geojson').read_text())))

@@ -1,236 +1,578 @@
 {
   "text_boxes": [
     {
-      "text": "<b>ABSTRACT</b>  We examine 46,463 M \u2265 5 earthquakes using geographic reference points, equal-duration time comparisons and local depth sections. Events concentrate near mapped plate boundaries, but period differences also coincide with changes in catalogue composition. Regional depth tails and selected event sequences reveal structure that pooled summaries conceal. Our results describe a fixed catalogue; they do not estimate future hazard.",
-      "x_mm": 29,
-      "y_mm": 99,
-      "width_mm": 1131,
-      "height_mm": 21.166666666666664,
-      "allocation_mm": 28,
+      "text": "<b>ABSTRACT</b>  Geographic references show strong boundary concentration, while regional depth tails and event windows expose structure hidden by pooled summaries. Time contrasts depend on the magnitude threshold and coincide with shifts in catalogue composition. We connect maps, exact comparisons and sensitivity checks to distinguish descriptive evidence from unsupported claims about causes or future hazard.",
+      "x_mm": 28,
+      "y_mm": 81,
+      "width_mm": 1133,
+      "height_mm": 19.148777777777774,
+      "allocation_mm": 22,
+      "font_pt": 23
+    },
+    {
+      "text": "<b>What can one catalogue show?</b>",
+      "x_mm": 22,
+      "y_mm": 133.0,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
       "font_pt": 24
     },
     {
-      "text": "Earthquakes vary in location, depth, magnitude and timing. A map identifies clusters, yet it cannot explain whether they reflect geography, a few large sequences or changes in reporting. We connect these views to ask where recorded activity concentrates, how it varies over time, and which regional structures survive beyond global averages.",
+      "text": "Earthquakes vary in location, depth, magnitude and timing. A map identifies clusters, but does not separate geographic concentration, large event sequences and changes in reporting. We ask where recorded activity concentrates, how its time pattern changes, and which regional structures disappear when observations are pooled.",
       "x_mm": 22,
-      "y_mm": 190,
-      "width_mm": 217,
-      "height_mm": 58.20833333333333,
-      "allocation_mm": 72,
+      "y_mm": 145.39066666666668,
+      "width_mm": 221,
+      "height_mm": 54.94866666666666,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "Coordinates, magnitude and depth are present for every record. Four negative reported depths are retained. Event IDs are deduplicated and non-earthquake types are excluded. A complete download does not prove complete earthquake detection, nor does a preferred magnitude represent one homogeneous scale.",
+      "text": "<b>Table 1. Shared analytical scope</b>",
       "x_mm": 22,
-      "y_mm": 458,
-      "width_mm": 217,
-      "height_mm": 58.20833333333333,
-      "allocation_mm": 72,
+      "y_mm": 202.93933333333334,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>From question to comparison</b>",
+      "x_mm": 22,
+      "y_mm": 315.4411111111111,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>Space:</b> compare boundary distances with equal-area and latitude-controlled reference points. <b>Time:</b> compare equal 13-year periods and inspect reporting changes. <b>Depth:</b> contrast regional distributions and local sections. <b>Magnitude and cases:</b> separate frequency, a relative proxy and time-window concentration.",
+      "x_mm": 22,
+      "y_mm": 327.8317777777778,
+      "width_mm": 221,
+      "height_mm": 54.94866666666666,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "<b>Fig. 1.</b> All epicentres on an equal-area Mollweide map; colours denote depth classes and grey lines PB2002 boundaries. Overlapping points are not area-normalized density.",
+      "text": "<b>Fig. 1.</b> All 46,463 epicentres; equal-area Mollweide projection. Colours denote depth bands; grey lines show PB2002 boundaries. Overlapping points are not an area-normalized density.",
       "x_mm": 22,
-      "y_mm": 682,
-      "width_mm": 217,
-      "height_mm": 25.135416666666664,
-      "allocation_mm": 37,
+      "y_mm": 514.4447336965495,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
       "font_pt": 19
     },
     {
-      "text": "<b>Analytical strategy</b>",
+      "text": "<b>Data checks and statistical choices</b>",
+      "x_mm": 22,
+      "y_mm": 540.7725670298828,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Coordinates, magnitude and depth are present for every record. Event IDs are deduplicated and non-earthquake types excluded. Four negative reported depths are retained. A complete download is not proof of complete detection; preferred magnitudes are not a homogeneous measurement scale.",
+      "x_mm": 22,
+      "y_mm": 553.1632336965495,
+      "width_mm": 221,
+      "height_mm": 45.79055555555554,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "Medians summarize typical values, tail shares retain rare deep events, and rank correlations describe monotonic association. Counts use all eligible records. We avoid independent-event p-values because clustered sequences do not supply independent observations.",
+      "x_mm": 22,
+      "y_mm": 601.553789252105,
+      "width_mm": 221,
+      "height_mm": 45.79055555555554,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Why the event-type filter matters</b>",
+      "x_mm": 22,
+      "y_mm": 649.9443448076606,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "An all-type companion extract has 46,523 records: 55 volcanic eruptions, four nuclear explosions and one landslide must be excluded. The remaining 46,463 earthquake IDs and principal measurements match the analysis catalogue. Treating the 60-record difference as a catalogue revision would misstate the sample.",
+      "x_mm": 22,
+      "y_mm": 662.3350114743273,
+      "width_mm": 221,
+      "height_mm": 54.94866666666666,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Reading the evidence</b>",
       "x_mm": 28,
-      "y_mm": 740,
-      "width_mm": 205,
-      "height_mm": 9.701388888888888,
-      "allocation_mm": 13,
-      "font_pt": 22
+      "y_mm": 722.883678140994,
+      "width_mm": 209,
+      "height_mm": 8.741833333333332,
+      "allocation_mm": 12,
+      "font_pt": 21
     },
     {
-      "text": "Use one frozen sample, explicit denominators and sensitivity checks. Compare recorded patterns while keeping geological interpretation and measurement limitations separate.",
+      "text": "Each column moves from a defined comparison to a result and its interpretation. Unequal region areas, selected routes, catalogue composition and window definitions remain visible rather than being absorbed into a single global conclusion.",
       "x_mm": 28,
-      "y_mm": 754,
-      "width_mm": 205,
-      "height_mm": 26.458333333333332,
-      "allocation_mm": 31,
+      "y_mm": 735.883678140994,
+      "width_mm": 209,
+      "height_mm": 33.30222222222221,
+      "allocation_mm": 33.40222222222222,
       "font_pt": 20
     },
     {
-      "text": "Boundary proximity needs a geographic denominator. We compare earthquake distances with points uniformly distributed over Earth\u2019s surface, including oceans. A second reference keeps the observed latitude distribution and varies longitude.",
-      "x_mm": 254,
-      "y_mm": 190,
-      "width_mm": 217,
-      "height_mm": 38.80555555555555,
-      "allocation_mm": 59,
+      "text": "<b>Concentrated relative to what?</b>",
+      "x_mm": 253,
+      "y_mm": 133.0,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Boundary proximity needs a geographic denominator. We compare event distances with equal-area points over the whole globe, including oceans. A second reference preserves the observed latitude distribution while varying longitude.",
+      "x_mm": 253,
+      "y_mm": 145.39066666666668,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "<b>Fig. 2.</b> Cumulative distance distributions use the same PB2002 arcs and spherical geometry (R = 6,371.0088 km) for events and both references.",
-      "x_mm": 254,
-      "y_mm": 372,
-      "width_mm": 217,
-      "height_mm": 16.756944444444443,
-      "allocation_mm": 30,
+      "text": "<b>Fig. 2.</b> Cumulative shares under identical PB2002 minor great-circle arc geometry, R = 6,371.0088 km. The reference curves answer a geographic comparison, not a seismicity null hypothesis.",
+      "x_mm": 253,
+      "y_mm": 286.83959560521794,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
       "font_pt": 19
     },
     {
-      "text": "<b>70.15%</b> of events lie within 100 km, compared with <b>9.42%</b> of equal-area points and <b>10.50%</b> of latitude-controlled points. The observed-to-area share ratio is <b>7.45</b>. Thus, concentration remains clear under two geographic references; the ratio is not a risk multiplier or a causal effect.",
-      "x_mm": 254,
-      "y_mm": 582,
-      "width_mm": 217,
-      "height_mm": 48.50694444444444,
-      "allocation_mm": 96,
+      "text": "<b>Table 2. Within-distance shares (%)</b>",
+      "x_mm": 253,
+      "y_mm": 313.16742893855127,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "At 100 km, <b>70.15%</b> of events versus <b>9.42%</b> of equal-area points gives an observed-to-area share ratio of <b>7.45</b>. Latitude control gives <b>10.50%</b>. At 500 km the ratio narrows to 2.70: the threshold changes the contrast.",
+      "x_mm": 253,
+      "y_mm": 400.2414289385513,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "<b>Numerical and geological limits</b>",
-      "x_mm": 260,
-      "y_mm": 712,
-      "width_mm": 205,
-      "height_mm": 9.701388888888888,
-      "allocation_mm": 13,
+      "text": "<b>Does every region behave alike?</b>",
+      "x_mm": 253,
+      "y_mm": 439.47387338299575,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>Fig. 3.</b> Within-region percentages inside 100 km. Each region uses its own earthquake denominator; these are not area-normalized hazard rates.",
+      "x_mm": 253,
+      "y_mm": 545.653340975547,
+      "width_mm": 221,
+      "height_mm": 15.818555555555553,
+      "allocation_mm": 250,
+      "font_pt": 19
+    },
+    {
+      "text": "Tonga/Fiji has a 76.0% nearby share, versus 39.6% in Mediterranean/Himalaya. The high 84.8% share in Other belongs to a heterogeneous residual group; it is not one coherent tectonic region.",
+      "x_mm": 253,
+      "y_mm": 564.0718965311027,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "Four independent 16,384-point designs give 9.38\u20139.53% within 100 km. This is numerical sensitivity, not a confidence interval. PB2002 is a simplified boundary layer, not a complete map of active faults.",
-      "x_mm": 260,
-      "y_mm": 726,
-      "width_mm": 205,
-      "height_mm": 35.27777777777777,
-      "allocation_mm": 59,
+      "text": "<b>Table 3. Magnitude-threshold check</b>",
+      "x_mm": 253,
+      "y_mm": 603.3043409755471,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "The within-100-km share falls to <b>63.57%</b> at M \u2265 7. Broad boundary concentration does not imply the same proximity distribution at every magnitude threshold.",
+      "x_mm": 253,
+      "y_mm": 677.6644520866582,
+      "width_mm": 221,
+      "height_mm": 24.976666666666663,
+      "allocation_mm": 250,
       "font_pt": 20
     },
     {
-      "text": "Annual M \u2265 5 counts fluctuate substantially, peaking at <b>2,701 in 2011</b>. Comparing equal 13-year periods gives a different summary from fitting a trend across the whole record.",
-      "x_mm": 486,
-      "y_mm": 190,
-      "width_mm": 217,
-      "height_mm": 29.104166666666664,
-      "allocation_mm": 49,
-      "font_pt": 22
+      "text": "<b>Reference sensitivity</b>",
+      "x_mm": 259,
+      "y_mm": 708.2411187533249,
+      "width_mm": 209,
+      "height_mm": 8.741833333333332,
+      "allocation_mm": 12,
+      "font_pt": 21
     },
     {
-      "text": "<b>Fig. 3.</b> Annual counts and period means (dashed). Rate comparisons allow for 4,749 days in 2000\u20132012 and 4,748 days in 2013\u20132025.",
-      "x_mm": 486,
-      "y_mm": 366,
-      "width_mm": 217,
-      "height_mm": 16.756944444444443,
-      "allocation_mm": 31,
-      "font_pt": 19
-    },
-    {
-      "text": "The later-period record rate is <b>6.63% lower at M \u2265 5</b> and <b>15.42% lower at M \u2265 6</b>. Yet the full-period M5 Sen slope is positive. Magnitude-type composition and error-field availability also change, so these contrasts alone cannot establish a change in physical seismic activity.",
-      "x_mm": 486,
-      "y_mm": 603,
-      "width_mm": 217,
-      "height_mm": 48.50694444444444,
-      "allocation_mm": 90,
-      "font_pt": 22
-    },
-    {
-      "text": "<b>Regional and window sensitivity</b>",
-      "x_mm": 492,
-      "y_mm": 713,
-      "width_mm": 205,
-      "height_mm": 9.701388888888888,
-      "allocation_mm": 13,
-      "font_pt": 22
-    },
-    {
-      "text": "M5 rate changes differ: Indonesia/Philippines \u221225.58%; Mediterranean/Himalaya +8.82%. Removing 30-day / 500-km windows around 28 M \u2265 8 events changes the global contrast to \u22123.37%. This is window sensitivity, not declustering.",
-      "x_mm": 492,
-      "y_mm": 727,
-      "width_mm": 205,
-      "height_mm": 35.27777777777777,
-      "allocation_mm": 58,
+      "text": "Four 16,384-point equal-area designs give 9.38\u20139.53% within 100 km. This is numerical sensitivity, not a confidence interval. The 7.45 ratio is descriptive; simplified PB2002 proximity does not quantify fault uncertainty or future risk.",
+      "x_mm": 259,
+      "y_mm": 721.2411187533249,
+      "width_mm": 209,
+      "height_mm": 33.30222222222221,
+      "allocation_mm": 33.40222222222222,
       "font_pt": 20
     },
     {
-      "text": "Globally, <b>83.20%</b> are shallow. Japan/Kuril and Tonga/Fiji share a 33 km median, but their deep-event shares differ by more than twofold.",
-      "x_mm": 718,
-      "y_mm": 190,
-      "width_mm": 217,
-      "height_mm": 29.104166666666664,
-      "allocation_mm": 43,
+      "text": "<b>A fluctuating recorded history</b>",
+      "x_mm": 484,
+      "y_mm": 133.0,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Annual M \u2265 5 counts peak at <b>2,701 in 2011</b>. Equal-period means, a whole-period slope and regional changes answer different questions, so no single summary is treated as the trend.",
+      "x_mm": 484,
+      "y_mm": 145.39066666666668,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "<b>Fig. 4.</b> Maps: gold trench, blue route/swath, star at 0 km. A \u2192 B spans \u2212200 to +1,200 km; swath \u00b1100 km. Depth and distance use equal kilometre scales. Routes were selected after exploration.",
-      "x_mm": 718,
-      "y_mm": 592,
-      "width_mm": 217,
-      "height_mm": 25.135416666666664,
-      "allocation_mm": 48,
+      "text": "<b>Fig. 4.</b> Annual counts and 13-year means (dashed). Comparisons account for 4,749 early-period days and 4,748 late-period days.",
+      "x_mm": 484,
+      "y_mm": 282.62150701049575,
+      "width_mm": 221,
+      "height_mm": 15.818555555555553,
+      "allocation_mm": 250,
       "font_pt": 19
     },
     {
-      "text": "Selected-section deep counts are <b>21/351</b> in northern Tohoku and <b>186/640</b> in central Tonga. Across the full regions, depth\u2013boundary-distance Spearman \u03c1 is <b>+0.39 globally</b> and <b>+0.56 in Japan/Kuril</b>. Magnitude associations are weak overall. These relationships describe patterns; pooled coefficients and illustrative sections do not identify a causal mechanism.",
-      "x_mm": 718,
-      "y_mm": 676,
-      "width_mm": 217,
-      "height_mm": 67.90972222222221,
-      "allocation_mm": 113,
-      "font_pt": 22
+      "text": "<b>Table 4. Catalogue comparability</b>",
+      "x_mm": 484,
+      "y_mm": 301.0400625660513,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
     },
     {
-      "text": "Event frequency and a magnitude-based energy proxy answer different questions. Their shares are compared directly below.",
-      "x_mm": 950,
-      "y_mm": 190,
-      "width_mm": 217,
-      "height_mm": 19.402777777777775,
-      "allocation_mm": 35,
-      "font_pt": 22
-    },
-    {
-      "text": "The <b>28 events at M \u2265 8</b> contribute <b>71.21%</b> of the summed proxy, R(M)=10<super>1.5(M\u22125)</super>. One magnitude unit multiplies R by 31.6. Mixed preferred scales mean that this is illustrative, not measured joules, damage or risk.",
-      "x_mm": 950,
-      "y_mm": 376,
-      "width_mm": 217,
-      "height_mm": 38.80555555555555,
-      "allocation_mm": 68,
-      "font_pt": 22
-    },
-    {
-      "text": "Radius \u2264500 km; UTC windows [\u221230,0) and [0,30) days from the exact anchor time. Anchors are excluded; all windows are fully observed.",
-      "x_mm": 950,
-      "y_mm": 584,
-      "width_mm": 217,
-      "height_mm": 16.756944444444443,
-      "allocation_mm": 35,
+      "text": "<b>Fig. 5.</b> Annual Mw-family composition exposes changes concealed by the two period averages. Selecting Mw alone does not make measurement homogeneous.",
+      "x_mm": 484,
+      "y_mm": 478.36072899386335,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
       "font_pt": 19
     },
     {
-      "text": "<b>Fig. 5.</b> Each curve uses its own 30-day post-window total. Day d counts events in [0,d), separating timing from total counts.",
-      "x_mm": 950,
-      "y_mm": 731,
-      "width_mm": 217,
-      "height_mm": 16.756944444444443,
-      "allocation_mm": 31,
-      "font_pt": 19
-    },
-    {
-      "text": "<b>Scope:</b> These selections do not prove causal aftershock membership or a universal sequence law.",
-      "x_mm": 950,
-      "y_mm": 771,
-      "width_mm": 217,
-      "height_mm": 16.756944444444443,
-      "allocation_mm": 19,
-      "font_pt": 19
-    },
-    {
-      "text": "<b>CONCLUSION</b>  Geography, regional depth tails and clustered sequences give a coherent descriptive picture. Time contrasts require catalogue-comparability checks; reference choices and window definitions remain central to interpretation. The strongest result is a transparent comparison of recorded patterns, not a forecast of future hazard.",
-      "x_mm": 29,
-      "y_mm": 805,
-      "width_mm": 1131,
-      "height_mm": 19.402777777777775,
-      "allocation_mm": 20,
+      "text": "Later-period rates are <b>6.63% lower at M \u2265 5</b> and <b>15.42% lower at M \u2265 6</b>, yet the full-period M5 Sen slope is positive. Changing magnitude composition and error reporting limit interpretation as changing physical activity. Missing error does not mean zero error.",
+      "x_mm": 484,
+      "y_mm": 504.6885623271967,
+      "width_mm": 221,
+      "height_mm": 45.79055555555554,
+      "allocation_mm": 250,
       "font_pt": 22
     },
     {
-      "text": "[1] <link href=\"https://earthquake.usgs.gov/fdsnws/event/1/\">USGS FDSN</link>  \u00b7  [2] <link href=\"https://doi.org/10.1029/2001GC000252\">Bird (2003), PB2002</link>; GeoJSON (ODC-By)  \u00b7  [3] <link href=\"https://www.naturalearthdata.com/\">Natural Earth 110m</link> (public domain)  \u00b7  [4] <link href=\"https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity\">USGS magnitude\u2013energy guidance</link>.  Reproducible methods, all figures and sensitivity results: <link href=\"https://github.com/VictoriaSU551/DSC5002-Earthquake-Explorer\">project repository</link>.",
+      "text": "<b>The direction depends on region</b>",
+      "x_mm": 484,
+      "y_mm": 553.0791178827523,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>Fig. 6.</b> Exposure-adjusted M5 rate changes, 2013\u20132025 versus 2000\u20132012. Shared periods support within-region comparison; unequal box areas prevent direct hazard ranking.",
+      "x_mm": 484,
+      "y_mm": 663.8017014390381,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
+      "font_pt": 19
+    },
+    {
+      "text": "Indonesia/Philippines falls by <b>25.58%</b>; Mediterranean/Himalaya rises by <b>8.82%</b>. Aggregation conceals that contrast. Selecting only Mw-family records also changes the sample and does not homogenize the catalogue.",
+      "x_mm": 484,
+      "y_mm": 690.1295347723715,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Large-event window check</b>",
+      "x_mm": 490,
+      "y_mm": 732.3619792168159,
+      "width_mm": 209,
+      "height_mm": 8.741833333333332,
+      "allocation_mm": 12,
+      "font_pt": 21
+    },
+    {
+      "text": "Removing the union of 30-day / 500-km windows around 28 M \u2265 8 anchors removes 3,090 records and changes the M5 contrast to \u22123.37%. Anchors are included in this removal. This is sensitivity analysis, not declustering.",
+      "x_mm": 490,
+      "y_mm": 745.3619792168159,
+      "width_mm": 209,
+      "height_mm": 33.30222222222221,
+      "allocation_mm": 33.40222222222222,
+      "font_pt": 20
+    },
+    {
+      "text": "<b>Similar medians, different tails</b>",
+      "x_mm": 715,
+      "y_mm": 133.0,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Globally <b>83.20%</b> of events are shallow. Japan/Kuril and Tonga/Fiji both have median depth 33 km, but deep-event shares differ by more than twofold. A centre alone hides that tail contrast.",
+      "x_mm": 715,
+      "y_mm": 145.39066666666668,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Table 5. Regional depth summaries</b>",
+      "x_mm": 715,
+      "y_mm": 184.62311111111111,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>Fig. 7.</b> Gold trench; blue route and \u00b1100 km swath; star at 0 km. A \u2192 B spans \u2212200 to +1,200 km. Depth and distance use equal kilometre scales. Routes were chosen after exploration.",
+      "x_mm": 715,
+      "y_mm": 448.45833288880965,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
+      "font_pt": 19
+    },
+    {
+      "text": "Selected-section deep counts are <b>21/351</b> in northern Tohoku and <b>186/640</b> in central Tonga. These local swaths are subsets, so their shares differ from Table 5. Tonga\u2019s selected 29.1% deep share versus 11.76% regionally illustrates why a section cannot represent its entire parent region.",
+      "x_mm": 715,
+      "y_mm": 474.786166222143,
+      "width_mm": 221,
+      "height_mm": 45.79055555555554,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Does the pooled association hold?</b>",
+      "x_mm": 715,
+      "y_mm": 523.1767217776985,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>Fig. 8.</b> Spearman \u03c1 for all records and each region. Common \u22121 to +1 scale; descriptive associations, without independent-event significance tests.",
+      "x_mm": 715,
+      "y_mm": 644.2961475131352,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
+      "font_pt": 19
+    },
+    {
+      "text": "Depth\u2013boundary-distance \u03c1 is <b>+0.39 globally</b> and <b>+0.56 in Japan/Kuril</b>, but only +0.07 in Mediterranean/Himalaya. Magnitude associations are weak overall. Pooled coefficients do not imply identical regional relationships.",
+      "x_mm": 715,
+      "y_mm": 670.6239808464686,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Geological interpretation</b>",
+      "x_mm": 721,
+      "y_mm": 712.8564252909131,
+      "width_mm": 209,
+      "height_mm": 8.741833333333332,
+      "allocation_mm": 12,
+      "font_pt": 21
+    },
+    {
+      "text": "Depth tails and local sections reveal structure consistent with regional differences. Selected routes, simplified boundaries and observational associations do not independently identify the physical mechanism or prove causality.",
+      "x_mm": 721,
+      "y_mm": 725.8564252909131,
+      "width_mm": 209,
+      "height_mm": 33.30222222222221,
+      "allocation_mm": 33.40222222222222,
+      "font_pt": 20
+    },
+    {
+      "text": "<b>Frequency and scale are different</b>",
+      "x_mm": 946,
+      "y_mm": 133.0,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "An event-count distribution describes how often magnitudes occur. A summed magnitude-based proxy gives much greater weight to rare, large events; the two shares should be compared explicitly.",
+      "x_mm": 946,
+      "y_mm": 145.39066666666668,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Table 6. Counts and relative proxy</b>",
+      "x_mm": 946,
+      "y_mm": 184.62311111111111,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Using R(M)=10<super>1.5(M\u22125)</super>, one magnitude unit multiplies the proxy by 31.6. Only <b>28 events at M \u2265 8</b> supply <b>71.21%</b> of its sum. Mixed preferred scales make this illustrative, not measured joules, damage or risk.",
+      "x_mm": 946,
+      "y_mm": 271.6971111111111,
+      "width_mm": 221,
+      "height_mm": 36.63244444444444,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Tail counts and completeness</b>",
+      "x_mm": 946,
+      "y_mm": 310.92955555555557,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Inclusive N(M \u2265 m) is <b>3,874 at M \u2265 6</b>, <b>387 at M \u2265 7</b> and <b>28 at M \u2265 8</b>. The M5 extraction threshold does not establish completeness, so no predictive b-value is fitted.",
+      "x_mm": 946,
+      "y_mm": 323.32022222222224,
+      "width_mm": 221,
+      "height_mm": 27.47433333333333,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Counts first; timing second</b>",
+      "x_mm": 946,
+      "y_mm": 353.3945555555556,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Cases use radius \u2264500 km and UTC windows [\u221230,0) and [0,30) days relative to the exact anchor time. Anchors are excluded. All windows are fully observed.",
+      "x_mm": 946,
+      "y_mm": 365.7852222222223,
+      "width_mm": 221,
+      "height_mm": 27.47433333333333,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Table 7. Fixed-window case counts</b>",
+      "x_mm": 946,
+      "y_mm": 395.85955555555563,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "<b>Fig. 9.</b> Each curve divides by its own 30-day post-window count. Day d includes [0,d). Normalization separates the timing pattern from unequal totals.",
+      "x_mm": 946,
+      "y_mm": 563.8695634799114,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
+      "font_pt": 19
+    },
+    {
+      "text": "The first three days contain <b>60.1%, 60.9% and 70.9%</b> of the post-window records. Early concentration coexists with a longer tail; changing duration changes the total being summarized.",
+      "x_mm": 946,
+      "y_mm": 590.1973968132447,
+      "width_mm": 221,
+      "height_mm": 27.47433333333333,
+      "allocation_mm": 250,
+      "font_pt": 22
+    },
+    {
+      "text": "<b>Table 8. Duration sensitivity at 500 km</b>",
+      "x_mm": 946,
+      "y_mm": 620.2717301465781,
+      "width_mm": 221,
+      "height_mm": 9.990666666666666,
+      "allocation_mm": 60,
+      "font_pt": 24
+    },
+    {
+      "text": "Post-window counts use the same radius and anchor exclusion. These are nested samples, not independent replicates. The full supplement also varies radius from 250 to 1,000 km.",
+      "x_mm": 946,
+      "y_mm": 686.5179523688003,
+      "width_mm": 221,
+      "height_mm": 23.72783333333333,
+      "allocation_mm": 250,
+      "font_pt": 19
+    },
+    {
+      "text": "<b>What the cases establish</b>",
+      "x_mm": 952,
+      "y_mm": 715.8457857021335,
+      "width_mm": 209,
+      "height_mm": 8.741833333333332,
+      "allocation_mm": 12,
+      "font_pt": 21
+    },
+    {
+      "text": "The selected sequences show concentrated recorded activity after major events. Time-and-distance membership alone does not establish causal aftershock status or a universal sequence law.",
+      "x_mm": 952,
+      "y_mm": 728.8457857021335,
+      "width_mm": 209,
+      "height_mm": 24.976666666666663,
+      "allocation_mm": 25.076666666666668,
+      "font_pt": 20
+    },
+    {
+      "text": "<b>CONCLUSION</b>  Geographic references establish a strong descriptive concentration near mapped boundaries. Depth tails and regional associations reveal structure that global summaries conceal; event curves separate timing from totals. Time contrasts require catalogue-comparability checks, and window choices materially change case counts. These are reproducible comparisons of recorded patterns, not forecasts of future hazard.",
+      "x_mm": 28,
+      "y_mm": 802,
+      "width_mm": 1133,
+      "height_mm": 18.31622222222222,
+      "allocation_mm": 21,
+      "font_pt": 22
+    },
+    {
+      "text": "[1] <link href=\"https://earthquake.usgs.gov/fdsnws/event/1/\">USGS FDSN</link>  \u00b7  [2] <link href=\"https://doi.org/10.1029/2001GC000252\">Bird (2003), PB2002</link>; GeoJSON (ODC-By)  \u00b7  [3] <link href=\"https://www.naturalearthdata.com/\">Natural Earth 110m</link> (public domain)  \u00b7  [4] <link href=\"https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity\">USGS magnitude\u2013energy guidance</link>.  Full methods, all figures and sensitivity results: <link href=\"https://github.com/VictoriaSU551/DSC5002-Earthquake-Explorer\">project repository</link>.",
       "x_mm": 22,
       "y_mm": 831,
       "width_mm": 1145,
-      "height_mm": 7.0555555555555545,
+      "height_mm": 6.660444444444443,
       "allocation_mm": 8,
       "font_pt": 16
     }
@@ -239,37 +581,65 @@
     {
       "name": "global_map",
       "x_mm": 22,
-      "y_mm": 563,
-      "width_mm": 217,
-      "height_mm": 113
+      "y_mm": 385.3804444444445,
+      "width_mm": 221,
+      "height_mm": 126.86428925210498
     },
     {
       "name": "boundary_cdf",
-      "x_mm": 254,
-      "y_mm": 260,
-      "width_mm": 217,
-      "height_mm": 106
+      "x_mm": 253,
+      "y_mm": 184.62311111111111,
+      "width_mm": 221,
+      "height_mm": 100.0164844941068
+    },
+    {
+      "name": "regional_proximity",
+      "x_mm": 253,
+      "y_mm": 451.8645400496624,
+      "width_mm": 221,
+      "height_mm": 91.58880092588461
     },
     {
       "name": "annual",
-      "x_mm": 486,
-      "y_mm": 251,
-      "width_mm": 217,
-      "height_mm": 109
+      "x_mm": 484,
+      "y_mm": 184.62311111111111,
+      "width_mm": 221,
+      "height_mm": 95.7983958993846
+    },
+    {
+      "name": "magnitude_mix",
+      "x_mm": 484,
+      "y_mm": 396.2279514549402,
+      "width_mm": 221,
+      "height_mm": 79.93277753892315
+    },
+    {
+      "name": "regional_change",
+      "x_mm": 484,
+      "y_mm": 565.4697845494189,
+      "width_mm": 221,
+      "height_mm": 96.1319168896191
     },
     {
       "name": "cross_sections",
-      "x_mm": 718,
-      "y_mm": 409,
-      "width_mm": 217,
-      "height_mm": 177
+      "x_mm": 715,
+      "y_mm": 271.6971111111111,
+      "width_mm": 221,
+      "height_mm": 174.56122177769853
+    },
+    {
+      "name": "correlations",
+      "x_mm": 715,
+      "y_mm": 535.5673884443652,
+      "width_mm": 221,
+      "height_mm": 106.52875906877006
     },
     {
       "name": "case_cumulative",
-      "x_mm": 950,
-      "y_mm": 634,
-      "width_mm": 217,
-      "height_mm": 92
+      "x_mm": 946,
+      "y_mm": 470.21966666666674,
+      "width_mm": 221,
+      "height_mm": 91.44989681324466
     }
   ],
   "tables": [
@@ -301,14 +671,14 @@
           "PB2002 spherical arcs"
         ],
         [
-          "Depth classes",
+          "Depth bands",
           "Shallow <70; intermediate 70\u2013<300; deep \u2265300 km"
         ]
       ],
       "x_mm": 22,
-      "y_mm": 294,
-      "width_mm": 217,
-      "height_mm": 106.9111111111111
+      "y_mm": 215.33,
+      "width_mm": 221,
+      "height_mm": 97.1111111111111
     },
     {
       "number": 2,
@@ -344,13 +714,46 @@
           "37.88"
         ]
       ],
-      "x_mm": 254,
-      "y_mm": 438,
-      "width_mm": 217,
-      "height_mm": 78.68333333333332
+      "x_mm": 253,
+      "y_mm": 325.55809560521794,
+      "width_mm": 221,
+      "height_mm": 71.68333333333332
     },
     {
       "number": 3,
+      "headers": [
+        "Cutoff",
+        "N",
+        "\u2264100 km\n(%)",
+        "Median\n(km)"
+      ],
+      "rows": [
+        [
+          "M \u2265 5",
+          "46,463",
+          "70.15",
+          "59.7"
+        ],
+        [
+          "M \u2265 6",
+          "3,874",
+          "65.93",
+          "68.5"
+        ],
+        [
+          "M \u2265 7",
+          "387",
+          "63.57",
+          "79.4"
+        ]
+      ],
+      "x_mm": 253,
+      "y_mm": 615.6950076422138,
+      "width_mm": 221,
+      "height_mm": 58.969444444444434
+    },
+    {
+      "number": 4,
       "headers": [
         "Indicator",
         "2000\u2013\n2012",
@@ -378,13 +781,13 @@
           "86.80%"
         ]
       ],
-      "x_mm": 486,
-      "y_mm": 434,
-      "width_mm": 217,
-      "height_mm": 86.79722222222222
+      "x_mm": 484,
+      "y_mm": 313.43072923271797,
+      "width_mm": 221,
+      "height_mm": 79.7972222222222
     },
     {
-      "number": 4,
+      "number": 5,
       "headers": [
         "Region",
         "N",
@@ -417,13 +820,13 @@
           "2.60"
         ]
       ],
-      "x_mm": 718,
-      "y_mm": 260,
-      "width_mm": 217,
-      "height_mm": 78.68333333333332
+      "x_mm": 715,
+      "y_mm": 197.0137777777778,
+      "width_mm": 221,
+      "height_mm": 71.68333333333332
     },
     {
-      "number": 5,
+      "number": 6,
       "headers": [
         "M band",
         "N",
@@ -456,13 +859,13 @@
           "71.21"
         ]
       ],
-      "x_mm": 950,
-      "y_mm": 254,
-      "width_mm": 217,
-      "height_mm": 78.68333333333332
+      "x_mm": 946,
+      "y_mm": 197.0137777777778,
+      "width_mm": 221,
+      "height_mm": 71.68333333333332
     },
     {
-      "number": 6,
+      "number": 7,
       "headers": [
         "Case",
         "Before",
@@ -489,10 +892,43 @@
           "70.9"
         ]
       ],
-      "x_mm": 950,
-      "y_mm": 484,
-      "width_mm": 217,
-      "height_mm": 64.56944444444443
+      "x_mm": 946,
+      "y_mm": 408.2502222222223,
+      "width_mm": 221,
+      "height_mm": 58.969444444444434
+    },
+    {
+      "number": 8,
+      "headers": [
+        "Case",
+        "7 days",
+        "30 days",
+        "90 days"
+      ],
+      "rows": [
+        [
+          "Sumatra 2004",
+          "109",
+          "143",
+          "179"
+        ],
+        [
+          "Maule 2010",
+          "218",
+          "302",
+          "331"
+        ],
+        [
+          "Tohoku 2011",
+          "467",
+          "563",
+          "647"
+        ]
+      ],
+      "x_mm": 946,
+      "y_mm": 632.6623968132448,
+      "width_mm": 221,
+      "height_mm": 50.85555555555555
     }
   ],
   "page_mm": [
@@ -500,5 +936,43 @@
     841
   ],
   "animation_link": null,
-  "columns": 5
+  "columns": 5,
+  "column_metrics": [
+    {
+      "column": 1,
+      "start_y_mm": 133,
+      "end_y_mm": 778.1859003632162,
+      "content_height_mm": 609.385900363216,
+      "used_height_mm": 645.1859003632162
+    },
+    {
+      "column": 2,
+      "start_y_mm": 133,
+      "end_y_mm": 763.5433409755472,
+      "content_height_mm": 591.9433409755469,
+      "used_height_mm": 630.5433409755472
+    },
+    {
+      "column": 3,
+      "start_y_mm": 133,
+      "end_y_mm": 787.6642014390382,
+      "content_height_mm": 619.264201439038,
+      "used_height_mm": 654.6642014390382
+    },
+    {
+      "column": 4,
+      "start_y_mm": 133,
+      "end_y_mm": 768.1586475131353,
+      "content_height_mm": 604.5586475131352,
+      "used_height_mm": 635.1586475131353
+    },
+    {
+      "column": 5,
+      "start_y_mm": 133,
+      "end_y_mm": 762.8224523688002,
+      "content_height_mm": 583.0224523688001,
+      "used_height_mm": 629.8224523688002
+    }
+  ],
+  "flow_gap_mm": 2.6
 }

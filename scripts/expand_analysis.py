@@ -39,6 +39,11 @@ for threshold in [50,100,200,500]:
     reps=[float((v<=threshold).mean()*100) for k,v in distances.items() if k.startswith('area_')]
     rows.append({'radius_km':threshold,'observed_pct':obs,'equal_area_pct':ref,'latitude_matched_pct':float((distances['latitude']<=threshold).mean()*100),'observed_to_area_ratio':obs/ref,'replicate_min_pct':min(reps),'replicate_max_pct':max(reps)})
 pd.DataFrame(rows).to_csv(T/'spatial_reference_summary.csv',index=False)
+threshold_rows=[]
+for threshold in [5,6,7]:
+    subset=d.loc[d.mag.ge(threshold)]
+    threshold_rows.append({'min_magnitude':threshold,'n':len(subset),'within_100km_pct':float(subset.boundary_distance_km.le(100).mean()*100),'median_boundary_distance_km':float(subset.boundary_distance_km.median())})
+pd.DataFrame(threshold_rows).to_csv(T/'boundary_threshold_sensitivity.csv',index=False)
 time_rows=[]
 for case in config['cases']:
     a=select_anchor(d,case);s,stats=case_sample(d,a,30,500,2000,2025);after=s[s.relative_days.ge(0)]

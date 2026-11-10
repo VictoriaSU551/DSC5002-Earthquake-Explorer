@@ -11,11 +11,14 @@ assert abs(float(p.mediabox.height)*25.4/72-841)<.01
 for phrase in ['INSIDE THE EARTH','ABSTRACT','CONCLUSION','46,463','70.15%','9.42%','10.50%','7.45','83.20%','6.63%','15.42%','11.76','21/351','186/640','60.1','70.9','71.21%','STUDY DESIGN','SPACE & REFERENCE','TIME & COMPARABILITY','DEPTH & ASSOCIATIONS','MAGNITUDE & SEQUENCES','24,030','22,433','42,589','3,487']:
     assert phrase in text,phrase
 assert '\ufffd' not in text
-for number in range(1,6):assert f'Fig. {number}.' in text
-for number in range(1,7):assert f'Table {number}.' in text
-assert 'Fig. 6.' not in text
+for number in range(1,10):assert f'Fig. {number}.' in text
+for number in range(1,9):assert f'Table {number}.' in text
+assert '63.57%' in text and '65.93' in text and '647' in text
 layout=json.loads((ROOT/'outputs/final/poster_layout_checks.json').read_text())
-assert layout['columns']==5 and len(layout['tables'])==6 and len(layout['charts'])==5
+assert layout['columns']==5 and len(layout['tables'])==8 and len(layout['charts'])==9
+for column in layout['column_metrics']:
+    assert 760<=column['end_y_mm']<=791,column
+    assert column['content_height_mm']/(791-133)>=.88,column
 for table in layout['tables']:
     for row in table['rows']:
         for value in row:assert str(value).replace('\n',' ') in text.replace('\n',' '),value
@@ -34,6 +37,6 @@ for a in p['/Annots']:
 script=PdfReader(ROOT/'deliverables/DSC5002_Presentation_Script.pdf')
 assert all(len(page.extract_text())>200 for page in script.pages)
 assert 'Thank you for your attention' in ' '.join((' '.join(page.extract_text() for page in script.pages)).split())
-receipt={'status':'PASS','poster_pages':1,'page_mm':[1189,841],'columns':5,'searchable_text_characters':len(text),'figures':5,'tables':6,'table_values_extractable':True,'allocated_blocks_no_overlap':True,'uri_annotations':urls,'animation_links':0,'script_pages':len(script.pages),'visual_check':'Separate manual Poppler render inspection documented in FINAL_VALIDATION.md.'}
+receipt={'status':'PASS','poster_pages':1,'page_mm':[1189,841],'columns':5,'searchable_text_characters':len(text),'figures':9,'tables':8,'table_values_extractable':True,'allocated_blocks_no_overlap':True,'content_height_share':[round(c['content_height_mm']/658,4) for c in layout['column_metrics']],'uri_annotations':urls,'animation_links':0,'script_pages':len(script.pages),'visual_check':'Separate manual Poppler render inspection documented in FINAL_VALIDATION.md.'}
 (ROOT/'outputs/final/pdf_verification.json').write_text(json.dumps(receipt,indent=2),encoding='utf-8')
 print(json.dumps(receipt,indent=2))

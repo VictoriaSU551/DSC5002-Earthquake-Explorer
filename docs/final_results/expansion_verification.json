@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "checks_passed": 164,
+  "checks_passed": 167,
   "checks": [
     "canonical hash",
     "reference cache binding",
@@ -18,6 +18,9 @@
     "independent arc bound area_5004",
     "independent arc bound area_5005",
     "independent arc bound latitude",
+    "magnitude threshold proximity 5",
+    "magnitude threshold proximity 6",
+    "magnitude threshold proximity 7",
     "energy and counts 5",
     "energy and counts 6",
     "energy and counts 7",
