@@ -1,4 +1,4 @@
-# 2.0 / 3.0 整合与四列海报（最新版）
+# 2.0 / 3.0 整合与五列海报（最新版）
 
 本轮逐项比较 `5002rp草稿2.0.docx` 与 `5002rp3.0.docx`，保留 3.0 的五个研究问题、
 统一冻结样本和组员成果审核，再恢复 2.0 中能提高解释力的分析。
@@ -34,8 +34,9 @@
 短段落、分栏、图文配合、颜色一致性、编号与引用的参考；
 [讲稿样本](https://www.cityu.edu.hk/lc/app/poster-script-samples1.html)用于开场、顺序提示、
 方法、发现与结尾。页面没有指定 A0、横版或展示时长。本项目选择 A0 横版，
-四列依次为空间参照、时间可比性、深度关联、震级与事件序列。
-正文约 22 pt，13 组主图使用可搜索图注、清楚的坐标和定义；第 14 组敏感性图在报告中。
+五列依次为研究设计、空间参照、时间可比性、深度关联、震级与事件序列。
+正文约 22 pt；六张可搜索表格呈现样本口径与核心比较，五组精选主图呈现空间、趋势、剖面和累计时间过程。
+摘要、研究动机、方法、结果讨论和局限构成完整叙述。完整报告保留全部 14 组研究图。
 讲稿约 6–7 分钟（排练建议）。未提供完整作者名单，使用团队署名。
 
 ## 复现顺序
@@ -52,7 +53,7 @@ python scripts/verify_expansion.py
 python scripts/build_poster_charts.py
 python scripts/build_poster_pdf.py
 python scripts/verify_poster_pdf.py
-pdftoppm -scale-to 2800 -png -singlefile deliverables/DSC5002_Academic_Poster.pdf outputs/final/poster_preview
+pdftoppm -scale-to 3200 -png -singlefile deliverables/DSC5002_Academic_Poster.pdf outputs/final/poster_preview
 python scripts/package_final.py
 python -m pytest -q
 ```

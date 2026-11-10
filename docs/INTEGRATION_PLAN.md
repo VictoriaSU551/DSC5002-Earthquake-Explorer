@@ -3,11 +3,12 @@
 Goal: audit the supplied team work against 5002rp3.0, integrate reproducible
 improvements, remove the emptied `others` folder, and deliver a searchable PDF.
 
-Current design: A0 landscape, four columns, English, numbered evidence panels;
+Current design: A0 landscape, five columns, English, numbered evidence panels;
 CityU's sample does not specify a mandatory page size or presentation duration.
-Use 13 figure groups regenerated from the frozen catalogue; a fourteenth window
-sensitivity figure belongs in the report. Daily and cumulative static panels
-communicate the event sequence, so no animation link is used on the poster.
+Use five selected figure groups and six searchable data tables, interleaved with
+substantive narrative: abstract, motivation, methods, findings, interpretation and
+limitations. The full report retains all fourteen analytical figures. Case-count
+tables and cumulative curves communicate timing without an animation link.
 Do not fabricate names; identify the DSC5002 project team collectively.
 
 - Preserve submitted files byte-for-byte in local_sources/team_submissions, with

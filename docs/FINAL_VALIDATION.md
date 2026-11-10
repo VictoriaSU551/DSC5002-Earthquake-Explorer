@@ -1,41 +1,40 @@
-# Current four-column delivery validation
+# Current five-column poster validation
 
 Validated on 2026-11-10 against the frozen 46,463-event catalogue.
 
-| Current check | Result |
+The current edition combines an abstract, research motivation, methods, findings,
+interpretation and limitations with six searchable tables and five selected figures.
+It replaces the former chart-dominated poster. The full report retains fourteen
+analytical figures; those are complementary evidence, not alternate poster editions.
+
+| Current presentation check | Result |
 |---|---|
-| Python regression suite | 30 passed |
-| Independent extension audit | 164 checks passed; CDFs, threshold shares, magnitude proxy, correlations, all 27 case windows and 93 cumulative checkpoints |
-| Reference-distance oracle | 640 reference points across all five designs; 282,503 spherical nodes with spacing ≤1 km; maximum upper-bound gap 0.164264 km, below the 0.501 km bound |
-| PDF | One A0 landscape page, four columns, 13 figure groups, 6,177 extractable characters, five correctly placed source/repository links, no animation links |
-| Presentation script | Two searchable pages, rendered and visually inspected |
-| Static browser delivery | Four entry/report pages; all images and local links load, desktop/mobile fit, no page errors or external requests |
-| Current exports | 14 scientific figures in PNG and vector PDF; all poster copies byte-identical; obsolete animation poster image removed |
+| PDF geometry | One A0 landscape page, 1189 × 841 mm, five columns |
+| Searchable content | 7,444 extracted characters; all six tables and five figure captions searchable |
+| Allocation checks | No overlap among paragraph, table or figure blocks; all allocations inside the page |
+| Numerical review | All six tables and their rounding checked against source summaries; denominators and claims agree |
+| Typography and layout | Poppler full-page and enlarged inspections; selected chart labels enlarged for the narrower columns |
+| Independent glyph audit | Zero out-of-page glyphs in the final poster and section figure; the final Tonga tick is fully visible |
+| Links | Five source/repository links aligned with their visible text; no animation links |
+| Presentation script | Two searchable pages, with signposting matching all five columns and the current table/figure numbers |
+| Browser delivery | Local/public entry pages and full reports checked on desktop and mobile; fourteen report images load |
 
-Poppler renders of the whole poster and enlarged panels were inspected. Two clipped
-legends were repaired; cross sections now use paired local route maps and equal-km
-profiles; the CDF legend was moved off the curves. Presentation-note leading was
-adjusted to avoid an orphan line on a third page. The final PDF retains searchable
-body text, chart axes, captions and references.
+The cross-section right margin was expanded after independent review found the last
+Tonga tick label clipping. It now ends at 461.93 pt within a 475.2 pt figure page.
+Table 1 explicitly labels shallow, intermediate and deep bands; qualitative cells
+are left-aligned and numerical comparisons right-aligned. Header colours follow
+column themes, with light alternating row shading and dedicated interpretation boxes.
 
-Fresh independent review checked data, mathematical claims, cache provenance,
-figure semantics and PDF links. Two substantive findings were repaired: sampling
-settings/runtime versions now participate in the spatial-reference cache binding;
-footer links now use text-aligned inline annotations. Packaging was also made
-independent of unavailable team originals, with historical receipts included only
-when present. The reference ratio is explicitly descriptive, not a seismicity
-null-model test, causal effect or hazard multiplier.
+The data and analytical definitions were not changed for this layout revision.
+Previously validated analysis evidence remains: 30 regression tests, 164 independent
+extension checks, 640 reference distances compared with a ≤1 km dense-node oracle
+(maximum gap 0.164264 km, below the 0.501 km bound), 442 submission checks,
+105 RQ3 checks, 4,425 temporal checks and 29 RQ3 browser checks. These counts distinguish
+analytical validation from the new layout and table review.
 
-Previously completed component audits remain applicable to unchanged inputs and
-methods: 442 submission checks, 105 RQ3 geometry/selection checks, 4,425 temporal
-checks and 29 RQ3 browser checks. These are inherited component evidence, not
-newly rerun counts. All 98 submitted originals were hash-verified after relocation;
-`others` was removed. Original inputs remain local. The only poster edition in
-current deliverable/public paths is the latest four-column PDF; duplicate locations
-are identical distribution copies.
-
-The supplied all-type extract supports the 60 non-earthquake finding, but is not
-proof of byte identity with Member 2's unavailable original download. Future USGS
-revisions require a new validation and revised poster text. Public artifact hashes
-are computed after LF normalization. Live deployment is verified after Git push.
-Machine-readable receipts are in `docs/final_results`.
+All three distributed poster copies are identical and contain only the current
+edition. Old posters are overwritten. Source data and the 98 reviewed submissions
+remain local, with `others` removed. Generated public artifacts use LF-normalized
+hashes. Live deployment is checked after pushing the current commit; local receipts
+are stored in outputs/final. Machine-readable PDF/layout and public-artifact receipts
+are published in docs/final_results.

@@ -8,7 +8,7 @@
 最终使用原项目冻结的 **46,463 条 earthquake 事件**，UTC
 `[2000-01-01, 2026-01-01)`、preferred M≥5。所有主体结果使用同一快照。
 数据 SHA256：`231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff`。
-当前交付在 `outputs/final` 和 `deliverables`。后续 2.0 扩充与四列海报见
+当前交付在 `outputs/final` 和 `deliverables`。后续 2.0 扩充与五列海报见
 [EXPERIMENT_EXTENSION.md](EXPERIMENT_EXTENSION.md)；旧海报不另留版本。
 
 ## 各部分结论
@@ -81,7 +81,7 @@ python scripts/verify_rq3.py
 python -m pytest -q
 ```
 
-最新四列海报用静态日计数与累计曲线展示时间过程，不再采用动画截图或链接。
+最新五列海报用案例计数表与静态累计曲线展示时间过程，不再采用动画截图或链接。
 使用安装了 ReportLab、pypdf、Pillow 的 Python 执行
 `scripts/build_poster_pdf.py`。本机使用 Codex bundled PDF runtime，无需改变分析环境。
 海报设计固定对应上述已审阅快照；不同快照需重新核验文字与数值。

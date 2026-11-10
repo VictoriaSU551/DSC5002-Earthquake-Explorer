@@ -21,11 +21,11 @@ names=[x['name'] for x in cfg['regions']]+['Other'];short=['Japan / Kuril','Indo
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':14,'axes.labelsize':14,'xtick.labelsize':12,'ytick.labelsize':12,'axes.spines.top':False,'axes.spines.right':False,'text.color':N,'axes.labelcolor':N,'xtick.color':N,'ytick.color':N,'pdf.fonttype':42,'axes.titleweight':'bold'})
 def save(fig,name):
  fig.savefig(F/(name+'.pdf'),facecolor='white');fig.savefig(F/(name+'.png'),dpi=220,facecolor='white');plt.close(fig)
-def chart(h=3.0,left=.14):
- fig,ax=plt.subplots(figsize=(8,h));fig.subplots_adjust(left=left,right=.97,bottom=.24,top=.94);return fig,ax
+def chart(h=3.0,left=.14,width=8):
+ fig,ax=plt.subplots(figsize=(width,h));fig.subplots_adjust(left=left,right=.97,bottom=.24,top=.94);return fig,ax
 coast=list(geometry_lines(json.loads((ROOT/'data/raw/geography/ne_110m_coastline.geojson').read_text())))
 bounds=list(geometry_lines(json.loads((ROOT/'data/raw/geography/PB2002_boundaries.json').read_text())))
-fig=plt.figure(figsize=(8,4.2));ax=fig.add_subplot(projection='mollweide');fig.subplots_adjust(left=.04,right=.96,bottom=.08,top=.88);ax.set_facecolor('#edf5f5')
+fig=plt.figure(figsize=(6.6,3.4));ax=fig.add_subplot(projection='mollweide');fig.subplots_adjust(left=.04,right=.96,bottom=.08,top=.86);ax.set_facecolor('#edf5f5')
 for lines,color,width in [(coast,'#99adb2',.4),(bounds,'#597a84',.65)]:
  for line in lines:
   for piece in np.split(line,np.where(abs(np.diff(line[:,0]))>180)[0]+1):
@@ -35,7 +35,7 @@ for cls,c in zip(['Shallow','Intermediate','Deep'],C):
 ax.grid(alpha=.15);ax.set_xticklabels([]);ax.set_yticklabels([]);fig.legend(*ax.get_legend_handles_labels(),ncol=3,loc='upper center',bbox_to_anchor=(.5,.99),frameon=False,markerscale=5,fontsize=12)
 save(fig,'global_map')
 
-ref=pd.read_csv(T/'spatial_reference_cdf.csv');fig,ax=chart(3.2)
+ref=pd.read_csv(T/'spatial_reference_cdf.csv');fig,ax=chart(3.2,width=6.6)
 for col,color,label in [('earthquakes_pct',B,'Earthquakes'),('equal_area_pct',G,'Equal-area globe'),('latitude_matched_pct',P,'Latitude control')]:ax.plot(ref.distance_km,ref[col],c=color,lw=2.6,label=label)
 ax.fill_between(ref.distance_km,ref.equal_area_pct,ref.earthquakes_pct,color=B,alpha=.06);ax.axvline(100,c=N,lw=.8,ls=':')
 ax.set(xlim=(0,500),ylim=(0,100),xlabel='Nearest PB2002 boundary (km)',ylabel='Cumulative share (%)');ax.legend(loc='center right',bbox_to_anchor=(1,.60),frameon=False,fontsize=12);ax.grid(alpha=.13)
@@ -46,7 +46,7 @@ ax.hlines(np.arange(7),0,reg.within_100km_pct,color='#d9e5e8',lw=5);ax.scatter(r
 for i,v in enumerate(reg.within_100km_pct):ax.text(v+2,i,f'{v:.1f}%',va='center',fontsize=12)
 ax.set(yticks=range(7),yticklabels=short,xlim=(0,104),xlabel='Events within 100 km (%)');ax.invert_yaxis();ax.grid(axis='x',alpha=.12);save(fig,'regional_proximity')
 
-annual=d.groupby('year').size();fig,ax=chart(3.15)
+annual=d.groupby('year').size();fig,ax=chart(3.15,width=6.6)
 ax.fill_between(annual.index,annual.values,color=B,alpha=.10);ax.plot(annual.index,annual.values,c=B,lw=2.3,marker='o',ms=3.5)
 ax.hlines([annual.loc[:2012].mean(),annual.loc[2013:].mean()],[2000,2013],[2012,2025],color=R,ls='--',lw=1.8)
 ax.axvline(2012.5,color=N,lw=.6,ls=':');ax.annotate('2011: 2,701',(2011,2701),xytext=(2003,3070),arrowprops={'arrowstyle':'-','color':N},fontsize=12)
@@ -68,7 +68,7 @@ for cls,c in zip(['Shallow','Intermediate','Deep'],C):
  v=np.array([d.loc[d.region.eq(n),'depth_class'].eq(cls).mean()*100 for n in names]);ax.barh(short,v,left=bottom,color=c,height=.65,label=cls);bottom+=v
 ax.set(xlim=(0,100),xlabel='Within-region depth share (%)');ax.invert_yaxis();fig.subplots_adjust(top=.83);fig.legend(*ax.get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.60,1),ncol=3,frameon=False,fontsize=10);save(fig,'depth_shares')
 
-fig=plt.figure(figsize=(8,5.3));gs=fig.add_gridspec(2,2,height_ratios=[1.45,1],hspace=.40,wspace=.32);fig.subplots_adjust(left=.10,right=.97,bottom=.15,top=.90)
+fig=plt.figure(figsize=(6.6,5.3));gs=fig.add_gridspec(2,2,height_ratios=[1.45,1],hspace=.40,wspace=.35);fig.subplots_adjust(left=.14,right=.94,bottom=.15,top=.90)
 # Two local route maps retain approximate kilometre aspect at the trench latitude.
 for k,name in enumerate([names[0],names[2]]):
  sec=sections[name];lon,lat=sec['origin'];axmap=fig.add_subplot(gs[0,k])
@@ -85,14 +85,15 @@ for k,name in enumerate([names[0],names[2]]):
  for label,point in [('A',route[0]),('B',route[-1])]:axmap.annotate(label,point,xytext=(3,5),textcoords='offset points',fontsize=11,color=N,fontweight='bold')
  axmap.xaxis.set_major_formatter(FuncFormatter(lambda value,pos:f'{abs((value+180)%360-180):g}°'+('E' if (value+180)%360-180>=0 else 'W')))
  axmap.yaxis.set_major_formatter(FuncFormatter(lambda value,pos:f'{abs(value):g}°'+('N' if value>=0 else 'S')))
- axmap.set(xlim=sec['map_longitude_range'],ylim=sec['map_latitude_range']);axmap.set_aspect(1/np.cos(np.deg2rad(lat)));axmap.tick_params(labelsize=10)
- axmap.set_title(['Japan Trench','Tonga Trench'][k],fontsize=12,pad=4)
+ axmap.set(xlim=sec['map_longitude_range'],ylim=sec['map_latitude_range']);axmap.set_aspect(1/np.cos(np.deg2rad(lat)));axmap.tick_params(labelsize=12)
+ axmap.xaxis.set_major_locator(matplotlib.ticker.MaxNLocator(nbins=3));axmap.yaxis.set_major_locator(matplotlib.ticker.MaxNLocator(nbins=4))
+ axmap.set_title(['Japan Trench','Tonga Trench'][k],fontsize=14,pad=5)
  ax=fig.add_subplot(gs[1,k]);ev=pd.DataFrame(sec['events'],columns=['id','along','offset']).merge(d[['id','depth','depth_class']],on='id')
  for cls,c in zip(['Shallow','Intermediate','Deep'],C):
   sub=ev[ev.depth_class.eq(cls)];ax.scatter(sub.along,sub.depth,s=7,c=c,alpha=.7,rasterized=True)
- ax.axvline(0,c=N,lw=.7,ls=':');ax.set(xlim=(-200,1200),ylim=(720,-10),yticks=[0,300,600],xticks=[0,600,1200]);ax.set_aspect('equal',adjustable='box');ax.set_title(['N. Tohoku · n = 351','Central Tonga · n = 640'][k],fontsize=11,pad=4);ax.tick_params(labelsize=10)
- if k==0:ax.set_ylabel('Depth (km)',fontsize=12)
-fig.text(.52,.035,'A → B: distance from trench (km)',ha='center',fontsize=12)
+ ax.axvline(0,c=N,lw=.7,ls=':');ax.set(xlim=(-200,1200),ylim=(720,-10),yticks=[0,300,600],xticks=[0,600,1200]);ax.set_aspect('equal',adjustable='box');ax.set_title(['N. Tohoku · n = 351','Tonga · n = 640'][k],fontsize=12,pad=5);ax.tick_params(labelsize=12)
+ if k==0:ax.set_ylabel('Depth (km)',fontsize=14)
+fig.text(.52,.035,'A → B: distance from trench (km)',ha='center',fontsize=14)
 save(fig,'cross_sections')
 
 corr=pd.read_csv(T/'spearman_correlations.csv');groups=['All']+names;matrix=np.array([[corr[(corr.group==g)&(corr.x==a)&(corr.y==b)].rho.item() for a,b in [('mag','depth'),('mag','boundary_distance_km'),('depth','boundary_distance_km')]] for g in groups])
@@ -117,7 +118,7 @@ for ax,case,label in zip(axes,cfg['cases'],['Sumatra 2004','Maule 2010','Tohoku 
  a=select_anchor(d,case);s,stats=case_sample(d,a,30,500,2000,2025);count=np.histogram(s.relative_days,np.arange(-30,31))[0];ax.bar(np.arange(-30,30)+.5,count,width=.94,color=[B]*30+[G]*30);ax.set(ylim=(0,320),yticks=[0,300],xlim=(-30,30));ax.axvline(0,c=N,ls=':',lw=.6);ax.text(.02,.7,label,transform=ax.transAxes,fontsize=11);ax.text(.98,.7,f"{stats['before_count']} before / {stats['after_count']} after",transform=ax.transAxes,ha='right',fontsize=11)
 axes[1].set_ylabel('Events / day');axes[-1].set_xlabel('Days relative to anchor (UTC)');save(fig,'case_timelines')
 
-cum=pd.read_csv(T/'case_cumulative.csv');fig,ax=chart(2.9)
+cum=pd.read_csv(T/'case_cumulative.csv');fig,ax=chart(2.9,width=6.6)
 for (name,group),color in zip(cum.groupby('case',sort=False),[B,G,P]):ax.plot(group.day,group.post_cumulative_pct,c=color,lw=2.3,label=name.split()[0])
 ax.axvline(3,c=N,ls=':',lw=.8);ax.set(xlim=(0,30),ylim=(0,103),xlabel='Days after anchor',ylabel='Post-window events (%)');ax.legend(loc='lower right',ncol=3,frameon=False,fontsize=11);ax.grid(alpha=.12);save(fig,'case_cumulative')
 

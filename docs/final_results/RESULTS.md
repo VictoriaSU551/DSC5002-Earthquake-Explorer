@@ -1,7 +1,7 @@
-# 最新四列海报与扩充实验
+# 最新五列海报与扩充实验
 
 - [在线成果入口](https://victoriasu551.github.io/DSC5002-Earthquake-Explorer/)
-- [可搜索海报 PDF](../poster.pdf)：A0 横版、四列、13 组科学图。
+- [可搜索海报 PDF](../poster.pdf)：A0 横版、五列、6 张表格与 5 组精选图。
 - [完整报告](report.html)：14 组图，包含事件窗口敏感性补充图。
 - [英文讲稿 PDF](../presentation_script.pdf)
 - [2.0 / 3.0 整合与复现说明](../EXPERIMENT_EXTENSION.md)

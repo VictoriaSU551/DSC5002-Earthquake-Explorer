@@ -5,9 +5,12 @@
     1189,
     841
   ],
-  "columns": 4,
-  "searchable_text_characters": 6177,
-  "figures": 13,
+  "columns": 5,
+  "searchable_text_characters": 7444,
+  "figures": 5,
+  "tables": 6,
+  "table_values_extractable": true,
+  "allocated_blocks_no_overlap": true,
   "uri_annotations": [
     "https://earthquake.usgs.gov/fdsnws/event/1/",
     "https://doi.org/10.1029/2001GC000252",
