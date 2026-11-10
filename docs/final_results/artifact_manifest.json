@@ -131,8 +131,8 @@
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_01_magnitude_distribution.svg",
-    "bytes": 18258,
-    "sha256": "e8a51f2dc614247a5a007c9b70584635d8757beea2c868ce78ec265e2781cd6a"
+    "bytes": 18030,
+    "sha256": "9bb40c90b0b40704d0214057acd35835f2f2cf51550a441c78f7d1ca38f16feb"
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_02_cumulative_frequency.png",
@@ -141,8 +141,8 @@
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_02_cumulative_frequency.svg",
-    "bytes": 36393,
-    "sha256": "37fa6c81c6d75252eb7cf28174e99d84de5e338eb84404341370c00b673cfce2"
+    "bytes": 36177,
+    "sha256": "cd6a0ff0257413dece4c7318df4957de171f3f7f624680f9cf333774c9904ccf"
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_03_magnitude_type_sensitivity.png",
@@ -151,8 +151,8 @@
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_03_magnitude_type_sensitivity.svg",
-    "bytes": 58571,
-    "sha256": "511969a45ea199454a05245a21d3f5f7bce831fee4bb31c4c57fd580e291df57"
+    "bytes": 57897,
+    "sha256": "3d0b066bfbbe1c2e89e0e8cd172da734a41dc1076b0e9e37074e69bd2756b3f5"
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_04_relative_energy_scale.png",
@@ -161,8 +161,8 @@
   },
   {
     "path": "docs/final_results/rq4/figures/rq4_04_relative_energy_scale.svg",
-    "bytes": 49593,
-    "sha256": "30402d63c95155871b4cb50ddf5eff08a58ffd425ebf1864adec638d39e90cfe"
+    "bytes": 49365,
+    "sha256": "843b00d73e90c8890a8bbb88497c97c05a39ccc31c433d27711c4c66b5ac79fd"
   },
   {
     "path": "docs/final_results/rq4/tables/annual_magnitude_types.csv",

@@ -77,7 +77,9 @@ entry='''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="vie
 (ROOT/'START_HERE.html').write_text(entry,encoding='utf-8')
 for p in [*(PUB.rglob('*')),ROOT/'docs/index.html']:
     if p.is_file() and p.suffix in {'.json','.csv','.html','.md','.svg'}:
-        p.write_bytes(p.read_bytes().replace(b'\r\n',b'\n'))
+        content=p.read_bytes().replace(b'\r\n',b'\n')
+        if p.suffix=='.svg':content=b'\n'.join(line.rstrip() for line in content.split(b'\n'))
+        p.write_bytes(content)
 manifest=[{'path':p.relative_to(ROOT).as_posix(),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(PUB.rglob('*')) if p.is_file() and p.name!='artifact_manifest.json']
 (PUB/'artifact_manifest.json').write_bytes(json.dumps(manifest,indent=2).encode('utf-8'))
 print(f'Packaged {len(manifest)} public results, local entry page, integrated reports and Pages files.')
