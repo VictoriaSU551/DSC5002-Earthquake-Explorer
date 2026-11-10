@@ -1,0 +1,4 @@
+name,anchor_id,anchor_time,anchor_magnitude,anchor_longitude,anchor_latitude,days_each_side,radius_km,before_count,after_count,fully_observed,before_per_day,after_per_day,peak_after_day,peak_day_count,first3_days_share_pct,largest_post_window_magnitude
+Sumatra Andaman 2004,official20041226005853450_30,2004-12-26T00:58:53.450000+00:00,9.1,95.982,3.295,30,500,2,143,True,0.06666666666666667,4.766666666666667,0,62,60.13986013986013,6.7
+Maule Chile 2010,official20100227063411530_30,2010-02-27T06:34:11.530000+00:00,8.8,-72.898,-36.122,30,500,1,302,True,0.03333333333333333,10.066666666666666,0,140,60.9271523178808,7.4
+Tohoku Japan 2011,official20110311054624120_30,2011-03-11T05:46:24.120000+00:00,9.1,142.373,38.297,30,500,33,563,True,1.1,18.766666666666666,0,303,70.87033747779752,7.9

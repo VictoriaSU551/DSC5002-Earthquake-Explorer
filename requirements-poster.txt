@@ -1,0 +1,4 @@
+# Optional PDF-authoring environment, separate from pinned analysis requirements.
+reportlab>=4.4,<5
+pypdf>=6.10,<7
+Pillow>=11,<14

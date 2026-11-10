@@ -1,0 +1,219 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "task": 1,
+      "label": "all regions",
+      "selected": 46463,
+      "known": 46463
+    },
+    {
+      "task": 1,
+      "label": "Japan and Kuril",
+      "selected": 4954,
+      "known": 4954
+    },
+    {
+      "task": 1,
+      "label": "Indonesia and Philippines",
+      "selected": 9313,
+      "known": 9313
+    },
+    {
+      "task": 1,
+      "label": "Tonga Kermadec Fiji",
+      "selected": 8904,
+      "known": 8904
+    },
+    {
+      "task": 1,
+      "label": "Andes",
+      "selected": 3769,
+      "known": 3769
+    },
+    {
+      "task": 1,
+      "label": "Alaska and Aleutians",
+      "selected": 1547,
+      "known": 1547
+    },
+    {
+      "task": 1,
+      "label": "Mediterranean and Himalaya",
+      "selected": 2468,
+      "known": 2468
+    },
+    {
+      "task": 1,
+      "label": "Other",
+      "selected": 15508,
+      "known": 15508
+    },
+    {
+      "task": 1,
+      "label": "2011 only",
+      "selected": 2701,
+      "known": 2701
+    },
+    {
+      "task": 1,
+      "label": "M >= 7",
+      "selected": 387,
+      "known": 387
+    },
+    {
+      "task": 1,
+      "label": "intermediate only",
+      "selected": 6083,
+      "known": 6083
+    },
+    {
+      "task": 1,
+      "label": "combined region/year/magnitude",
+      "selected": 442,
+      "known": 442
+    },
+    {
+      "task": 1,
+      "label": "empty selection",
+      "selected": 0,
+      "known": 0
+    },
+    {
+      "task": 1,
+      "label": "seven real pointer hover cards"
+    },
+    {
+      "task": 1,
+      "label": "70/300 km boundaries, negative and missing depths"
+    },
+    {
+      "task": 2,
+      "region": "Japan and Kuril",
+      "profileEvents": 351,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Japan and Kuril",
+      "plotted": 4954,
+      "eligible": 4954,
+      "coordinatesStable": true
+    },
+    {
+      "task": 2,
+      "region": "Indonesia and Philippines",
+      "profileEvents": 59,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Indonesia and Philippines",
+      "plotted": 8000,
+      "eligible": 9313,
+      "coordinatesStable": true
+    },
+    {
+      "task": 2,
+      "region": "Tonga Kermadec Fiji",
+      "profileEvents": 640,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Tonga Kermadec Fiji",
+      "plotted": 8000,
+      "eligible": 8904,
+      "coordinatesStable": true
+    },
+    {
+      "task": 2,
+      "region": "Andes",
+      "profileEvents": 185,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Andes",
+      "plotted": 3769,
+      "eligible": 3769,
+      "coordinatesStable": true
+    },
+    {
+      "task": 2,
+      "region": "Alaska and Aleutians",
+      "profileEvents": 129,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Alaska and Aleutians",
+      "plotted": 1547,
+      "eligible": 1547,
+      "coordinatesStable": true
+    },
+    {
+      "task": 2,
+      "region": "Mediterranean and Himalaya",
+      "profileEvents": 57,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Mediterranean and Himalaya",
+      "plotted": 2468,
+      "eligible": 2468,
+      "coordinatesStable": true
+    },
+    {
+      "task": 2,
+      "region": "Other",
+      "profileEvents": 73,
+      "mapProfileIdentity": true,
+      "equalKmScale": true
+    },
+    {
+      "task": 3,
+      "region": "Other",
+      "plotted": 8000,
+      "eligible": 15508,
+      "coordinatesStable": true
+    }
+  ],
+  "renderWaitMaxMs": 217,
+  "pageErrors": [],
+  "externalRequests": [],
+  "scopes": {
+    "figures": [
+      "depth histogram",
+      "regional boxplots",
+      "depth-class shares",
+      "regional projection",
+      "route map",
+      "finite cross-section",
+      "regional 3D"
+    ],
+    "regions": [
+      "Japan and Kuril",
+      "Indonesia and Philippines",
+      "Tonga Kermadec Fiji",
+      "Andes",
+      "Alaska and Aleutians",
+      "Mediterranean and Himalaya",
+      "Other"
+    ],
+    "viewportWidths": [
+      1480
+    ]
+  },
+  "limitations": [
+    "Representative combined filters, not every possible filter combination.",
+    "Desktop browser only; numerical source/geometry audit is recorded separately."
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "n_events": 46463,
+  "period_utc": [
+    "2000-01-01T05:24:35.290000+00:00",
+    "2025-12-31T14:26:57.992000+00:00"
+  ],
+  "annual_max": {
+    "year": 2011,
+    "count": 2701
+  },
+  "annual_min": {
+    "year": 2002,
+    "count": 1309
+  },
+  "numeric": {
+    "mag": {
+      "n": 46463,
+      "missing_pct": 0.0,
+      "mean": 5.3461747555472785,
+      "median": 5.2,
+      "std": 0.41011826079710856,
+      "q05": 5.0,
+      "q25": 5.1,
+      "q75": 5.5,
+      "q95": 6.2,
+      "iqr": 0.40000000000000036
+    },
+    "depth": {
+      "n": 46463,
+      "missing_pct": 0.0,
+      "mean": 55.00420709817608,
+      "median": 23.7,
+      "std": 101.79435621199319,
+      "q05": 10.0,
+      "q25": 10.0,
+      "q75": 46.3,
+      "q95": 207.87200000000024,
+      "iqr": 36.3
+    },
+    "boundary_distance_km": {
+      "n": 46463,
+      "missing_pct": 0.0,
+      "mean": 105.1416108832776,
+      "median": 59.68024329136871,
+      "std": 179.51680880672077,
+      "q05": 3.7609400758227536,
+      "q25": 22.688060778289994,
+      "q75": 113.95340554292449,
+      "q95": 335.1759533511283,
+      "iqr": 91.26534476463449
+    }
+  },
+  "within_boundary_km_pct": {
+    "50": 43.91666487312485,
+    "100": 70.15044228741148,
+    "250": 91.53735230183156
+  },
+  "depth_counts": {
+    "Shallow": 38656,
+    "Intermediate": 6083,
+    "Deep": 1724,
+    "Missing": 0
+  },
+  "magnitude_at_least_7": 387,
+  "magnitude_at_least_8": 28,
+  "regions": [
+    {
+      "region": "Japan and Kuril",
+      "count": 4954,
+      "median_depth_km": 33.0,
+      "deep_pct_known_depth": 5.0060557125555105,
+      "median_boundary_distance_km": 85.9839295099849,
+      "within_100km_pct": 58.3366976180864
+    },
+    {
+      "region": "Indonesia and Philippines",
+      "count": 9313,
+      "median_depth_km": 33.0,
+      "deep_pct_known_depth": 2.4374530226565017,
+      "median_boundary_distance_km": 70.84093481606985,
+      "within_100km_pct": 62.45033823687319
+    },
+    {
+      "region": "Tonga Kermadec Fiji",
+      "count": 8904,
+      "median_depth_km": 33.0,
+      "deep_pct_known_depth": 11.75876010781671,
+      "median_boundary_distance_km": 59.13033711813556,
+      "within_100km_pct": 75.9995507637017
+    },
+    {
+      "region": "Andes",
+      "count": 3769,
+      "median_depth_km": 35.0,
+      "deep_pct_known_depth": 2.600159193420005,
+      "median_boundary_distance_km": 93.74611938958907,
+      "within_100km_pct": 53.25019899177501
+    },
+    {
+      "region": "Alaska and Aleutians",
+      "count": 1547,
+      "median_depth_km": 26.2,
+      "deep_pct_known_depth": 0.0,
+      "median_boundary_distance_km": 80.09321760389798,
+      "within_100km_pct": 63.60698125404007
+    },
+    {
+      "region": "Mediterranean and Himalaya",
+      "count": 2468,
+      "median_depth_km": 10.0,
+      "deep_pct_known_depth": 0.28363047001620745,
+      "median_boundary_distance_km": 179.7360115601554,
+      "within_100km_pct": 39.62722852512155
+    },
+    {
+      "region": "Other",
+      "count": 15508,
+      "median_depth_km": 10.0,
+      "deep_pct_known_depth": 0.6254836213567192,
+      "median_boundary_distance_km": 29.30465339791996,
+      "within_100km_pct": 84.80784111426361
+    }
+  ],
+  "correlations_all": [
+    {
+      "group": "All",
+      "x": "mag",
+      "y": "depth",
+      "n": 46463,
+      "rho": -0.0037682345517844
+    },
+    {
+      "group": "All",
+      "x": "mag",
+      "y": "boundary_distance_km",
+      "n": 46463,
+      "rho": 0.015515132545649658
+    },
+    {
+      "group": "All",
+      "x": "depth",
+      "y": "boundary_distance_km",
+      "n": 46463,
+      "rho": 0.38683206515462815
+    }
+  ],
+  "cases": [
+    {
+      "name": "Sumatra Andaman 2004",
+      "anchor_id": "official20041226005853450_30",
+      "anchor_time": "2004-12-26T00:58:53.450000+00:00",
+      "anchor_magnitude": 9.1,
+      "anchor_longitude": 95.982,
+      "anchor_latitude": 3.295,
+      "days_each_side": 30,
+      "radius_km": 500,
+      "before_count": 2,
+      "after_count": 143,
+      "fully_observed": true,
+      "before_per_day": 0.06666666666666667,
+      "after_per_day": 4.766666666666667
+    },
+    {
+      "name": "Maule Chile 2010",
+      "anchor_id": "official20100227063411530_30",
+      "anchor_time": "2010-02-27T06:34:11.530000+00:00",
+      "anchor_magnitude": 8.8,
+      "anchor_longitude": -72.898,
+      "anchor_latitude": -36.122,
+      "days_each_side": 30,
+      "radius_km": 500,
+      "before_count": 1,
+      "after_count": 302,
+      "fully_observed": true,
+      "before_per_day": 0.03333333333333333,
+      "after_per_day": 10.066666666666666
+    },
+    {
+      "name": "Tohoku Japan 2011",
+      "anchor_id": "official20110311054624120_30",
+      "anchor_time": "2011-03-11T05:46:24.120000+00:00",
+      "anchor_magnitude": 9.1,
+      "anchor_longitude": 142.373,
+      "anchor_latitude": 38.297,
+      "days_each_side": 30,
+      "radius_km": 500,
+      "before_count": 33,
+      "after_count": 563,
+      "fully_observed": true,
+      "before_per_day": 1.1,
+      "after_per_day": 18.766666666666666
+    }
+  ],
+  "case_comparison": [
+    {
+      "name": "Sumatra Andaman 2004",
+      "anchor_id": "official20041226005853450_30",
+      "anchor_time": "2004-12-26T00:58:53.450000+00:00",
+      "anchor_magnitude": 9.1,
+      "anchor_longitude": 95.982,
+      "anchor_latitude": 3.295,
+      "days_each_side": 30,
+      "radius_km": 500,
+      "before_count": 2,
+      "after_count": 143,
+      "fully_observed": true,
+      "before_per_day": 0.06666666666666667,
+      "after_per_day": 4.766666666666667,
+      "peak_after_day": 0,
+      "peak_day_count": 62,
+      "first3_days_share_pct": 60.13986013986013,
+      "largest_post_window_magnitude": 6.7
+    },
+    {
+      "name": "Maule Chile 2010",
+      "anchor_id": "official20100227063411530_30",
+      "anchor_time": "2010-02-27T06:34:11.530000+00:00",
+      "anchor_magnitude": 8.8,
+      "anchor_longitude": -72.898,
+      "anchor_latitude": -36.122,
+      "days_each_side": 30,
+      "radius_km": 500,
+      "before_count": 1,
+      "after_count": 302,
+      "fully_observed": true,
+      "before_per_day": 0.03333333333333333,
+      "after_per_day": 10.066666666666666,
+      "peak_after_day": 0,
+      "peak_day_count": 140,
+      "first3_days_share_pct": 60.9271523178808,
+      "largest_post_window_magnitude": 7.4
+    },
+    {
+      "name": "Tohoku Japan 2011",
+      "anchor_id": "official20110311054624120_30",
+      "anchor_time": "2011-03-11T05:46:24.120000+00:00",
+      "anchor_magnitude": 9.1,
+      "anchor_longitude": 142.373,
+      "anchor_latitude": 38.297,
+      "days_each_side": 30,
+      "radius_km": 500,
+      "before_count": 33,
+      "after_count": 563,
+      "fully_observed": true,
+      "before_per_day": 1.1,
+      "after_per_day": 18.766666666666666,
+      "peak_after_day": 0,
+      "peak_day_count": 303,
+      "first3_days_share_pct": 70.87033747779752,
+      "largest_post_window_magnitude": 7.9
+    }
+  ],
+  "within_200km_pct": 87.89574500139896,
+  "magnitude_counts": {
+    "5": 46463,
+    "6": 3874,
+    "7": 387,
+    "8": 28,
+    "9": 2
+  },
+  "data_sha256": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff"
+}

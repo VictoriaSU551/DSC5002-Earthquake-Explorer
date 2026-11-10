@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "poster_pages": 1,
+  "page_mm": [
+    1189,
+    841
+  ],
+  "searchable_text_characters": 4713,
+  "figures": 9,
+  "uri_annotations": [
+    "https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/",
+    "https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/",
+    "https://earthquake.usgs.gov/fdsnws/event/1/",
+    "https://doi.org/10.1029/2001GC000252",
+    "https://www.naturalearthdata.com/"
+  ],
+  "script_pages": 2,
+  "visual_check": "Rendered with Poppler; full poster and enlarged chart/keyframe regions inspected."
+}

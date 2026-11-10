@@ -1,0 +1,31 @@
+group,x,y,n,rho
+All,mag,depth,46463,-0.0037682345517844
+All,mag,boundary_distance_km,46463,0.015515132545649658
+All,depth,boundary_distance_km,46463,0.38683206515462815
+Japan and Kuril,mag,depth,4954,0.002472225749899657
+Japan and Kuril,mag,boundary_distance_km,4954,0.11333602613576667
+Japan and Kuril,depth,boundary_distance_km,4954,0.555604401552047
+Indonesia and Philippines,mag,depth,9313,-0.050785557241786114
+Indonesia and Philippines,mag,boundary_distance_km,9313,0.02603359867266352
+Indonesia and Philippines,depth,boundary_distance_km,9313,0.18022326448430906
+Tonga Kermadec Fiji,mag,depth,8904,0.08026887752442878
+Tonga Kermadec Fiji,mag,boundary_distance_km,8904,0.06528554304740256
+Tonga Kermadec Fiji,depth,boundary_distance_km,8904,0.44343593267854503
+Andes,mag,depth,3769,-0.010136550474630432
+Andes,mag,boundary_distance_km,3769,0.004320058156138532
+Andes,depth,boundary_distance_km,3769,0.5499529148839448
+Alaska and Aleutians,mag,depth,1547,-0.08222084491413317
+Alaska and Aleutians,mag,boundary_distance_km,1547,-0.02536385040134334
+Alaska and Aleutians,depth,boundary_distance_km,1547,0.43132873696539786
+Mediterranean and Himalaya,mag,depth,2468,0.005217371793180531
+Mediterranean and Himalaya,mag,boundary_distance_km,2468,-0.046978725404113894
+Mediterranean and Himalaya,depth,boundary_distance_km,2468,0.07411176805212864
+Other,mag,depth,15508,-0.03464257548334604
+Other,mag,boundary_distance_km,15508,-0.02263772943526893
+Other,depth,boundary_distance_km,15508,0.3846686979650108
+2000–2012,mag,depth,24030,-0.022277590029151337
+2000–2012,mag,boundary_distance_km,24030,0.024494391213374614
+2000–2012,depth,boundary_distance_km,24030,0.36291369381352523
+2013–2025,mag,depth,22433,0.004678920619267726
+2013–2025,mag,boundary_distance_km,22433,0.002855302581064571
+2013–2025,depth,boundary_distance_km,22433,0.4043363186865634

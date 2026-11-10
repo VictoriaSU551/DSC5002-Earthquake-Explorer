@@ -1,0 +1,232 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Inside the Earth | Integrated results</title><style>body{font:17px/1.65 system-ui,sans-serif;color:#16364b;background:#f4f7f8;margin:0}main{max-width:1120px;margin:auto;padding:40px}h1{font-size:44px;line-height:1.15}h2{border-bottom:2px solid #d9e7ec;padding-bottom:8px;margin-top:48px}a{color:#167d8d}figure,table{background:white;margin:24px 0;padding:16px}img{max-width:100%}table{border-collapse:collapse;font-size:14px;width:100%}td,th{border-bottom:1px solid #d9e7ec;padding:7px;text-align:left}.lead{font-size:23px}.note{background:#e7f0f4;padding:18px}figcaption{font-size:15px}nav{display:flex;gap:20px;flex-wrap:wrap}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}.card{display:block;background:white;padding:20px;text-decoration:none;border-top:4px solid #167d8d}.card strong{display:block;font-size:23px}</style><main><h1>Inside the Earth</h1><p class="lead">Integrated evidence across space, time, depth and magnitude</p><p>DSC5002 project · fixed 2000–2025 USGS catalogue · preferred M ≥ 5 · 46,463 unique earthquakes</p><nav><a href="../../deliverables/DSC5002_Academic_Poster.pdf">Academic poster</a><a href="../index.html">Interactive animation</a><a href="https://github.com/VictoriaSU551/DSC5002-Earthquake-Explorer#最终整合与学术海报2026-11-10">Complete integrated dashboard</a><a href="../temporal_regional_v2/report.html">Full temporal-comparability report</a></nav><h2>Research design and contribution</h2><p>The project follows the five research questions in the supplied proposal. A single, sealed earthquake-only snapshot links descriptive statistics, maps, boundary distances, regional depth sections, magnitude-frequency curves and fixed-window event sequences. All substantive results below can be traced to the supplied tables and reproducible code.</p><div class="note"><b>Review decision:</b> Member 2 required correction of event-type filtering, region scope and boundary approximation. Member 3 depth methods, Member 4 magnitude calculations and RQ5 case metrics were adopted after numerical checks. The supplied all-type extract contains 55 volcanic eruptions, four nuclear explosions and one landslide; those 60 are excluded. It does not demonstrate a 60-earthquake catalogue revision.</div><h2>Data and processing</h2><p>UTC interval [2000-01-01,2026-01-01); event type earthquake; magnitude at least 5. Source requests and hashes are preserved. All 46,463 event IDs are unique. Coordinates, magnitude and depth are present; extreme or negative depths were not removed mechanically. Geometry uses PB2002 and Natural Earth 110m. Complete requested files do not establish detection completeness.</p><p>Canonical data SHA256: <code>231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff</code>. The original 30 baseline outputs remain unchanged. The final integration is a separate output version.</p><h2>RQ1 / RQ2: Global geography</h2><figure><img src="poster_charts/global_map.png" alt="RQ1 / RQ2: Global geography"><figcaption>All 46,463 epicentres, coloured by depth; PB2002 and Natural Earth provide geographic context. No detection-completeness or area-normalized hazard claim.</figcaption></figure><h2>RQ2: Boundary proximity</h2><figure><img src="poster_charts/boundary_cdf.png" alt="RQ2: Boundary proximity"><figcaption>Shortest spherical distance to minor great-circle boundary arcs, R=6371.0088 km. Global and two selected regional ECDFs use their own denominators. Curves continue beyond the displayed 500 km range; no clipping of values to the endpoint.</figcaption></figure><p>Median 59.68 km; 70.15% within 100 km; 87.90% within 200 km. The layer is dated and simplified; proximity is not geological uncertainty or a causal estimate.</p><h2>RQ1: Annual variation</h2><figure><img src="poster_charts/annual.png" alt="RQ1: Annual variation"><figcaption>Raw annual counts and calendar-year period means. Exposure-adjusted late-versus-early rates are -6.63% at M≥5 and -15.42% at M≥6. The positive full-period M5 Sen slope illustrates sensitivity to the chosen summary.</figcaption></figure><h2>RQ1: Regional comparisons</h2><figure><img src="poster_charts/regional_change.png" alt="RQ1: Regional comparisons"><figcaption>2013–2025 versus 2000–2012, rate per equal duration; regions are six configured boxes plus Other. Raw counts are not comparable hazard rates across unequal areas.</figcaption></figure><h2>RQ3: Regional depth composition</h2><figure><img src="poster_charts/depth_shares.png" alt="RQ3: Regional depth composition"><figcaption>Known-depth denominators; shallow <70 km, intermediate 70–<300 km, deep ≥300 km. All records have depth. Four negative reported depths remain in the shallow class.</figcaption></figure><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>region</th>
+      <th>known_depth_n</th>
+      <th>missing_depth_n</th>
+      <th>shallow_n</th>
+      <th>shallow_pct_known</th>
+      <th>intermediate_n</th>
+      <th>intermediate_pct_known</th>
+      <th>deep_n</th>
+      <th>deep_pct_known</th>
+      <th>median_depth_km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Japan and Kuril</td>
+      <td>4954</td>
+      <td>0</td>
+      <td>4280</td>
+      <td>86.4</td>
+      <td>426</td>
+      <td>8.6</td>
+      <td>248</td>
+      <td>5.0</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>Indonesia and Philippines</td>
+      <td>9313</td>
+      <td>0</td>
+      <td>7539</td>
+      <td>81.0</td>
+      <td>1547</td>
+      <td>16.6</td>
+      <td>227</td>
+      <td>2.4</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>Tonga Kermadec Fiji</td>
+      <td>8904</td>
+      <td>0</td>
+      <td>6571</td>
+      <td>73.8</td>
+      <td>1286</td>
+      <td>14.4</td>
+      <td>1047</td>
+      <td>11.8</td>
+      <td>33.0</td>
+    </tr>
+    <tr>
+      <td>Andes</td>
+      <td>3769</td>
+      <td>0</td>
+      <td>2684</td>
+      <td>71.2</td>
+      <td>987</td>
+      <td>26.2</td>
+      <td>98</td>
+      <td>2.6</td>
+      <td>35.0</td>
+    </tr>
+    <tr>
+      <td>Alaska and Aleutians</td>
+      <td>1547</td>
+      <td>0</td>
+      <td>1392</td>
+      <td>90.0</td>
+      <td>155</td>
+      <td>10.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>26.2</td>
+    </tr>
+    <tr>
+      <td>Mediterranean and Himalaya</td>
+      <td>2468</td>
+      <td>0</td>
+      <td>2218</td>
+      <td>89.9</td>
+      <td>243</td>
+      <td>9.8</td>
+      <td>7</td>
+      <td>0.3</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td>15508</td>
+      <td>0</td>
+      <td>13972</td>
+      <td>90.1</td>
+      <td>1439</td>
+      <td>9.3</td>
+      <td>97</td>
+      <td>0.6</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <td>All groups</td>
+      <td>46463</td>
+      <td>0</td>
+      <td>38656</td>
+      <td>83.2</td>
+      <td>6083</td>
+      <td>13.1</td>
+      <td>1724</td>
+      <td>3.7</td>
+      <td>23.7</td>
+    </tr>
+  </tbody>
+</table><h2>RQ3: Two local cross sections</h2><figure><img src="poster_charts/cross_sections.png" alt="RQ3: Two local cross sections"><figcaption>Adopted Member 3 methods: finite -200 to +1200 km route, ±100 km swath, parent-region restriction, spherical trench intersection. Distance and depth use equal scales. Profiles were explored and selected for illustration; their shapes are not an independent test of slab structure.</figcaption></figure><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>region</th>
+      <th>local_section</th>
+      <th>half_width_km</th>
+      <th>known_depth_n</th>
+      <th>shallow_n</th>
+      <th>intermediate_n</th>
+      <th>deep_n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Japan and Kuril</td>
+      <td>Northern Tohoku</td>
+      <td>100</td>
+      <td>351</td>
+      <td>309</td>
+      <td>21</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>Indonesia and Philippines</td>
+      <td>East Java</td>
+      <td>100</td>
+      <td>59</td>
+      <td>35</td>
+      <td>16</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Tonga Kermadec Fiji</td>
+      <td>Central Tonga</td>
+      <td>100</td>
+      <td>640</td>
+      <td>369</td>
+      <td>85</td>
+      <td>186</td>
+    </tr>
+    <tr>
+      <td>Andes</td>
+      <td>Northern Chile</td>
+      <td>100</td>
+      <td>185</td>
+      <td>51</td>
+      <td>131</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Alaska and Aleutians</td>
+      <td>Central Aleutians</td>
+      <td>100</td>
+      <td>129</td>
+      <td>118</td>
+      <td>11</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Mediterranean and Himalaya</td>
+      <td>Western Crete</td>
+      <td>100</td>
+      <td>57</td>
+      <td>52</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Other</td>
+      <td>Southern Hikurangi, New Zealand</td>
+      <td>100</td>
+      <td>73</td>
+      <td>58</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table><p>Route maps, endpoint coordinates, seven profiles and regional 3D views are available in the integrated dashboard. The regional 3D view uses a documented display approximation and vertical exaggeration; display sampling does not alter table counts.</p><h2>RQ4: Magnitude and frequency</h2><figure><img src="poster_charts/magnitude.png" alt="RQ4: Magnitude and frequency"><figcaption>The histogram uses 0.1 magnitude bins; cumulative N(M≥m) includes threshold ties. Counts decrease across thresholds, with 3,874 records ≥6, 387 ≥7, 28 ≥8 and two ≥9. Mixed preferred magnitude types are not converted into a homogeneous Mw scale.</figcaption></figure><h2>RQ5: Three selected major events</h2><figure><img src="poster_charts/case_timelines.png" alt="RQ5: Three selected major events"><figcaption>UTC offsets relative to each largest-on-date anchor. Windows [-30,0) and [0,30) days, distance ≤500 km, anchor excluded. All are fully observed; no causal aftershock classification.</figcaption></figure><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>before_count</th>
+      <th>after_count</th>
+      <th>peak_after_day</th>
+      <th>peak_day_count</th>
+      <th>first3_days_share_pct</th>
+      <th>largest_post_window_magnitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sumatra Andaman 2004</td>
+      <td>2</td>
+      <td>143</td>
+      <td>0</td>
+      <td>62</td>
+      <td>60.140</td>
+      <td>6.7</td>
+    </tr>
+    <tr>
+      <td>Maule Chile 2010</td>
+      <td>1</td>
+      <td>302</td>
+      <td>0</td>
+      <td>140</td>
+      <td>60.927</td>
+      <td>7.4</td>
+    </tr>
+    <tr>
+      <td>Tohoku Japan 2011</td>
+      <td>33</td>
+      <td>563</td>
+      <td>0</td>
+      <td>303</td>
+      <td>70.870</td>
+      <td>7.9</td>
+    </tr>
+  </tbody>
+</table><p><a href="../index.html"><b>Play the animation</b></a></p><figure><a href="../index.html"><img src="animation_poster_keyframe.png" alt="Actual cumulative animation at day three"></a><figcaption>Three synchronized cases at +3 days. Revealed totals include the before-window observations: 88/145, 185/303 and 432/596. The anchor is excluded; its star is a reference location at every frame. Maps preserve approximate kilometre aspect at each anchor latitude.</figcaption></figure><h2>Comparability and sensitivity</h2><p>We compare 13 calendar years against 13 calendar years with 4,749 and 4,748 days of exposure. Mw-family composition changes from 73.45% to 55.05%; error-field availability and concentrations at exact depths change too. These signals limit a direct interpretation as changing physical activity. The M≥5 sample cannot establish completeness below M5.</p><p>All 28 M≥8 anchors define a sensitivity union of 30-day, 500 km windows including those anchors. Removing 3,090 unique observations changes the M5 rate contrast to -3.37%. This is a window-removal sensitivity, not a declustered catalogue. See the full temporal report for threshold, review-status, region-box and annual-slope sensitivity results.</p><h2>Magnitude-type and illustrative energy supplement</h2><figure><img src="rq4/figures/rq4_03_magnitude_type_sensitivity.png" alt="rq4_03_magnitude_type_sensitivity"></figure><figure><img src="rq4/figures/rq4_04_relative_energy_scale.png" alt="rq4_04_relative_energy_scale"></figure><p>The 1.5-exponent relative proxy is dimensionless and uses mixed magnitude scales. Its summed shares are dominated by extreme events; they are not measured energy in joules, damage or hazard.</p><h2>Association and uncertainty</h2><p>Pooled Spearman rho is -0.00377 for magnitude/depth and 0.01552 for magnitude/boundary distance. Near-zero pooled monotonic association does not rule out subgroup relationships. The supplied correlations table includes region and period strata. No independent-event p-values or causal claims are inferred from clustered seismic sequences.</p><h2>Conclusion</h2><p>Recorded events concentrate near mapped boundaries, regional depth distributions differ markedly, larger magnitudes are rarer, and selected large-event windows exhibit strongly concentrated post-window counts. Catalogue composition, selected windows, geographic definitions and simplified geometry remain essential to interpretation.</p><h2>Sources and acknowledgements</h2><p><a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS FDSN catalogue</a>; <a href="https://doi.org/10.1029/2001GC000252">Bird (2003), PB2002</a>; <a href="https://github.com/fraxen/tectonicplates">GeoJSON conversion by Hugo Ahlenius (ODC-By)</a>; <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain). RQ3 adapted from Member 3; RQ4 adapted from HUANG Youkun; case animation adapted from the RQ5 contributor. Full names not supplied are not invented.</p></main></html>

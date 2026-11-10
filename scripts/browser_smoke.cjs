@@ -16,7 +16,7 @@ const root = path.resolve(__dirname,'..');
     const wait=()=>page.waitForFunction(()=>window.earthquakeApp&&!window.earthquakeApp.getState().busy&&window.earthquakeApp.getState().renderCount>0,{},{timeout:60000});
     const select=async(id,value)=>{await page.selectOption('#'+id,value);await wait();};
     const tab=async(name)=>{await page.click('[data-tab="'+name+'"]');await wait();};
-    await page.goto(pathToFileURL(path.join(root,'outputs/dashboard.html')).href,{waitUntil:'load',timeout:60000});
+    await page.goto(pathToFileURL(path.join(root,process.env.DASHBOARD_PATH||'outputs/final/dashboard.html')).href,{waitUntil:'load',timeout:60000});
     await wait();
     assert.equal(await page.locator('#count').textContent(),'46,463');
     assert.deepEqual(await page.evaluate(()=>histogram([5,5.1,5.2],5,.1,3).y),[1,1,1]);
@@ -43,6 +43,32 @@ const root = path.resolve(__dirname,'..');
     assert.ok(await page.locator('#cross-section').evaluate(e=>e.data.some(t=>t.x.some(v=>v>180))));
     await select('section-view','3d');
     assert.equal(await page.locator('#cross-section').evaluate(e=>e.data[0].type),'scatter3d');
+    await select('section-region','0');
+    const sceneSnapshot=()=>page.locator('#cross-section').evaluate(e=>({
+        ranges:['x','y','z'].map(axis=>e._fullLayout.scene[axis+'axis'].range),
+        aspect:e._fullLayout.scene.aspectratio,
+        positions:Object.fromEntries(e.data.filter(t=>t.mode==='markers').flatMap(t=>t.customdata.map((d,i)=>[d[0],[t.x[i],t.y[i],t.z[i]]]))),
+        depthLabels:e._fullLayout.scene.zaxis.ticktext,
+        correctDepth:e.data.filter(t=>t.mode==='markers').every(t=>t.z.every((z,i)=>z===-t.customdata[i][1]))
+    }));
+    const initialScene=await sceneSnapshot();
+    assert.ok(initialScene.correctDepth&&initialScene.depthLabels.every(value=>value>=0));
+    const contextCheck=await page.locator('#cross-section').evaluate(e=>({
+        depths:e.data.filter(t=>t.meta?.kind==='depth-boundary').map(t=>t.meta.depth),
+        coastlinePresent:e.data.some(t=>t.meta?.kind==='coastline')
+    }));
+    assert.deepEqual(contextCheck.depths,[70,300]);assert.equal(contextCheck.coastlinePresent,false);
+    await select('min-mag','7');
+    const filteredScene=await sceneSnapshot();
+    const near=(actual,expected)=>assert.ok(Math.abs(actual-expected)<1e-6);
+    assert.ok(Object.keys(filteredScene.positions).length>0);
+    for(const [id,position] of Object.entries(filteredScene.positions)) {
+        assert.ok(initialScene.positions[id]);
+        position.forEach((value,i)=>near(value,initialScene.positions[id][i]));
+    }
+    filteredScene.ranges.flat().forEach((value,i)=>near(value,initialScene.ranges.flat()[i]));
+    ['x','y','z'].forEach(axis=>near(filteredScene.aspect[axis],initialScene.aspect[axis]));
+    await select('min-mag','5');
     await page.screenshot({path:path.join(root,'outputs/dashboard_depth.png'),fullPage:true});
     await tab('magnitude');
     assert.equal(await page.locator('#mag-frequency').evaluate(e=>e.data[0].y[0]),46463);
@@ -66,7 +92,7 @@ const root = path.resolve(__dirname,'..');
     await page.screenshot({path:path.join(root,'outputs/report_preview.png'),fullPage:false});
     assert.deepEqual(errors,[]);
     assert.deepEqual(remote,[]);
-    const receipt={status:'PASS',remote_requests:remote.length,page_errors:errors.length,checks:['default counts','decimal magnitude bin edges','valid geographic map axes','3D globe','year filters','magnitude filter','empty selection','boundary ECDF','date-line cross-section','3D hypocentres','magnitude survival','case windows','mobile layout','twelve report images','offline without HTTP requests']};
+    const receipt={status:'PASS',remote_requests:remote.length,page_errors:errors.length,checks:['default counts','decimal magnitude bin edges','valid geographic map axes','3D globe','year filters','magnitude filter','empty selection','boundary ECDF','date-line cross-section','3D hypocentres','stable 3D coordinates and frame across filters','positive-down 3D depth labels','magnitude survival','case windows','mobile layout','twelve report images','offline without HTTP requests']};
     fs.writeFileSync(path.join(root,'outputs/browser_verification.json'),JSON.stringify(receipt,null,2)+'\n');
     console.log(JSON.stringify(receipt,null,2));
     await browser.close();

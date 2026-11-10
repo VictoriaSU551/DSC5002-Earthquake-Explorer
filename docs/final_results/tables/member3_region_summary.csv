@@ -1,0 +1,9 @@
+﻿region,known_depth_n,missing_depth_n,shallow_n,shallow_pct_known,intermediate_n,intermediate_pct_known,deep_n,deep_pct_known,median_depth_km
+Japan and Kuril,4954,0,4280,86.4,426,8.6,248,5.0,33.0
+Indonesia and Philippines,9313,0,7539,81.0,1547,16.6,227,2.4,33.0
+Tonga Kermadec Fiji,8904,0,6571,73.8,1286,14.4,1047,11.8,33.0
+Andes,3769,0,2684,71.2,987,26.2,98,2.6,35.0
+Alaska and Aleutians,1547,0,1392,90.0,155,10.0,0,0.0,26.2
+Mediterranean and Himalaya,2468,0,2218,89.9,243,9.8,7,0.3,10.0
+Other,15508,0,13972,90.1,1439,9.3,97,0.6,10.0
+All groups,46463,0,38656,83.2,6083,13.1,1724,3.7,23.7

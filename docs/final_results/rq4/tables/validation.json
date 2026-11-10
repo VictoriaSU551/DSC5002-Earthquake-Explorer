@@ -1,0 +1,18 @@
+{
+  "event_count": 46463,
+  "unique_ids": true,
+  "matches_group_ids_and_magnitudes": true,
+  "histogram_total": 46463,
+  "band_total": 46463,
+  "cumulative_at_5": 46463,
+  "cumulative_nonincreasing": true,
+  "source_sha256": {
+    "earthquakes.csv": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff"
+  },
+  "versions": {
+    "python": "3.12.3",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.2"
+  }
+}

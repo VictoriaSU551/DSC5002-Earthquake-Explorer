@@ -29,3 +29,16 @@ Natural Earth coastline and land are public-domain cartographic data. They suppl
 The project depends on the libraries listed in `requirements.txt`, which retain their upstream licenses. Plotly JavaScript is embedded from the installed Plotly Python package in the generated local HTML for offline use; its distributed license header is retained. It is not committed as a vendored JavaScript file. Matplotlib and DejaVu Sans render the local research figures.
 
 The public annual/regional extension also includes an offline aggregate-only HTML tool with the same embedded Plotly runtime and retained MIT license header. The original-code MIT license does not replace third-party terms.
+
+## Integrated poster and animation (2026-11-10)
+
+The published animation embeds only 1,044 public USGS observations from the
+three specified case windows, plus the attributed boundary/coastline geometry
+and the Plotly runtime (license header retained). Full source CSVs and submitted
+team archives remain local. Poster PDFs embed subsets of Arial (Windows authoring)
+and DejaVu Sans (Matplotlib). Optional PDF dependencies are listed separately in
+requirements-poster.txt. RQ3 section code was adapted from Member 3; magnitude
+code from HUANG Youkun; the animation from the supplied RQ5 contribution.
+
+CityU Language Centre's poster and script pages are design references, linked in
+docs/TEAM_REVIEW.md. Their sample poster image is not redistributed in this repo.

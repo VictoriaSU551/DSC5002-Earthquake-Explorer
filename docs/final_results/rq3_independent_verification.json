@@ -1,0 +1,1328 @@
+{
+  "method": "Independent haversine, initial bearing, signed along/cross-track formulae; trench intersections solved by scalar brentq on geodesic boundary segments.",
+  "checks": {
+    "raw_snapshot_scope": {
+      "pass": true,
+      "detail": {
+        "rows": 46463,
+        "invalid": 0,
+        "duplicates": 0
+      }
+    },
+    "processed_raw_ids": {
+      "pass": true,
+      "detail": null
+    },
+    "processed_raw_latitude": {
+      "pass": true,
+      "detail": null
+    },
+    "processed_raw_longitude": {
+      "pass": true,
+      "detail": null
+    },
+    "processed_raw_depth": {
+      "pass": true,
+      "detail": null
+    },
+    "processed_raw_mag": {
+      "pass": true,
+      "detail": null
+    },
+    "region_priority": {
+      "pass": true,
+      "detail": null
+    },
+    "depth_classes": {
+      "pass": true,
+      "detail": null
+    },
+    "missing_and_negative": {
+      "pass": true,
+      "detail": {
+        "missing": 0,
+        "negative": 4,
+        "negative_ids": [
+          "ak002e5g3k50",
+          "nc40193932",
+          "nc51181705",
+          "ci14519780"
+        ]
+      }
+    },
+    "processing_seal": {
+      "pass": true,
+      "detail": null
+    },
+    "embedded_ids_and_order": {
+      "pass": true,
+      "detail": null
+    },
+    "embedded_config": {
+      "pass": true,
+      "detail": null
+    },
+    "embedded_classes_and_regions": {
+      "pass": true,
+      "detail": null
+    },
+    "embedded_values": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_hist_10_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_hist_20_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_hist_40_coverage": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_count_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_summary_table": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            144.28096248353233,
+            40.05744568278872
+          ]
+        ]
+      }
+    },
+    "Japan and Kuril_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 2.411485954757775e-11
+      }
+    },
+    "Japan and Kuril_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 351,
+        "actual": 351,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Japan and Kuril_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 5.000180465231097e-07,
+        "max_offset_error_km": 4.993128897012866e-07
+      }
+    },
+    "Japan and Kuril_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -199.99999999997445,
+          1200.0000000000252
+        ],
+        "offset_km": [
+          -1.1789312256917508e-12,
+          -1.3244041293295391e-12
+        ]
+      }
+    },
+    "Japan and Kuril_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Japan and Kuril_depth_range": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            112.09097287084558,
+            -10.642936566074482
+          ]
+        ]
+      }
+    },
+    "Indonesia and Philippines_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 1.5914791484661348e-12
+      }
+    },
+    "Indonesia and Philippines_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 59,
+        "actual": 59,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Indonesia and Philippines_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 4.812338545434613e-07,
+        "max_offset_error_km": 4.913476603363165e-07
+      }
+    },
+    "Indonesia and Philippines_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -200.00000000000142,
+          1199.9999999999986
+        ],
+        "offset_km": [
+          -1.5311759625573504e-13,
+          -3.3772305297902514e-12
+        ]
+      }
+    },
+    "Indonesia and Philippines_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Indonesia and Philippines_depth_range": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            -173.14982647815833,
+            -20.02861584834105
+          ]
+        ]
+      }
+    },
+    "Tonga Kermadec Fiji_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 0.0
+      }
+    },
+    "Tonga Kermadec Fiji_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 640,
+        "actual": 640,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Tonga Kermadec Fiji_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 4.966754545421281e-07,
+        "max_offset_error_km": 4.996527813716511e-07
+      }
+    },
+    "Tonga Kermadec Fiji_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -199.99999999999696,
+          1199.9999999999952
+        ],
+        "offset_km": [
+          -9.125214613023605e-13,
+          -7.946424775977039e-13
+        ]
+      }
+    },
+    "Tonga Kermadec Fiji_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Tonga Kermadec Fiji_depth_range": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            -71.4457000362228,
+            -24.06780001638946
+          ]
+        ]
+      }
+    },
+    "Andes_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 5.214846568979903e-12
+      }
+    },
+    "Andes_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 185,
+        "actual": 185,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Andes_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 4.922548555441608e-07,
+        "max_offset_error_km": 4.965907720588802e-07
+      }
+    },
+    "Andes_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -200.00000000000483,
+          1199.9999999999925
+        ],
+        "offset_km": [
+          -4.195273606452712e-13,
+          -2.648808258659007e-13
+        ]
+      }
+    },
+    "Andes_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Andes_depth_range": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            -174.0,
+            50.90677896057559
+          ]
+        ]
+      }
+    },
+    "Alaska and Aleutians_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 1.4146481319698977e-12
+      }
+    },
+    "Alaska and Aleutians_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 129,
+        "actual": 129,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Alaska and Aleutians_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 4.981995402886241e-07,
+        "max_offset_error_km": 4.968764315549379e-07
+      }
+    },
+    "Alaska and Aleutians_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -200.00000000000134,
+          1199.9999999999986
+        ],
+        "offset_km": [
+          -2.4488913337284275e-14,
+          -0.0
+        ]
+      }
+    },
+    "Alaska and Aleutians_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Alaska and Aleutians_depth_range": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            24.0,
+            34.578126064800834
+          ]
+        ]
+      }
+    },
+    "Mediterranean and Himalaya_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 7.0732406598494886e-12
+      }
+    },
+    "Mediterranean and Himalaya_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 57,
+        "actual": 57,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Mediterranean and Himalaya_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 4.833940172588314e-07,
+        "max_offset_error_km": 4.941276969816499e-07
+      }
+    },
+    "Mediterranean and Himalaya_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -199.99999999999284,
+          1200.0000000000066
+        ],
+        "offset_km": [
+          -2.448891333728324e-14,
+          -0.0
+        ]
+      }
+    },
+    "Mediterranean and Himalaya_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Mediterranean and Himalaya_depth_range": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_one_trench_crossing": {
+      "pass": true,
+      "detail": {
+        "crossings": [
+          [
+            178.13459938637243,
+            -41.01921380636395
+          ]
+        ]
+      }
+    },
+    "Other_origin": {
+      "pass": true,
+      "detail": {
+        "error_km": 7.073240659849489e-13
+      }
+    },
+    "Other_section_ids": {
+      "pass": true,
+      "detail": {
+        "expected": 73,
+        "actual": 73,
+        "extra": [],
+        "missing": []
+      }
+    },
+    "Other_section_coordinates": {
+      "pass": true,
+      "detail": {
+        "max_along_error_km": 4.794361530002789e-07,
+        "max_offset_error_km": 4.942723137446592e-07
+      }
+    },
+    "Other_finite_endpoints": {
+      "pass": true,
+      "detail": {
+        "along_km": [
+          -199.99999999999758,
+          1200.0000000000005
+        ],
+        "offset_km": [
+          -9.125214613023633e-13,
+          1.324404129329512e-12
+        ]
+      }
+    },
+    "Other_swath_geometry": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_width_checks": {
+      "pass": true,
+      "detail": null
+    },
+    "Other_depth_range": {
+      "pass": true,
+      "detail": null
+    }
+  },
+  "regions": [
+    {
+      "name": "Japan and Kuril",
+      "total": 4954,
+      "known": 4954,
+      "missing": 0,
+      "negative": 0,
+      "counts": [
+        4280,
+        426,
+        248
+      ],
+      "shares_pct": [
+        86.39483245861929,
+        8.599111828825192,
+        5.0060557125555105
+      ],
+      "q25_median_q75": [
+        10.0,
+        33.0,
+        47.8
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 4954,
+          "percent_sum": 100.0,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 4954,
+          "percent_sum": 100.0,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 4954,
+          "percent_sum": 100.0,
+          "bins": 19
+        }
+      }
+    },
+    {
+      "name": "Indonesia and Philippines",
+      "total": 9313,
+      "known": 9313,
+      "missing": 0,
+      "negative": 0,
+      "counts": [
+        7539,
+        1547,
+        227
+      ],
+      "shares_pct": [
+        80.951358316332,
+        16.61118866101149,
+        2.4374530226565017
+      ],
+      "q25_median_q75": [
+        16.0,
+        33.0,
+        55.726
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 9313,
+          "percent_sum": 100.0,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 9313,
+          "percent_sum": 99.99999999999999,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 9313,
+          "percent_sum": 100.0,
+          "bins": 19
+        }
+      }
+    },
+    {
+      "name": "Tonga Kermadec Fiji",
+      "total": 8904,
+      "known": 8904,
+      "missing": 0,
+      "negative": 0,
+      "counts": [
+        6571,
+        1286,
+        1047
+      ],
+      "shares_pct": [
+        73.79829290206649,
+        14.4429469901168,
+        11.75876010781671
+      ],
+      "q25_median_q75": [
+        10.0,
+        33.0,
+        81.4075
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 8904,
+          "percent_sum": 100.00000000000001,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 8904,
+          "percent_sum": 100.0,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 8904,
+          "percent_sum": 100.0,
+          "bins": 19
+        }
+      }
+    },
+    {
+      "name": "Andes",
+      "total": 3769,
+      "known": 3769,
+      "missing": 0,
+      "negative": 0,
+      "counts": [
+        2684,
+        987,
+        98
+      ],
+      "shares_pct": [
+        71.21252321570708,
+        26.18731759087291,
+        2.600159193420005
+      ],
+      "q25_median_q75": [
+        16.18,
+        35.0,
+        93.0
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 3769,
+          "percent_sum": 100.0,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 3769,
+          "percent_sum": 100.0,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 3769,
+          "percent_sum": 100.00000000000001,
+          "bins": 19
+        }
+      }
+    },
+    {
+      "name": "Alaska and Aleutians",
+      "total": 1547,
+      "known": 1547,
+      "missing": 0,
+      "negative": 1,
+      "counts": [
+        1392,
+        155,
+        0
+      ],
+      "shares_pct": [
+        89.98060762766646,
+        10.019392372333549,
+        0.0
+      ],
+      "q25_median_q75": [
+        10.0,
+        26.2,
+        40.457
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 1547,
+          "percent_sum": 99.99999999999999,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 1547,
+          "percent_sum": 100.0,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 1547,
+          "percent_sum": 100.0,
+          "bins": 19
+        }
+      }
+    },
+    {
+      "name": "Mediterranean and Himalaya",
+      "total": 2468,
+      "known": 2468,
+      "missing": 0,
+      "negative": 0,
+      "counts": [
+        2218,
+        243,
+        7
+      ],
+      "shares_pct": [
+        89.87034035656401,
+        9.846029173419774,
+        0.28363047001620745
+      ],
+      "q25_median_q75": [
+        10.0,
+        10.0,
+        31.16
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 2468,
+          "percent_sum": 100.0,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 2468,
+          "percent_sum": 99.99999999999999,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 2468,
+          "percent_sum": 100.0,
+          "bins": 19
+        }
+      }
+    },
+    {
+      "name": "Other",
+      "total": 15508,
+      "known": 15508,
+      "missing": 0,
+      "negative": 3,
+      "counts": [
+        13972,
+        1439,
+        97
+      ],
+      "shares_pct": [
+        90.09543461439257,
+        9.279081764250709,
+        0.6254836213567192
+      ],
+      "q25_median_q75": [
+        10.0,
+        10.0,
+        34.0
+      ],
+      "histograms": {
+        "10": {
+          "count_sum": 15508,
+          "percent_sum": 99.99999999999999,
+          "bins": 76
+        },
+        "20": {
+          "count_sum": 15508,
+          "percent_sum": 100.0,
+          "bins": 38
+        },
+        "40": {
+          "count_sum": 15508,
+          "percent_sum": 100.0,
+          "bins": 19
+        }
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "Japan and Kuril",
+      "known": 351,
+      "counts": [
+        309,
+        21,
+        21
+      ],
+      "origin": [
+        144.28096248353233,
+        40.05744568278872
+      ],
+      "a": {
+        "coordinates": [
+          146.43285457888982,
+          39.354180885603085
+        ],
+        "place": "Pacific Ocean east of northeast Japan"
+      },
+      "b": {
+        "coordinates": [
+          130.49826983064438,
+          43.36271194189526
+        ],
+        "place": "Wangqing County, Jilin, northeast China"
+      },
+      "origin_error_km": 2.411485954757775e-11,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 131,
+          "shallow": 114,
+          "intermediate": 8,
+          "deep": 9
+        },
+        {
+          "half_width_km": 100,
+          "known": 351,
+          "shallow": 309,
+          "intermediate": 21,
+          "deep": 21
+        },
+        {
+          "half_width_km": 200,
+          "known": 636,
+          "shallow": 566,
+          "intermediate": 44,
+          "deep": 26
+        }
+      ],
+      "selected_id_sha256": "9624ae1cf3533031305fe350d1402c23bc3aaf62ad3f0f03ddec65dabe8bcf3c",
+      "along_min_max": [
+        -76.10087773396012,
+        1196.7134963554338
+      ],
+      "offset_min_max": [
+        -99.6380572535023,
+        99.94116567737895
+      ]
+    },
+    {
+      "name": "Indonesia and Philippines",
+      "known": 59,
+      "counts": [
+        35,
+        16,
+        8
+      ],
+      "origin": [
+        112.09097287084558,
+        -10.642936566074482
+      ],
+      "a": {
+        "coordinates": [
+          111.54480971189868,
+          -12.360113910937125
+        ],
+        "place": "Indian Ocean south of East Java"
+      },
+      "b": {
+        "coordinates": [
+          115.27526785432985,
+          -0.3257310118971625
+        ],
+        "place": "Borneo interior, Indonesia"
+      },
+      "origin_error_km": 1.5914791484661348e-12,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 41,
+          "shallow": 24,
+          "intermediate": 12,
+          "deep": 5
+        },
+        {
+          "half_width_km": 100,
+          "known": 59,
+          "shallow": 35,
+          "intermediate": 16,
+          "deep": 8
+        },
+        {
+          "half_width_km": 200,
+          "known": 128,
+          "shallow": 88,
+          "intermediate": 27,
+          "deep": 13
+        }
+      ],
+      "selected_id_sha256": "0cd9de6ec14486a28d6c068f76635fa195584a0559e329a07386752cda276c85",
+      "along_min_max": [
+        -77.75389347594142,
+        530.5148212793426
+      ],
+      "offset_min_max": [
+        -66.94717466230223,
+        88.82170796398708
+      ]
+    },
+    {
+      "name": "Tonga Kermadec Fiji",
+      "known": 640,
+      "counts": [
+        369,
+        85,
+        186
+      ],
+      "origin": [
+        -173.14982647815833,
+        -20.02861584834105
+      ],
+      "a": {
+        "coordinates": [
+          -171.236500563202,
+          -19.97689401067801
+        ],
+        "place": "Pacific Ocean east of Tonga"
+      },
+      "b": {
+        "coordinates": [
+          175.3665810253567,
+          -19.906476509651622
+        ],
+        "place": "Fiji region, west of Tonga"
+      },
+      "origin_error_km": 0.0,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 290,
+          "shallow": 154,
+          "intermediate": 49,
+          "deep": 87
+        },
+        {
+          "half_width_km": 100,
+          "known": 640,
+          "shallow": 369,
+          "intermediate": 85,
+          "deep": 186
+        },
+        {
+          "half_width_km": 200,
+          "known": 1182,
+          "shallow": 679,
+          "intermediate": 167,
+          "deep": 336
+        }
+      ],
+      "selected_id_sha256": "bec9f2f79d914304a5872adf6fc74d6e9869f869c3eb596c311f545a830063a9",
+      "along_min_max": [
+        -107.10999408502988,
+        1176.657654028859
+      ],
+      "offset_min_max": [
+        -99.70341740567162,
+        99.99312695653748
+      ]
+    },
+    {
+      "name": "Andes",
+      "known": 185,
+      "counts": [
+        51,
+        131,
+        3
+      ],
+      "origin": [
+        -71.4457000362228,
+        -24.06780001638946
+      ],
+      "a": {
+        "coordinates": [
+          -73.41563910443143,
+          -24.071888970596817
+        ],
+        "place": "Pacific Ocean west of northern Chile"
+      },
+      "b": {
+        "coordinates": [
+          -59.66343801378098,
+          -23.51676056164331
+        ],
+        "place": "Presidente Hayes, Paraguayan Chaco"
+      },
+      "origin_error_km": 5.214846568979903e-12,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 116,
+          "shallow": 23,
+          "intermediate": 90,
+          "deep": 3
+        },
+        {
+          "half_width_km": 100,
+          "known": 185,
+          "shallow": 51,
+          "intermediate": 131,
+          "deep": 3
+        },
+        {
+          "half_width_km": 200,
+          "known": 347,
+          "shallow": 118,
+          "intermediate": 217,
+          "deep": 12
+        }
+      ],
+      "selected_id_sha256": "2b350bf9da6e48a6d5cdeeee304d31987a53cad4ddebded52ebd8f021baccd93",
+      "along_min_max": [
+        -5.548054441327029,
+        801.4871379348548
+      ],
+      "offset_min_max": [
+        -98.69327210110629,
+        98.34169589862296
+      ]
+    },
+    {
+      "name": "Alaska and Aleutians",
+      "known": 129,
+      "counts": [
+        118,
+        11,
+        0
+      ],
+      "origin": [
+        -174.0,
+        50.90677896057559
+      ],
+      "a": {
+        "coordinates": [
+          -174.0,
+          49.1081382331265
+        ],
+        "place": "North Pacific Ocean south of the Aleutians"
+      },
+      "b": {
+        "coordinates": [
+          -174.0,
+          61.69862332527004
+        ],
+        "place": "Bering Sea north of the Aleutians"
+      },
+      "origin_error_km": 1.4146481319698977e-12,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 61,
+          "shallow": 55,
+          "intermediate": 6,
+          "deep": 0
+        },
+        {
+          "half_width_km": 100,
+          "known": 129,
+          "shallow": 118,
+          "intermediate": 11,
+          "deep": 0
+        },
+        {
+          "half_width_km": 200,
+          "known": 220,
+          "shallow": 202,
+          "intermediate": 18,
+          "deep": 0
+        }
+      ],
+      "selected_id_sha256": "23429b5c6c58576592e728cc51e71efa63cea6a35824724ad407c526806177d6",
+      "along_min_max": [
+        -52.39993181951349,
+        256.79357567821086
+      ],
+      "offset_min_max": [
+        -96.77728538612475,
+        97.57035343680703
+      ]
+    },
+    {
+      "name": "Mediterranean and Himalaya",
+      "known": 57,
+      "counts": [
+        52,
+        5,
+        0
+      ],
+      "origin": [
+        24.0,
+        34.578126064800834
+      ],
+      "a": {
+        "coordinates": [
+          24.00000000000001,
+          32.77948533735182
+        ],
+        "place": "Mediterranean Sea south of Crete"
+      },
+      "b": {
+        "coordinates": [
+          24.00000000000001,
+          45.36997042949535
+        ],
+        "place": "Southern Carpathians, Romania"
+      },
+      "origin_error_km": 7.0732406598494886e-12,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 31,
+          "shallow": 27,
+          "intermediate": 4,
+          "deep": 0
+        },
+        {
+          "half_width_km": 100,
+          "known": 57,
+          "shallow": 52,
+          "intermediate": 5,
+          "deep": 0
+        },
+        {
+          "half_width_km": 200,
+          "known": 168,
+          "shallow": 160,
+          "intermediate": 8,
+          "deep": 0
+        }
+      ],
+      "selected_id_sha256": "130d3a3a2c771a012e2f7df464406eefd8a03cf1d79f300b22b1d32e9bc5afee",
+      "along_min_max": [
+        -32.064407430447176,
+        897.5117091928614
+      ],
+      "offset_min_max": [
+        -99.77176149049487,
+        95.41048010896627
+      ]
+    },
+    {
+      "name": "Other",
+      "known": 73,
+      "counts": [
+        58,
+        15,
+        0
+      ],
+      "origin": [
+        178.13459938637243,
+        -41.01921380636395
+      ],
+      "a": {
+        "coordinates": [
+          -179.4843761281729,
+          -40.950714101709586
+        ],
+        "place": "Pacific Ocean east of southern North Island, New Zealand"
+      },
+      "b": {
+        "coordinates": [
+          163.90489114755079,
+          -40.40296791939175
+        ],
+        "place": "Tasman Sea west of New Zealand"
+      },
+      "origin_error_km": 7.073240659849489e-13,
+      "width_checks": [
+        {
+          "half_width_km": 50,
+          "known": 19,
+          "shallow": 14,
+          "intermediate": 5,
+          "deep": 0
+        },
+        {
+          "half_width_km": 100,
+          "known": 73,
+          "shallow": 58,
+          "intermediate": 15,
+          "deep": 0
+        },
+        {
+          "half_width_km": 200,
+          "known": 105,
+          "shallow": 88,
+          "intermediate": 17,
+          "deep": 0
+        }
+      ],
+      "selected_id_sha256": "1ce80e9aa13f022a7c73f821afd26490364e64ae9332cfdd2832040b1e9e274c",
+      "along_min_max": [
+        -32.272130127908824,
+        491.59678846206526
+      ],
+      "offset_min_max": [
+        -93.77016896463692,
+        92.45468541652936
+      ]
+    }
+  ],
+  "summary": {
+    "checks": 105,
+    "passed": 105,
+    "failed": [],
+    "dataset_rows": 46463,
+    "global_counts": [
+      38656,
+      6083,
+      1724
+    ]
+  }
+}

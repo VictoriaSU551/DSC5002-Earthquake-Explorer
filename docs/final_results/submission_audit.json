@@ -1,0 +1,13 @@
+{
+  "checks": 442,
+  "passed": 442,
+  "failures": [],
+  "non_earthquake_types": {
+    "volcanic eruption": 55,
+    "nuclear explosion": 4,
+    "landslide": 1
+  },
+  "archive_files": 98,
+  "interpretation": "Member 2 source omits eventtype filter. The supplied all-type snapshot reproduces its 46,523 count; its 60-event revision explanation is unsupported. Exact Member 2 downloaded files were not supplied.",
+  "canonical_sha256": "231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff"
+}

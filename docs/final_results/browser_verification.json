@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "map_aspect": [
+    {
+      "actual": 1.0016559012543504,
+      "expected": 1.0016559012543504
+    },
+    {
+      "actual": 1.2379859817829604,
+      "expected": 1.2379859817829602
+    },
+    {
+      "actual": 1.2741956680750728,
+      "expected": 1.2741956680750728
+    }
+  ],
+  "keyframe_counts": [
+    {
+      "t": -0.001,
+      "shown": [
+        2,
+        1,
+        33
+      ],
+      "expected": [
+        2,
+        1,
+        33
+      ]
+    },
+    {
+      "t": 1,
+      "shown": [
+        64,
+        141,
+        336
+      ],
+      "expected": [
+        64,
+        141,
+        336
+      ]
+    },
+    {
+      "t": 3,
+      "shown": [
+        88,
+        185,
+        432
+      ],
+      "expected": [
+        88,
+        185,
+        432
+      ]
+    },
+    {
+      "t": 30,
+      "shown": [
+        145,
+        303,
+        596
+      ],
+      "expected": [
+        145,
+        303,
+        596
+      ]
+    }
+  ],
+  "checks": [
+    "map kilometre aspect",
+    "four keyframes",
+    "complete case counts",
+    "trailing window",
+    "play",
+    "reset stops playback",
+    "mobile overflow",
+    "integrated animation",
+    "integrated cross section"
+  ],
+  "pageErrors": [],
+  "externalRequests": []
+}

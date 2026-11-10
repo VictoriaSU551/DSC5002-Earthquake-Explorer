@@ -7,6 +7,7 @@ from matplotlib.path import Path as PolygonPath
 from plotly.offline import get_plotlyjs
 from .geometry import geometry_lines
 from .analysis import select_anchor, case_sample
+from .sections import build_sections
 
 
 def safe_json(value):
@@ -14,7 +15,7 @@ def safe_json(value):
     return json.dumps(value,separators=(',',':'),ensure_ascii=False,allow_nan=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
 
 
-def build_dashboard(frame,config,root):
+def build_dashboard(frame,config,root,target=None):
     geography=root/'data/raw/geography'
     boundaries=json.loads((geography/'PB2002_boundaries.json').read_text(encoding='utf-8'))
     coast=json.loads((geography/'ne_110m_coastline.geojson').read_text(encoding='utf-8'))
@@ -43,6 +44,7 @@ def build_dashboard(frame,config,root):
             for hole in polygon[1:]:covered &= ~PolygonPath(hole).contains_points(grid)
             mask |= covered
     payload={'rows':rows,'regions':regions,'depth_names':depth_names,'config':config,
+             'sections':build_sections(frame,boundaries),
              'boundaries':[x.round(5).tolist() for x in geometry_lines(boundaries)],
              'coast':[x.round(5).tolist() for x in geometry_lines(coast)],
              'land':[x.round(5).tolist() for x in geometry_lines(land)],
@@ -52,7 +54,7 @@ def build_dashboard(frame,config,root):
     html=html.replace('/*__CSS__*/',(root/'web/style.css').read_text(encoding='utf-8'))
     html=html.replace('/*__DATA__*/',safe_json(payload))
     html=html.replace('/*__APP__*/',(root/'web/dashboard.js').read_text(encoding='utf-8'))
-    target=root/'outputs/dashboard.html'
+    target=Path(target) if target is not None else root/'outputs/dashboard.html'
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(html,encoding='utf-8')
     return target

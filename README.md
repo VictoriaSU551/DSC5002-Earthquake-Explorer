@@ -1,5 +1,19 @@
 # Inside the Earth
 
+## 最终整合与学术海报（2026-11-10）
+
+- [可搜索 A0 学术海报 PDF](deliverables/DSC5002_Academic_Poster.pdf)
+- [海报展示讲稿 PDF](deliverables/DSC5002_Presentation_Script.pdf)
+- [在线动画与海报](https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/)
+- [组员成果评审、修改清单与复现方法](docs/TEAM_REVIEW.md)
+- [整合后的公开结果](docs/final_results/RESULTS.md)
+
+本地从 `START_HERE.html` 开始；整合仪表盘是 `outputs/final/dashboard.html`。
+Member 3 的剖面、Member 4 的震级分析及 RQ5 动画已合入源码。
+Member 2 的统计改用统一的 46,463 条地震记录；46,523 条中的 60 条非地震
+事件不得混入。原稿已校验并保存在 `local_sources/team_submissions`，`others` 已移除。
+旧版成果保留，下面的 baseline 与 temporal 扩展说明仍适用于各自版本。
+
 **DSC5002 Exploratory Data Analysis and Visualization — earthquake project baseline.**
 
 A reproducible Python implementation of the supplied project proposal, covering all five research questions with real USGS observations, spherical PB2002 boundary distances, twelve figures, a standalone interactive dashboard and an English results report. Team assignments are intentionally omitted.

@@ -27,8 +27,22 @@
 <div class="grid"><article><h3>Distance distribution</h3><div id="distance-hist" class="chart"></div></article><article><h3>Regional cumulative distance</h3><div id="distance-ecdf" class="chart"></div></article></div>
 <p class="note">ECDFs use separate regional denominators. Distances use minor great-circle arcs and a sphere of radius 6371.0088 km; they do not estimate geological uncertainty.</p></section>
 <section data-panel="depth" hidden><h2>Below the surface</h2><p class="intro">Depth classes: shallow &lt;70 km, intermediate 70–&lt;300 km, deep ≥300 km. Negative reported depths are retained.</p>
-<div class="grid"><article><h3>Depth distribution</h3><div id="depth-hist" class="chart"></div></article><article><h3>Regional depth distributions</h3><div id="depth-box" class="chart"></div></article></div>
-<div class="panel-heading"><div><h3>Regional cross-section</h3><p>Choose a geographic box for a longitude–depth projection or local hypocentre view.</p></div><label>Section region<select id="section-region"></select></label><label>View<select id="section-view"><option value="2d">Longitude–depth</option><option value="3d">3D hypocentres</option></select></label></div>
+<div class="grid">
+<article><div class="depth-chart-heading"><h3>Depth distribution</h3></div><div id="depth-hist" class="chart"></div></article>
+<article><div class="depth-chart-heading"><h3>Regional depth distributions</h3><label>View<select id="regional-depth-view" aria-label="Regional depth chart view"><option value="box">Box plots</option><option value="shares">Depth class shares</option></select></label></div>
+<div id="depth-box" class="chart"></div>
+<div id="depth-box-tooltip" class="depth-box-tooltip" role="tooltip" hidden>
+<strong id="depth-tooltip-region"></strong><div id="depth-tooltip-median"></div><div id="depth-tooltip-range"></div>
+</div></article>
+</div>
+<div class="panel-heading"><div><h3>Regional cross-section</h3><p id="section-intro">Compare the regional projection with a local depth section.</p></div><label>Section region<select id="section-region"></select></label><label>View<select id="section-view"><option value="2d" selected>Regional projection</option><option value="profile">Cross-section</option><option value="3d">3D hypocentres</option></select></label></div>
+<div id="section-preview" hidden>
+<div class="section-pair">
+<article><h4>Route map</h4><div id="section-map" class="chart section-chart" aria-label="Selected cross-section route map"></div></article>
+<article><h4>Cross-section · A → B</h4><div id="section-profile" class="chart section-chart" aria-label="Two-dimensional earthquake depth cross-section"></div></article>
+</div>
+<div class="section-caption"><p id="section-location"></p><p id="section-endpoint-a"></p><p id="section-endpoint-b"></p><p class="note"><span id="section-method"></span> <a id="section-reference" target="_blank" rel="noopener">Tectonic reference ↗</a></p></div>
+</div>
 <div id="cross-section" class="chart tall"></div><p class="note" id="section-note"></p></section>
 <section data-panel="magnitude" hidden><h2>Magnitude and recorded frequency</h2><p class="intro">The extraction starts at M5. Preferred catalogue magnitude types are mixed and have not been homogenized.</p>
 <div class="grid"><article><h3>Magnitude distribution</h3><div id="mag-hist" class="chart"></div></article><article><h3>Cumulative magnitude frequency</h3><div id="mag-frequency" class="chart"></div></article></div>
@@ -37,6 +51,16 @@
 <section data-panel="cases" hidden><div class="panel-heading"><div><h2>Recorded sequences around major events</h2><p>Fixed M ≥ 5 catalogue, 500 km radius, 30 days before and after. The anchor is excluded.</p></div><label>Case study<select id="case-select"></select></label></div>
 <p class="notice">Case studies use the full M ≥ 5 catalogue and their fixed windows. Global filters are hidden on this tab.</p>
 <div id="case-stats" class="case-stats"></div><div class="grid"><article><h3>Local epicentres</h3><div id="case-map" class="chart"></div></article><article><h3>Daily recorded sequence</h3><div id="case-timeline" class="chart"></div></article></div>
-<p class="note">Windows are [−30,0) and [0,30) days relative to the anchor, with equal exposure. These selected cases do not establish a general causal effect and exclude events below M5.</p></section>
+<p class="note">Windows are [−30,0) and [0,30) days relative to the anchor, with equal exposure. These selected cases do not establish a general causal effect and exclude events below M5.</p><div class="anim-block" id="animation"><div class="panel-heading"><div><h3>Time-lapse animation · three cases side by side</h3><p>Synchronized ±30-day axis. Points are sized by magnitude and coloured by depth class; the star is the anchor location, shown as a reference at every time.</p></div>
+<div class="anim-controls"><button class="secondary" id="anim-play">Play</button><label>Speed<select id="anim-speed"><option value="1">1 d/s</option><option selected="" value="2">2 d/s</option><option value="4">4 d/s</option><option value="8">8 d/s</option></select></label><label>Mode<select id="anim-mode"><option selected="" value="cumulative">Cumulative</option><option value="sliding">Trailing 7 days</option></select></label><button class="secondary" id="anim-reset">Reset</button></div></div>
+<div class="anim-slider-row"><span class="anim-time-label" id="anim-time-label">t = −30.0 d</span><input aria-label="Animation time" id="anim-slider" max="30" min="-30" step="0.25" type="range" value="-30"/></div>
+<div class="anim-grid">
+<article><h3 id="anim-title-0"></h3><div class="chart anim-chart" id="anim-map-0"></div><div class="anim-stat" id="anim-stat-0"></div></article>
+<article><h3 id="anim-title-1"></h3><div class="chart anim-chart" id="anim-map-1"></div><div class="anim-stat" id="anim-stat-1"></div></article>
+<article><h3 id="anim-title-2"></h3><div class="chart anim-chart" id="anim-map-2"></div><div class="anim-stat" id="anim-stat-2"></div></article>
+</div>
+<article><h3>Synchronized daily activity</h3><div class="chart anim-histogram" id="anim-histogram"></div></article>
+<p class="note">The three cases share one relative time axis for direct comparison. Cumulative mode retains every revealed event; the trailing mode shows only the previous 7 days. The anchor is excluded from counts. Descriptive only — not a causal aftershock attribution.</p>
+</div></section>
 <footer><strong>Scope and limits</strong><p>Historical descriptive analysis only. Earthquake sequences are dependent; monitoring coverage, magnitude types and catalogue revisions affect comparisons. Geographic boxes are not tectonic classifications. PB2002 is dated and simplified.</p><p>Sources: <a href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS catalogue</a> · <a href="https://github.com/fraxen/tectonicplates">PB2002 conversion</a> (Hugo Ahlenius, Nordpil and Peter Bird; ODC-By) · <a href="https://www.naturalearthdata.com/">Natural Earth</a> (public domain). All plot assets are embedded for offline use.</p></footer>
 </main><script id="catalogue" type="application/json">/*__DATA__*/</script><script>/*__APP__*/</script></body></html>
