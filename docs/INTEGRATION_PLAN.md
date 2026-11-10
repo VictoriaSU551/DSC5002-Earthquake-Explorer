@@ -3,9 +3,11 @@
 Goal: audit the supplied team work against 5002rp3.0, integrate reproducible
 improvements, remove the emptied `others` folder, and deliver a searchable PDF.
 
-Design choice: A0 landscape, three columns, English, numbered IMRaD sections;
+Current design: A0 landscape, four columns, English, numbered evidence panels;
 CityU's sample does not specify a mandatory page size or presentation duration.
-Use charts regenerated from the frozen catalogue and actual animation keyframes.
+Use 13 figure groups regenerated from the frozen catalogue; a fourteenth window
+sensitivity figure belongs in the report. Daily and cumulative static panels
+communicate the event sequence, so no animation link is used on the poster.
 Do not fabricate names; identify the DSC5002 project team collectively.
 
 - Preserve submitted files byte-for-byte in local_sources/team_submissions, with
@@ -20,9 +22,13 @@ Do not fabricate names; identify the DSC5002 project team collectively.
   a short presentation script, and a final local contents page.
 - Validate numerical results, interactions, source preservation, PDF text,
   external and relative links, and rendered layout; review before delivery.
-- Publish the animation companion and poster/results to the existing GitHub
+- Add equal-area and empirical-latitude geographic references, regional
+  correlations and an annotated dimensionless energy proxy from proposal 2.0.
+- Replace the former animation homepage with the latest poster/results landing page.
+- Publish the current poster/results to the existing GitHub
   repository, keeping raw datasets and submitted originals local.
 
 Review focus: non-earthquake contamination; mismatched denominators; arbitrary
 completeness assumptions; apparent causal labels; map aspect ratio, colour
-consistency, searchable text, clipping and working animation links.
+consistency, searchable text, clipping and correctly positioned source links.
+Superseded poster exports and animation keyframes are removed; source inputs stay intact.

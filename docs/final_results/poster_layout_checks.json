@@ -1,80 +1,96 @@
 {
   "text_boxes": [
     {
-      "text": "A global map alone hides variation through time and below the surface. We connec",
-      "height_mm": 33.072916666666664,
-      "allocation_mm": 40
+      "text": "Where are earthquakes concentrated, and what changes when we examine time and de",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 35
     },
     {
-      "text": "<b>Data:</b> USGS earthquake-only catalogue [1], 1 Jan 2000 to 31 Dec 2025; pref",
-      "height_mm": 31.749999999999996,
+      "text": "<b>Methods.</b> Unique IDs; UTC 2000\u20132025; M \u2265 5. Six geographic boxes plus Othe",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 42
+    },
+    {
+      "text": "<b>Fig. 1.</b> All 46,463 epicentres on an equal-area Mollweide map. Colours: sh",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 39
+    },
+    {
+      "text": "<b>Fig. 2.</b> Within 100 km: <b>70.15%</b> of events versus <b>9.42%</b> of equ",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 46
+    },
+    {
+      "text": "<b>Fig. 3.</b> Each region has its own denominator. Other is a heterogeneous res",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 39
+    },
+    {
+      "text": "<b>Fig. 4.</b> Annual counts; dashed lines are 13-year means. The 2011 peak is <",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 45
+    },
+    {
+      "text": "<b>Fig. 5.</b> 2013\u20132025 versus 2000\u20132012: Indonesia/Philippines <b>\u221225.58%</b>,",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 41
+    },
+    {
+      "text": "<b>Fig. 6.</b> Mw-family share shifts from <b>73.45% to 55.05%</b> between perio",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 37
+    },
+    {
+      "text": "<b>Reporting and sensitivity</b><br/>Horizontal-error availability: <b>0.28% \u2192 8",
+      "height_mm": 48.50694444444444,
+      "allocation_mm": 65
+    },
+    {
+      "text": "<b>Fig. 7.</b> Globally <b>83.20%</b> are shallow (&lt;70 km). Japan/Kuril and T",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 42
+    },
+    {
+      "text": "<b>Fig. 8.</b> Maps: gold trench, blue route/swath, star at 0 km. A \u2192 B: \u2212200 to",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 50
+    },
+    {
+      "text": "<b>Fig. 9.</b> Pairwise Spearman \u03c1, all eligible records. Depth\u2013distance associa",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 37
+    },
+    {
+      "text": "<b>Fig. 10.</b> Inclusive N(M \u2265 m), log count axis: <b>3,874</b> records \u22656; <b>",
+      "height_mm": 29.104166666666664,
+      "allocation_mm": 39
+    },
+    {
+      "text": "<b>Fig. 11.</b> M \u2265 8 accounts for <b>0.06%</b> of events but <b>71.21%</b> of t",
+      "height_mm": 29.104166666666664,
       "allocation_mm": 43
     },
     {
-      "text": "<b>Methods:</b> shortest spherical distance to boundary arcs (R = 6,371.0088 km)",
-      "height_mm": 31.749999999999996,
-      "allocation_mm": 40
-    },
-    {
-      "text": "<b>Figure 1.</b> All 46,463 epicentres; points coloured by depth. Grey lines sho",
+      "text": "<b>Figs. 12\u201313.</b> Within 500 km and \u00b130 days; anchors excluded. Gold: post-eve",
       "height_mm": 29.104166666666664,
-      "allocation_mm": 36
+      "allocation_mm": 44
     },
     {
-      "text": "<b>Figure 2.</b> Median distance = <b>59.68 km</b>; 70.15% lie within 100 km. Th",
-      "height_mm": 19.402777777777775,
-      "allocation_mm": 31
+      "text": "<b>CONCLUSION</b>  Strong boundary concentration, contrasting depth tails and cl",
+      "height_mm": 9.260416666666666,
+      "allocation_mm": 13
     },
     {
-      "text": "<b>Figure 3.</b> Annual M \u2265 5 counts; dashed lines are period means. The maximum",
-      "height_mm": 30.42708333333333,
-      "allocation_mm": 40
-    },
-    {
-      "text": "<b>Figure 4.</b> 2013\u20132025 versus 2000\u20132012, M \u2265 5; equal exposure rates. Indone",
-      "height_mm": 19.402777777777775,
-      "allocation_mm": 36
-    },
-    {
-      "text": "<b>Figure 5.</b> Shallow &lt;70, intermediate 70\u2013&lt;300, deep \u2265300 km. Tonga/Ke",
-      "height_mm": 29.104166666666664,
-      "allocation_mm": 36
-    },
-    {
-      "text": "<b>Figure 6.</b> Histogram and inclusive cumulative counts (log axis): M \u2265 6: <b",
-      "height_mm": 19.402777777777775,
-      "allocation_mm": 31
-    },
-    {
-      "text": "<b>Figure 7.</b> \u00b1100 km finite swaths; zero at the mapped trench. Equal kilomet",
-      "height_mm": 29.104166666666664,
-      "allocation_mm": 31
-    },
-    {
-      "text": "<b>Figure 8.</b> Fixed 500 km, \u00b130-day windows; anchors excluded. First 3 post-e",
-      "height_mm": 19.402777777777775,
-      "allocation_mm": 28
-    },
-    {
-      "text": "<b>Figure 9.</b> Actual animation keyframe at +3 days, cumulative mode. Full int",
-      "height_mm": 16.756944444444443,
-      "allocation_mm": 17
-    },
-    {
-      "text": "<b>CONCLUSION & LIMITS</b>  Boundary proximity and depth structure are clear cat",
-      "height_mm": 10.14236111111111,
-      "allocation_mm": 16
-    },
-    {
-      "text": "[1] USGS FDSN Event Web Service: earthquake.usgs.gov/fdsnws/event/1/  \u00b7  [2] Bir",
-      "height_mm": 7.0555555555555545,
+      "text": "[1] <link href=\"https://earthquake.usgs.gov/fdsnws/event/1/\">USGS FDSN Event Ser",
+      "height_mm": 7.496527777777777,
       "allocation_mm": 8
     }
   ],
-  "charts": 8,
+  "charts": 13,
   "page_mm": [
     1189,
     841
   ],
-  "animation_link": "https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/"
+  "animation_link": null,
+  "columns": 4
 }

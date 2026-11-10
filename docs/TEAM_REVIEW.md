@@ -8,7 +8,8 @@
 最终使用原项目冻结的 **46,463 条 earthquake 事件**，UTC
 `[2000-01-01, 2026-01-01)`、preferred M≥5。所有主体结果使用同一快照。
 数据 SHA256：`231b5b4fadf2d0d4eccfe4f03b8eb8489d225ff84e921f18d2b973af46d544ff`。
-旧版 30 个成果保留，新版写入 `outputs/final`。
+当前交付在 `outputs/final` 和 `deliverables`。后续 2.0 扩充与四列海报见
+[EXPERIMENT_EXTENSION.md](EXPERIMENT_EXTENSION.md)；旧海报不另留版本。
 
 ## 各部分结论
 
@@ -49,7 +50,7 @@ Member 2 原始下载的逐字节副本。
 - `earthquake_explorer/magnitude_analysis.py`：整合后的 RQ4 分析。
 - `web/dashboard.*`、`web/style.css`：整合后的 RQ3/RQ5 交互源代码。
 - `run_final.py`：只读使用冻结快照生成整合结果。
-- `outputs/final/`：新版仪表盘、动画、表、RQ4 图、海报图、验证记录。
+- `outputs/final/`：当前报告、仪表盘、表、RQ4 图、海报图、验证记录。
 - `deliverables/`：最终可搜索海报、讲稿和预览。
 - `START_HERE.html`：本地总入口。
 
@@ -73,18 +74,18 @@ Member 2 原始下载的逐字节副本。
 ```powershell
 python run_final.py
 python scripts/member3_analysis.py outputs/final/dashboard.html --output-dir outputs/final/tables
-python scripts/build_animation.py
+python scripts/expand_analysis.py
+python scripts/verify_expansion.py
 python scripts/build_poster_charts.py
 python scripts/verify_rq3.py
 python -m pytest -q
 ```
 
-关键帧来自 `scripts/final_browser_smoke.cjs` 实际浏览器渲染，需要 Playwright
-和 Chromium/Edge。设置 `PLAYWRIGHT_MODULE`、`PLAYWRIGHT_BROWSER_CHANNEL` 后执行。
+最新四列海报用静态日计数与累计曲线展示时间过程，不再采用动画截图或链接。
 使用安装了 ReportLab、pypdf、Pillow 的 Python 执行
 `scripts/build_poster_pdf.py`。本机使用 Codex bundled PDF runtime，无需改变分析环境。
 海报设计固定对应上述已审阅快照；不同快照需重新核验文字与数值。
 
 原始投稿的审计另用 `python scripts/audit_submissions.py`，只在持有本地投稿包时运行。
-原稿、原始目录与完整观察级分析数据不上传；公开海报、代码、汇总表和动画的三个
-USGS 公共案例子集。来源许可见 THIRD_PARTY.md。
+原稿、原始目录与完整观察级分析数据不上传；公开最新版海报、代码、汇总图表和报告。
+来源许可见 THIRD_PARTY.md。最新构建完整顺序见上述扩充说明。

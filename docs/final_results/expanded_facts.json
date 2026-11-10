@@ -1,0 +1,66 @@
+{
+  "design": "4 independent scrambled Sobol equal-area spherical designs, 16384 points each; longitude uniform and sine(latitude) uniform; whole globe including oceans. Latitude control uses empirical latitude quantiles and uniform longitude. Descriptive geographic references, not realistic seismicity null models.",
+  "reference_n": 65536,
+  "latitude_control_n": 16384,
+  "seeds": [
+    5002,
+    5003,
+    5004,
+    5005,
+    5012
+  ],
+  "radius_km": 6371.0088,
+  "thresholds": [
+    {
+      "radius_km": 50,
+      "observed_pct": 43.91666487312485,
+      "equal_area_pct": 4.96368408203125,
+      "latitude_matched_pct": 5.5419921875,
+      "observed_to_area_ratio": 8.847594679142668,
+      "replicate_min_pct": 4.888916015625,
+      "replicate_max_pct": 5.023193359375
+    },
+    {
+      "radius_km": 100,
+      "observed_pct": 70.15044228741148,
+      "equal_area_pct": 9.417724609375,
+      "latitude_matched_pct": 10.504150390625,
+      "observed_to_area_ratio": 7.448767637310108,
+      "replicate_min_pct": 9.375,
+      "replicate_max_pct": 9.53369140625
+    },
+    {
+      "radius_km": 200,
+      "observed_pct": 87.89574500139896,
+      "equal_area_pct": 17.26531982421875,
+      "latitude_matched_pct": 18.994140625,
+      "observed_to_area_ratio": 5.090884263731049,
+      "replicate_min_pct": 17.205810546875,
+      "replicate_max_pct": 17.34619140625
+    },
+    {
+      "radius_km": 500,
+      "observed_pct": 97.13320276348922,
+      "equal_area_pct": 35.98175048828125,
+      "latitude_matched_pct": 37.87841796875,
+      "observed_to_area_ratio": 2.6995129877053685,
+      "replicate_min_pct": 35.9130859375,
+      "replicate_max_pct": 36.016845703125
+    }
+  ],
+  "median_area_distance_km": 785.5220810963958,
+  "replicate_note": "Across-design range is numerical sensitivity, not a confidence interval. No p-value or causal enrichment claim.",
+  "binding_sha256": "9ae1c6f57b817c2f77754277f834ab4dff1f766234453d76c96f4759d969dfc6",
+  "sampling_spec": {
+    "power": 14,
+    "area_seeds": [
+      5002,
+      5003,
+      5004,
+      5005
+    ],
+    "latitude_seed": 5012,
+    "scipy": "1.13.1",
+    "numpy": "1.26.4"
+  }
+}

@@ -1,7 +1,7 @@
 """Build searchable A0 poster and presentation notes with ReportLab + pypdf.
 
 Run with a Python environment containing reportlab, pypdf and Pillow, after
-run_final.py, build_poster_charts.py and final_browser_smoke.cjs.
+run_final.py, member3_analysis.py, expand_analysis.py and build_poster_charts.py.
 """
 from pathlib import Path
 from io import BytesIO
@@ -50,71 +50,77 @@ def chart(name,x,y,w,h):
 def link(label,url,x,y,w,size=22):
     text(label,x,y,size,TEAL,True);c.linkURL(url,(x*mm,H-(y+2)*mm,(x+w)*mm,H-(y-9)*mm),relative=0,thickness=0)
 
-rect(0,0,1189,841,'#ffffff');rect(0,0,1189,116,NAVY)
-text('INSIDE THE EARTH',24,45,88,'#ffffff',True)
-text('Global earthquake patterns in space, time and depth',25,70,43,'#e2f1f5')
-text('DSC5002 Project Team  |  City University of Hong Kong  |  Exploratory Data Analysis and Visualization',25,94,24,'#c7dce5')
-rect(964,23,201,68,'#254d62')
-text('2000–2025',977,46,45,'#ffffff',True)
-text('M ≥ 5  •  UTC  •  Earthquakes only',977,64,22,'#d9edf2')
-text('One frozen catalogue across all panels',977,79,20,'#d9edf2')
+# Current design: four aligned evidence columns, with no animation link.
+expanded=json.loads((OUT/'expanded_facts.json').read_text())
+r100=next(v for v in expanded['thresholds'] if v['radius_km']==100)
+rect(0,0,1189,841,'#ffffff')
+for x,col in zip([0,297.25,594.5,891.75],['#197c9e','#c95d54','#8254a6','#d58c27']):rect(x,0,297.25,5,col)
+text('INSIDE THE EARTH',22,42,86,NAVY,True)
+text('Reading global earthquakes through space, time, depth and magnitude',23,64,35,MUTED)
+text('DSC5002 Project Team  |  City University of Hong Kong  |  USGS 2000–2025, preferred M ≥ 5',23,82,24,MUTED)
+# Four compact findings replace the former oversized header.
+metrics=[('46,463','unique earthquake records'),(f"{r100['observed_to_area_ratio']:.2f}×",'100-km share / equal-area reference'),('11.76%','deep events in Tonga / Kermadec / Fiji'),('28','events with magnitude ≥ 8')]
+for x,(value,label),col in zip([22,312,602,892],metrics,['#197c9e','#c95d54','#8254a6','#b57919']):
+ rect(x,94,275,43,'#f1f5f6');text(value,x+8,116,42,col,True);text(label,x+8,129,20,NAVY)
+cols=[22,312,602,892];cw=275
+for x,title,col in zip(cols,['01  SPACE & REFERENCE','02  TIME & COMPARABILITY','03  DEPTH & RELATIONSHIPS','04  MAGNITUDE & SEQUENCES'],['#197c9e','#c95d54','#8254a6','#b57919']):
+ rect(x,146,cw,17,col);text(title,x+6,157,25,'#ffffff',True)
+def heading(title,x,y):
+ text(title,x,y,28,NAVY,True)
+def cap(value,x,y,h=32):para(value,x,y,cw,h,22)
+x=cols[0]
+heading('Question, data and approach',x,180)
+cap('Where are earthquakes concentrated, and what changes when we examine time and depth? We connect five research questions using one frozen, earthquake-only catalogue.',x,187,35)
+cap('<b>Methods.</b> Unique IDs; UTC 2000–2025; M ≥ 5. Six geographic boxes plus Other. Distances to PB2002 minor great-circle arcs (R = 6,371 km); no automatic removal of extreme or negative depths.',x,225,42)
+heading('Global geography',x,283)
+chart('global_map',x,291,cw,116)
+cap('<b>Fig. 1.</b> All 46,463 epicentres on an equal-area Mollweide map. Colours: shallow, intermediate and deep; grey lines: PB2002. Clusters follow the circum-Pacific belts; overlapping points are not an area-normalized density.',x,408,39)
+heading('Concentrated relative to what?',x,463)
+chart('boundary_cdf',x,470,cw,104)
+cap(f"<b>Fig. 2.</b> Within 100 km: <b>70.15%</b> of events versus <b>{r100['equal_area_pct']:.2f}%</b> of equal-area globe points; latitude control <b>{r100['latitude_matched_pct']:.2f}%</b>. Four 16,384-point designs give {r100['replicate_min_pct']:.2f}–{r100['replicate_max_pct']:.2f}% (numerical sensitivity, not a CI).",x,577,46)
+heading('Regional proximity is uneven',x,642)
+chart('regional_proximity',x,650,cw,105)
+cap('<b>Fig. 3.</b> Each region has its own denominator. Other is a heterogeneous residual category. Reference points cover land and ocean; this is a descriptive geographic baseline, not a seismicity null model.',x,758,39)
 
-rect(24,126,1141,57,'#eff5f7')
-metrics=[('46,463','unique earthquake records'),('70.15%','within 100 km of a PB2002 boundary'),('83.20%','shallow events (<70 km)')]
-for x,(a,b) in zip([37,423,809],metrics):
-    text(a,x,151,51,TEAL,True);text(b,x,169,25,NAVY)
+x=cols[1]
+heading('A fluctuating recorded history',x,180)
+chart('annual',x,188,cw,111)
+cap('<b>Fig. 4.</b> Annual counts; dashed lines are 13-year means. The 2011 peak is <b>2,701</b>. Later-period rates are <b>6.63% lower at M ≥ 5</b> and <b>15.42% lower at M ≥ 6</b>, after allowing for 4,749 versus 4,748 days.',x,302,45)
+heading('The direction depends on region',x,365)
+chart('regional_change',x,373,cw,117)
+cap('<b>Fig. 5.</b> 2013–2025 versus 2000–2012: Indonesia/Philippines <b>−25.58%</b>, Mediterranean/Himalaya <b>+8.82%</b>. Region boxes differ in area; these are within-region changes, not comparisons of hazard.',x,493,41)
+heading('Can the periods be compared?',x,553)
+chart('magnitude_mix',x,561,cw,104)
+cap('<b>Fig. 6.</b> Mw-family share shifts from <b>73.45% to 55.05%</b> between periods. Preferred magnitude scales are mixed; selecting Mw records alone does not homogenize the catalogue.',x,668,37)
+rect(x,718,cw,77,'#f8f0ee')
+para('<b>Reporting and sensitivity</b><br/>Horizontal-error availability: <b>0.28% → 86.80%</b>. Missing does not mean zero error.<br/>Removing 30-day / 500-km windows around 28 M ≥ 8 events changes the M5 contrast to <b>−3.37%</b>. This is a window sensitivity, not declustering.',x+7,724,cw-14,65,22)
 
-x1,x2,x3=24,411,798;cw=367
-section('1','INTRODUCTION & METHODS',x1,205,cw)
-para('A global map alone hides variation through time and below the surface. We connect five questions: <b>where and when, boundary proximity, depth, magnitude frequency, and major-event sequences.</b>',x1,217,cw,40,25)
-para('<b>Data:</b> USGS earthquake-only catalogue [1], 1 Jan 2000 to 31 Dec 2025; preferred M ≥ 5. Event IDs are unique; four negative reported depths are retained. PB2002 [2] supplies 241 boundary features; Natural Earth [3] supplies map context.',x1,261,cw,43,24)
-para('<b>Methods:</b> shortest spherical distance to boundary arcs (R = 6,371.0088 km); six geographic boxes plus Other; full-sample statistics; equal 13-year comparisons adjusted for 4,749 versus 4,748 days. No prediction model.',x1,308,cw,40,24)
+x=cols[2]
+heading('Similar medians, different tails',x,180)
+chart('depth_shares',x,188,cw,112)
+cap('<b>Fig. 7.</b> Globally <b>83.20%</b> are shallow (&lt;70 km). Japan/Kuril and Tonga/Fiji both have median depth 33 km, but deep-event shares are <b>5.01% and 11.76%</b>. Andes has <b>26.19%</b> intermediate events.',x,303,42)
+heading('Local sections reveal structure',x,363)
+chart('cross_sections',x,371,cw,182)
+cap('<b>Fig. 8.</b> Maps: gold trench, blue route/swath, star at 0 km. A → B: −200 to +1,200 km; ±100 km swaths, equal kilometre scales. Deep events: <b>21/351</b> in northern Tohoku; <b>186/640</b> in central Tonga. Routes were selected after exploration.',x,556,50)
+heading('Pooled and regional associations',x,626)
+chart('correlations',x,634,cw,126)
+cap('<b>Fig. 9.</b> Pairwise Spearman ρ, all eligible records. Depth–distance association is +0.39 overall and +0.56 in Japan/Kuril; magnitude associations are weak. Correlation does not identify causality.',x,763,37)
 
-section('2','WHERE ARE THE EVENTS?  ·  RQ1–2',x1,365,cw)
-chart('global_map',x1,377,cw,177)
-para('<b>Figure 1.</b> All 46,463 epicentres; points coloured by depth. Grey lines show PB2002 boundaries. The circum-Pacific pattern is prominent. Overplotting indicates concentration, not an area-normalized risk estimate.',x1,557,cw,36,22)
-section('3','HOW CLOSE TO BOUNDARIES?  ·  RQ2',x1,611,cw)
-chart('boundary_cdf',x1,623,cw,134)
-para('<b>Figure 2.</b> Median distance = <b>59.68 km</b>; 70.15% lie within 100 km. These are distances to a simplified, dated map layer, not to every active fault. No spatial null model was fitted.',x1,759,cw,31,22)
+x=cols[3]
+heading('Large events are much rarer',x,180)
+chart('magnitude',x,188,cw,103)
+cap('<b>Fig. 10.</b> Inclusive N(M ≥ m), log count axis: <b>3,874</b> records ≥6; <b>387</b> ≥7; <b>28</b> ≥8. The M5 extraction threshold does not establish catalogue completeness; no predictive b-value is fitted.',x,294,39)
+heading('Counts are not an energy scale',x,352)
+chart('energy_scale',x,360,cw,103)
+cap('<b>Fig. 11.</b> M ≥ 8 accounts for <b>0.06%</b> of events but <b>71.21%</b> of the summed illustrative proxy, R(M)=10<super>1.5(M−5)</super>. A unit increase multiplies R by 31.6. Mixed scales: not measured joules, damage or risk.',x,466,43)
+heading('Sequences through a fixed window',x,527)
+chart('case_timelines',x,535,cw,115)
+cap('<b>Figs. 12–13.</b> Within 500 km and ±30 days; anchors excluded. Gold: post-event; blue: pre-event. First three days contain <b>60.1%, 60.9%, 70.9%</b> of post-window counts. Each cumulative curve uses its own 30-day total as denominator.',x,653,44)
+chart('case_cumulative',x,701,cw,95)
 
-section('4','RECORDED ACTIVITY OVER TIME  ·  RQ1',x2,205,cw)
-chart('annual',x2,218,cw,124)
-para('<b>Figure 3.</b> Annual M ≥ 5 counts; dashed lines are period means. The maximum is 2,701 in 2011. Later-period recorded rate: <b>−6.63% at M ≥ 5</b>, <b>−15.42% at M ≥ 6</b>. These are descriptive comparisons, not a monotonic trend.',x2,345,cw,40,23)
-
-section('5','REGIONAL CHANGES  ·  RQ1',x2,404,cw)
-chart('regional_change',x2,417,cw,140)
-para('<b>Figure 4.</b> 2013–2025 versus 2000–2012, M ≥ 5; equal exposure rates. Indonesia/Philippines decreases 25.58%; Mediterranean/Himalaya increases 8.82%. Boxes differ in area and do not define tectonic plates.',x2,561,cw,36,22)
-
-section('6','DEPTH DIFFERS BY REGION  ·  RQ3',x2,616,cw)
-chart('depth_shares',x2,630,cw,118)
-para('<b>Figure 5.</b> Shallow &lt;70, intermediate 70–&lt;300, deep ≥300 km. Tonga/Kermadec/Fiji has <b>11.76% deep</b> events versus Japan/Kuril 5.01%; Andes has 26.19% intermediate. Each row uses its own known-depth denominator.',x2,752,cw,36,22)
-
-section('7','MAGNITUDE & FREQUENCY  ·  RQ4',x3,205,cw)
-chart('magnitude',x3,216,cw,85)
-para('<b>Figure 6.</b> Histogram and inclusive cumulative counts (log axis): M ≥ 6: <b>3,874</b>; M ≥ 7: <b>387</b>; M ≥ 8: <b>28</b>. Mixed magnitude types are not homogenized; M5 completeness is not established.',x3,304,cw,31,22)
-
-section('8','LOCAL DEPTH SECTIONS  ·  RQ3',x3,352,cw)
-chart('cross_sections',x3,363,cw,85)
-para('<b>Figure 7.</b> ±100 km finite swaths; zero at the mapped trench. Equal kilometre scales, depth positive downward. Deep events: Tohoku <b>21/351</b>, Tonga <b>186/640</b>. Routes were explored and selected; profiles are illustrative.',x3,451,cw,31,22)
-
-section('9','MAJOR-EVENT SEQUENCES  ·  RQ5',x3,499,cw)
-chart('case_timelines',x3,510,cw,93)
-para('<b>Figure 8.</b> Fixed 500 km, ±30-day windows; anchors excluded. First 3 post-event days contain <b>60.1%, 60.9%, 70.9%</b> of post-window counts. Shared y-scale; blue = before, gold = after.',x3,606,cw,28,22)
-
-link('PLAY THE ANIMATION  >  (click here or the image)',SITE,x3,651,cw,23)
-text('VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/',x3,663,18,TEAL)
-im=OUT/'animation_poster_keyframe.png'
-iw,ih=Image.open(im).size
-imgw=cw;imgh=min(111,cw*ih/iw);actualw=imgh*iw/ih
-ix=x3+(cw-actualw)/2
-c.drawImage(str(im),ix*mm,H-(667+imgh)*mm,width=actualw*mm,height=imgh*mm,preserveAspectRatio=True)
-c.linkURL(SITE,(ix*mm,H-(667+imgh)*mm,(ix+actualw)*mm,H-667*mm),relative=0,thickness=0)
-para('<b>Figure 9.</b> Actual animation keyframe at +3 days, cumulative mode. Full interactive companion includes play, time slider and 7-day trailing windows.',x3,781,cw,17,19)
-
-rect(24,802,1141,21,NAVY)
-para('<b>CONCLUSION & LIMITS</b>  Boundary proximity and depth structure are clear catalogue patterns. Cross-period counts need caution: Mw-family share changes from 73.45% to 55.05%, and reporting fields change. These results do not establish causality, completeness or future hazard.',31,805,1127,16,23,'#ffffff')
-para('[1] USGS FDSN Event Web Service: earthquake.usgs.gov/fdsnws/event/1/  ·  [2] Bird (2003), doi:10.1029/2001GC000252; PB2002 GeoJSON, ODC-By  ·  [3] Natural Earth 110m, public domain.',24,828,1141,8,16,MUTED)
-for a,b,url in [(24,390,'https://earthquake.usgs.gov/fdsnws/event/1/'),(416,850,'https://doi.org/10.1029/2001GC000252'),(886,1165,'https://www.naturalearthdata.com/')]:c.linkURL(url,(a*mm,3*mm,b*mm,13*mm),relative=0,thickness=0)
+rect(22,808,1145,17,NAVY)
+para('<b>CONCLUSION</b>  Strong boundary concentration, contrasting depth tails and clustered sequences emerge. Their interpretation depends on the geographic reference, catalogue composition and window definition; none estimates future hazard.',28,811,1133,13,21,'#ffffff')
+para('[1] <link href="https://earthquake.usgs.gov/fdsnws/event/1/">USGS FDSN Event Service</link>  ·  [2] <link href="https://doi.org/10.1029/2001GC000252">Bird (2003), PB2002</link>; GeoJSON (ODC-By)  ·  [3] <link href="https://www.naturalearthdata.com/">Natural Earth 110m</link> (public domain)  ·  [4] <link href="https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity">USGS magnitude–energy guidance</link>.  Full methods and sensitivity results: <link href="'+REPO+'">project repository</link>.',22,831,1145,8,17,MUTED)
 c.showPage();c.save();buf.seek(0)
 reader=PdfReader(buf);page=reader.pages[0]
 for name,x,y,w,h in charts:
@@ -123,24 +129,23 @@ for name,x,y,w,h in charts:
     scale=min(w*mm/sw,h*mm/sh)
     xx=x*mm+(w*mm-sw*scale)/2;yy=H-(y+h)*mm+(h*mm-sh*scale)/2
     page.merge_transformed_page(source,Transformation().scale(scale).translate(xx,yy))
-writer=PdfWriter();writer.add_page(page);writer.add_metadata({'/Title':'Inside the Earth | DSC5002 Academic Poster','/Author':'DSC5002 Project Team','/Subject':'Searchable A0 landscape; source-backed charts and linked animation'})
+writer=PdfWriter();writer.add_page(page);writer.add_metadata({'/Title':'Inside the Earth | DSC5002 Academic Poster','/Author':'DSC5002 Project Team','/Subject':'Searchable A0 landscape; four columns, 13 evidence figures and geographic controls'})
 with (DEL/'DSC5002_Academic_Poster.pdf').open('wb') as f:writer.write(f)
-(OUT/'poster_layout_checks.json').write_text(json.dumps({'text_boxes':boxes,'charts':len(charts),'page_mm':[1189,841],'animation_link':SITE},indent=2),encoding='utf-8')
-print('Created searchable A0 poster with eight vector charts and an actual animation screenshot.')
+(OUT/'poster_layout_checks.json').write_text(json.dumps({'text_boxes':boxes,'charts':len(charts),'page_mm':[1189,841],'animation_link':None,'columns':4},indent=2),encoding='utf-8')
+print('Created current four-column A0 poster; 13 static evidence figures, no animation link.')
 
 # Presentation script: source-informed signposting without copying the sample's story.
 script=[
-('Opening | introduce the research',"Hello, and thank you for stopping by. We are the DSC5002 project team at City University of Hong Kong. Our project is called Inside the Earth. When we see a cluster of earthquakes on a world map, what can that map tell us, and what is still hidden? We combined time, location, magnitude and depth to make those patterns easier to explore. Our goal is to describe the recorded catalogue, not to predict the next earthquake."),
-('Methods | point to section 1',"First, we used a fixed USGS snapshot containing 46,463 unique earthquake records, from 2000 through 2025, with preferred magnitude at least five. All final analyses use the same records. We checked a teammate's larger extract and identified 60 non-earthquake events, so those were not part of our earthquake sample. We calculated spherical distances to PB2002 boundary arcs and used clearly specified regional boxes. For comparisons across time, we allowed for the one-day difference between the two thirteen-year periods."),
-('Spatial results | point to sections 2 and 3',"The map on the left shows the familiar concentration around the Pacific and other mapped boundaries. The distance curve makes this more precise: 70.15 percent of the records lie within one hundred kilometres of a PB2002 boundary, and the median distance is 59.68 kilometres. This is a description of proximity to our selected map. It is not a test against a spatial null model, and PB2002 does not represent every active fault."),
-('Time and regions | point to sections 4 and 5',"Next, the middle column shows how recorded counts vary through time. The annual maximum is 2,701 in 2011. Comparing 2013 to 2025 with 2000 to 2012, the exposure-adjusted rate is 6.63 percent lower at magnitude five or above, and 15.42 percent lower at magnitude six or above. Regional changes differ: Indonesia and the Philippines decrease by 25.58 percent, while the Mediterranean and Himalaya group increases by 8.82 percent. These are changes in catalogue counts. They should not be read as changes in hazard, especially because the regions differ in area."),
-('Depth and magnitude | point to sections 6, 7 and 8',"Depth adds another dimension. Globally, 83.20 percent of the records are shallow. Yet the deep-event share is 11.76 percent in Tonga, Kermadec and Fiji, compared with 5.01 percent in Japan and Kuril. The two local profiles use the same distance and depth scales, with zero at the mapped trench. The Tonga profile contains 186 deep events out of 640, while the northern Tohoku profile contains 21 out of 351. These are selected local swaths, not representative samples of entire regions. The magnitude charts show that larger events are much less frequent: 387 records reach magnitude seven, and only 28 reach magnitude eight. We did not assume that the threshold proves catalogue completeness."),
-('Sequences and animation | point to sections 9 and the linked frame',"Finally, we compared three major-event windows using the same five-hundred-kilometre radius and thirty days on each side, excluding the anchor itself. The after-window counts are 143 for Sumatra, 302 for Maule and 563 for Tohoku. Around sixty to seventy-one percent of those post-window records fall in the first three days. The linked animation lets us inspect their timing and geography together. This screenshot shows the actual cumulative frame at day three. The full-window histogram is displayed throughout, and the star marks the anchor's reference location even before time zero."),
-('Conclusion | point to the bottom strip',"To conclude, the project makes boundary proximity, regional depth contrasts and event sequences visible within one consistent catalogue. The main caution is comparability. The composition of preferred magnitude types and the availability of reporting fields change over time, so a count difference alone cannot identify a physical change in earthquake activity. Our contribution is a reproducible, interactive description with those limits made explicit. Thank you for your attention. We would be happy to discuss the figures or demonstrate the animation.")]
+('Opening | four connected views',"Hello. We are the DSC5002 project team at City University of Hong Kong. Inside the Earth asks how earthquake patterns change when we look at space, time, depth and magnitude together. Please read the four columns from left to right. We use 46,463 unique USGS earthquake records from 2000 to 2025, all with preferred magnitude at least five. We aim to describe recorded patterns with explicit reference points, not to predict future earthquakes."),
+('Column 1 | space and reference',f"The equal-area world map shows geographic concentration. But a map alone does not say how unusual proximity to boundaries is relative to available surface area. We therefore generated 65,536 equal-area reference locations on the whole globe, including oceans, and calculated the same spherical distance to PB2002 boundaries. Within one hundred kilometres, the observed share is 70.15 percent, compared with {r100['equal_area_pct']:.2f} percent for the geographic reference. Their ratio is {r100['observed_to_area_ratio']:.2f}. A second reference preserves the observed latitude distribution while randomizing longitude; its share is {r100['latitude_matched_pct']:.2f} percent. These controls help interpret concentration, but neither is a realistic model of earthquake occurrence. We make no causal or significance claim from the ratio."),
+('Column 2 | time and comparability',"The second column combines trends with reasons for caution. Recorded activity fluctuates, with 2,701 events in 2011. Comparing the later thirteen years with the earlier thirteen years, the exposure-adjusted rate is 6.63 percent lower at magnitude five and 15.42 percent lower at magnitude six. The regional chart shows that the direction differs: Indonesia and the Philippines decrease by 25.58 percent, whereas the Mediterranean and Himalaya group increases by 8.82 percent. The next chart shows why those numbers should not stand alone. Mw-family composition changes from 73.45 to 55.05 percent. Horizontal-error availability changes sharply too. Removing fixed windows around the largest events reduces the M5 contrast to minus 3.37 percent; this is a sensitivity exercise, not declustering."),
+('Column 3 | depth and relationships',"The third column moves below the surface. Most events are shallow, but similar medians hide different tails. Japan and Kuril and Tonga, Kermadec and Fiji both have median depth thirty-three kilometres, yet their deep shares differ, at 5.01 and 11.76 percent. The local cross sections use equal kilometre scales, a fixed swath and zero at the mapped trench. Tonga has 186 deep events out of 640 in the selected swath, compared with 21 out of 351 in northern Tohoku. The correlation heatmap then connects depth to boundary distance across the complete regions. The overall rank correlation is about 0.39 and is stronger in Japan and Kuril. Magnitude correlations are generally weak. These are observational relationships, not causal mechanisms identified by this analysis."),
+('Column 4 | magnitude and event sequences',"The last column separates event frequency from an illustrative energy scale. There are only twenty-eight events of magnitude eight or more. They represent 0.06 percent of records but about 71.21 percent of a summed magnitude-based proxy. That proxy increases by about thirty-two for each unit of magnitude. Because preferred magnitude scales are mixed, it is not measured energy in joules and it does not measure damage. Finally, the daily timelines and cumulative curves compare three events within the same five-hundred-kilometre and thirty-day windows. Anchors are excluded. Roughly sixty to seventy-one percent of each post-window sample appears in the first three days. Static aligned panels communicate both the total counts and the timing directly, so an animation link is unnecessary on this poster. The supplementary sensitivity grid shows how counts change when we change the radius and duration."),
+('Conclusion | what the evidence supports',"Together, the four columns show strong concentration near mapped boundaries, regional differences in depth, rare high magnitudes and clustered event sequences. They also show how conclusions depend on the reference geography, catalogue composition and selected windows. Our contribution is to make those comparisons visible and reproducible while keeping their limitations explicit. Thank you for your attention. We would be happy to discuss the geographic reference or demonstrate the companion interactive analysis.")]
 styles={'title':ParagraphStyle('title',fontName='Body-Bold',fontSize=21,leading=26,textColor=HexColor(NAVY)),
-'head':ParagraphStyle('head',fontName='Body-Bold',fontSize=12,leading=16,textColor=HexColor(TEAL),spaceBefore=12,spaceAfter=5),
-'body':ParagraphStyle('body',fontName='Body',fontSize=11,leading=16,textColor=HexColor(NAVY))}
-story=[Paragraph('Inside the Earth | Poster presentation script',styles['title']),Spacer(1,10),Paragraph('Suggested delivery: approximately 6–7 minutes at 115–130 words/minute. This is a rehearsal estimate, not a CityU course rule. Use the numbered poster panels as cues; the sample pages do not prescribe a duration.',styles['body'])]
+'head':ParagraphStyle('head',fontName='Body-Bold',fontSize=12,leading=16,textColor=HexColor(TEAL),spaceBefore=10,spaceAfter=4),
+'body':ParagraphStyle('body',fontName='Body',fontSize=11,leading=14.5,textColor=HexColor(NAVY))}
+story=[Paragraph('Inside the Earth | Poster presentation script',styles['title']),Spacer(1,10),Paragraph('Suggested delivery: approximately 6–7 minutes including pauses to point to the figures. This is a rehearsal estimate, not a CityU course rule. Use the numbered poster panels as cues; the sample pages do not prescribe a duration.',styles['body'])]
 for heading,body in script:story.append(KeepTogether([Paragraph(heading,styles['head']),Paragraph(body,styles['body'])]))
 story.extend([Paragraph('Likely questions',styles['head']),Paragraph('<b>Why not 46,523?</b> The supplied all-type extract includes 60 non-earthquake records. The final catalogue is earthquake-only.<br/><br/><b>Why not fit a predictive b-value?</b> A lower extraction threshold does not establish completeness, and magnitude scales are mixed.<br/><br/><b>Are the post-window events proven aftershocks?</b> No. Membership is determined only by the stated time and epicentral-distance windows.<br/><br/><b>What does the colour mean?</b> For location and depth charts: blue shallow, gold intermediate, purple deep. In the timeline only: blue before, gold after; this encoding is stated beside that figure.',styles['body']),Paragraph('Presentation reference',styles['head']),Paragraph('CityU Language Centre: <link href="https://www.cityu.edu.hk/lc/app/poster-script-samples1.html" color="#167d8d">poster script sample</link>. We follow its introduction, signposting, methods, findings and closing structure; the research content and wording here are original.',styles['body'])])
 doc=SimpleDocTemplate(str(DEL/'DSC5002_Presentation_Script.pdf'),pagesize=(210*mm,297*mm),rightMargin=22*mm,leftMargin=22*mm,topMargin=20*mm,bottomMargin=20*mm)

@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "pages": [
+    {
+      "file": "START_HERE.html",
+      "images": 1,
+      "links": 8,
+      "desktop_mobile": "PASS"
+    },
+    {
+      "file": "docs/index.html",
+      "images": 1,
+      "links": 7,
+      "desktop_mobile": "PASS"
+    },
+    {
+      "file": "outputs/final/report.html",
+      "images": 14,
+      "links": 25,
+      "desktop_mobile": "PASS"
+    },
+    {
+      "file": "docs/final_results/report.html",
+      "images": 14,
+      "links": 25,
+      "desktop_mobile": "PASS"
+    }
+  ],
+  "console_errors": [],
+  "external_requests": []
+}

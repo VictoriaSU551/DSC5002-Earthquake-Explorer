@@ -5,15 +5,17 @@
     1189,
     841
   ],
-  "searchable_text_characters": 4713,
-  "figures": 9,
+  "columns": 4,
+  "searchable_text_characters": 6177,
+  "figures": 13,
   "uri_annotations": [
-    "https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/",
-    "https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/",
     "https://earthquake.usgs.gov/fdsnws/event/1/",
     "https://doi.org/10.1029/2001GC000252",
-    "https://www.naturalearthdata.com/"
+    "https://www.naturalearthdata.com/",
+    "https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity",
+    "https://github.com/VictoriaSU551/DSC5002-Earthquake-Explorer"
   ],
+  "animation_links": 0,
   "script_pages": 2,
-  "visual_check": "Rendered with Poppler; full poster and enlarged chart/keyframe regions inspected."
+  "visual_check": "Separate manual Poppler render inspection documented in FINAL_VALIDATION.md."
 }

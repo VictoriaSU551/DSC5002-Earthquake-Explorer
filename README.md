@@ -1,10 +1,11 @@
 # Inside the Earth
 
-## 最终整合与学术海报（2026-11-10）
+## 最新四列海报与扩充实验（2026-11-10）
 
 - [可搜索 A0 学术海报 PDF](deliverables/DSC5002_Academic_Poster.pdf)
 - [海报展示讲稿 PDF](deliverables/DSC5002_Presentation_Script.pdf)
-- [在线动画与海报](https://VictoriaSU551.github.io/DSC5002-Earthquake-Explorer/)
+- [在线海报与全部结果](https://victoriasu551.github.io/DSC5002-Earthquake-Explorer/)
+- [2.0 / 3.0 整合说明与完整复现顺序](docs/EXPERIMENT_EXTENSION.md)
 - [组员成果评审、修改清单与复现方法](docs/TEAM_REVIEW.md)
 - [整合后的公开结果](docs/final_results/RESULTS.md)
 
@@ -12,7 +13,11 @@
 Member 3 的剖面、Member 4 的震级分析及 RQ5 动画已合入源码。
 Member 2 的统计改用统一的 46,463 条地震记录；46,523 条中的 60 条非地震
 事件不得混入。原稿已校验并保存在 `local_sources/team_submissions`，`others` 已移除。
-旧版成果保留，下面的 baseline 与 temporal 扩展说明仍适用于各自版本。
+最新海报为 **A0 横版、四列、13 组主图**；完整报告另附窗口敏感性图，共 14 组。
+新增等面积/纬度控制空间参照、地区关联热图、事件数与相对能量对比、累计时间曲线。
+100 km 内地震占比 70.15%，等面积参照 9.42%，纬度控制 10.50%。7.45 倍是描述性
+占比比值，不是风险倍数。海报以静态图直接呈现结果，不加非必要动画链接。
+旧海报已覆盖，交付入口只链接最新版；下面保留基础流水线及可比性补充的方法说明。
 
 **DSC5002 Exploratory Data Analysis and Visualization — earthquake project baseline.**
 
@@ -42,10 +47,10 @@ python -m pytest -q
 
 本地成品已生成，可以直接双击打开：
 
-- `outputs/dashboard.html`：离线交互面板，包含全球地图、可旋转 3D 地球、区域深度剖面、3D 震源视图、筛选器和三场重大地震案例。
-- `outputs/report.html`：英文结果报告，包含 12 张图、数据审计、五个研究问题的结果与解释边界。请保留整个 `outputs` 文件夹，报告需要读取旁边的图片。
+- `outputs/final/dashboard.html`：整合后的离线交互面板，包含地区深度剖面、3D 震源视图和事件探索工具。
+- `outputs/final/report.html`：当前英文结果报告，包含 14 组图及方法与解释边界。
 - `data/processed/earthquakes.csv`：清洗及派生变量后的完整分析数据。
-- `outputs/tables/`：统计表、Spearman 相关系数、案例事件列表与敏感性分析。
+- `outputs/final/tables/`：当前统计表、Spearman 相关系数和敏感性分析。
 
 所有文件均位于 `5002final`。公开仓库包含代码、测试、文档、来源清单，以及本轮用户要求同步的汇总图表、报告和交互页；完整事件级数据、旧版生成目录和输入 Word 计划保存在本地。克隆仓库后运行下列命令即可重新生成基础版本。
 
